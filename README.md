@@ -5,6 +5,6 @@ A free, open source cards game inspired by Spectromancer, Magic: The Gathering, 
 
  
    
-  ![Screenshot of Necromancer](https://joancipria.files.wordpress.com/)
+  ![Screenshot of Necromancer](https://joancipria.files.wordpress.com/2017/02/necromancer.png)
 
 Licensed udner GPL
