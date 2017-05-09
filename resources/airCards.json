@@ -1,0 +1,33 @@
+[{
+    "id": "griffin",
+    "type": "card",
+    "ElementalType": "air",
+    "image": "griffin.png",
+    "life": 15,
+    "attack": 3,
+    "cost": 2
+}, {
+    "id": "faerie",
+    "type": "card",
+    "ElementalType": "air",
+    "image": "faerie.png",
+    "life": 12,
+    "attack": 4,
+    "cost": 1
+}, {
+    "id": "phoenix",
+    "type": "card",
+    "ElementalType": "air",
+    "image": "phoenix.png",
+    "life": 12,
+    "attack": 4,
+    "cost": 1
+}, {
+    "id": "storm",
+    "type": "card",
+    "ElementalType": "air",
+    "image": "storm.png",
+    "life": 12,
+    "attack": 4,
+    "cost": 1
+}]

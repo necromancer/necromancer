@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/system.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!--Preload some resources-->
+
+    <!--CSS Files-->
+    <link rel="preload" href="./css/singlePlayer.css" as="style">
+    <link rel="preload" href="./css/style.css" as="style">
+    <link rel="preload" href="./css/index.css" as="style">
+
+    <!--JS Files-->
+    <link rel="preload" href="./js/system.js" as="script">
+    <link rel="preload" href="./js/game.js" as="script">
+    <link rel="preload" href="./js/IA.js" as="script">
+
+    <!-- Sound Assets -->
+    <link rel="preload" href="./audio/music1.ogg" as="media">
+
+    <!-- Generic Image Assets -->
+    <link rel="preload" href="./img/blank.png" as="image">
+    <link rel="preload" href="./img/bg.jpg" as="image">
+    <link rel="preload" href="./img/title.png" as="image">
+    <link rel="preload" href="./img/combat/backgrounds/bg0.png" as="image">
+    <link rel="preload" href="./img/enemyStausBar.png" as="image">
+    <link rel="preload" href="./img/playerStausBar.png" as="image">
+    <link rel="preload" href="./img/line.png" as="image">
+    <link rel="preload" href="./img/buttons/OSinglePlayer.png" as="image">
+    <link rel="preload" href="./img/buttons/OOptions.png" as="image">
+    <link rel="preload" href="./img/buttons/OExit.png" as="image">
+    <link rel="preload" href="./img/buttons/OSave.png" as="image">
+    <link rel="preload" href="./img/buttons/ONext.png" as="image">
+    <link rel="preload" href="./img/buttons/OBack.png" as="image">
+</head>
+<body>
+    <div id="overlay">
+        <div id="progstat"></div>
+        <div id="progress"></div>
+    </div>
+    <script type="text/javascript">
+        initLoading();
+    </script>
+    <audio autoplay="" controls="" loop="" preload="">
+    <source src="audio/music1.ogg" type="audio/ogg"></source>
+    Your browser does not support the audio element.
+  </audio>
+    <div class="title">
+        <img src="img/title.png" alt="">
+    </div>
+    <div class="menu">
+        <img class="singleplayer-button" onclick="location.href='singleplayer.html';" src="/img/buttons/NSinglePlayer.png" alt="">
+        <img onclick="#" src="img/buttons/BMultiPlayer.png" alt="">
+        <img onclick="#" src="img/buttons/BMyDeck.png" alt="">
+        <img class="options-button" onclick="openOptions();" src="img/buttons/NOptions.png" alt="">
+        <img class="exit-button" onclick="exitApp();" src="img/buttons/NExit.png" alt="">
+    </div>
+
+    <div class="window" id="options" style="display:none;">
+        <div style="text-align:right;color:#901805;" id="newMets_handle"><a onclick="closeWindow(this);">&#x2716;&nbsp;</a></div>
+        <img class="faces" id="PlayerImageProfile" src="" alt="">
+        <input id="playerName" onclick="savePlayerProfile();" type="text" name=""><br>
+        <img class="small-back-button back-button" onclick="previousImageProfile()" src="img/buttons/NBack.png" alt="">
+        <img class="small-back-button next-button" onclick="nextImageProfile()" src="img/buttons/NNext.png" alt="">
+        <img class="save-button" onclick="savePlayerProfile();" src="img/buttons/NSave.png" alt=""><br>
+    </div>
+    <script type="text/javascript">
+        readPlayerProfile();
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+[{
+    "id": "meditation",
+    "type": "card",
+    "ElementalType": "water",
+    "image": "meditation.png",
+    "life": 1,
+    "attack": 1,
+    "cost": 1
+}, {
+    "id": "golem",
+    "type": "card",
+    "ElementalType": "water",
+    "image": "golem.png",
+    "life": 12,
+    "attack": 4,
+    "cost": 4
+}, {
+    "id": "seamaid",
+    "type": "card",
+    "ElementalType": "water",
+    "image": "seamaid.png",
+    "life": 22,
+    "attack": 5,
+    "cost": 2
+}, {
+    "id": "merfolk",
+    "type": "card",
+    "ElementalType": "water",
+    "image": "merfolk.png",
+    "life": 10,
+    "attack": 3,
+    "cost": 3
+}]

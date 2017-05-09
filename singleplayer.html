@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Necromancer</title>
+    <link rel="stylesheet" href="css/singlePlayer.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/system.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/IA.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+
+    <link rel="preload" href="./img/combat/backgrounds/bg0.png" as="image">
+    <link rel="preload" href="./img/bg.jpg" as="image">
+    <link rel="preload" href="./img/enemyStausBar.png" as="image">
+    <link rel="preload" href="./img/playerStausBar.png" as="image">
+    <link rel="preload" href="./img/line.png" as="image">
+    <link rel="preload" href="./img/blank.png" as="image">
+    <link rel="preload" href="./img/paper.jpg" as="image">
+    <link rel="preload" href="./img/paperborder.png" as="image">
+
+
+
+
+    <!-- Cards Image Assets -->
+    <script type="text/javascript">
+    var fileCardTypes = ["fire", "water", "air", "earth","enemy"];
+
+    for (var z = 0; z < 5; z++) {
+      var cardsFiles = JSON.parse(fs.readFileSync("resources/" + fileCardTypes[z] + "Cards.json", "utf8"));
+
+      for (var i = 0; i < 4; i++) {
+          var link = document.createElement("link");
+          link.setAttribute("rel", "preload");
+          link.setAttribute("href", "img/cards/" + cardsFiles[i].image);
+          link.setAttribute("as", "image");
+          document.head.appendChild(link);
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="enemy-bar"><img class="enemy-bar-profile" src="img/faces/enemy.png" alt="">
+        <h4>Enemy </h4>
+        <h5 id="enemy-life">60</h5></div>
+    <div id="battlefield" class="battlefield">
+        <div id="space1" class="card-space"><img src="img/blank.png" alt=""></div>
+        <div id="space2" class="card-space"><img src="img/blank.png" alt=""></div>
+        <div id="space3" class="card-space"><img src="img/blank.png" alt=""></div>
+        <div id="space4" class="card-space"><img src="img/blank.png" alt=""></div>
+        <div id="space5" class="card-space"><img src="img/blank.png" alt=""></div>
+        <div id="space6" class="card-space"><img src="img/blank.png" alt=""></div>
+
+        <br><br>
+
+        <div id="space7" onclick="moveCard(this);" class="card-space"><img src="img/blank.png" alt=""></div>
+        <div id="space8" onclick="moveCard(this);" class="card-space"><img src="img/blank.png" alt=""></div>
+        <div id="space9" onclick="moveCard(this);" class="card-space"><img src="img/blank.png" alt=""></div>
+        <div id="space10" onclick="moveCard(this);" class="card-space"><img src="img/blank.png" alt=""></div>
+        <div id="space11" onclick="moveCard(this);" class="card-space"><img src="img/blank.png" alt=""></div>
+        <div id="space12" onclick="moveCard(this);" class="card-space"><img src="img/blank.png" alt=""></div>
+    </div>
+    <div class="player-bar"><img id="PlayerImageProfile" class="player-bar-profile" src="" alt="">
+        <h4 id="playerName"></h4>
+        <h5 id="player-life">60</h5>
+        <div class="allManas">
+        <div class="mana"><img src="img/combat/fire_rune.png" alt=""><span id="fireMana"></span></div>
+        <div class="mana"><img src="img/combat/water_rune.png" alt=""><span id="waterMana"></span></div>
+        <div class="mana"><img src="img/combat/air_rune.png" alt=""><span id="airMana"></span></div>
+        <div class="mana"><img src="img/combat/earth_rune.png" alt=""><span id="earthMana"></span></div>
+
+        </div>
+    </div>
+    <div id="cards-deck" class="cards-deck"></div>
+    <script type="text/javascript">
+      readPlayerProfile();
+    </script>
+
+    <script type="text/javascript">
+        $.fn.extend({
+            animateCss: function(animationName) {
+                var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                this.addClass('animated ' + animationName).one(animationEnd, function() {
+                    $(this).removeClass('animated ' + animationName);
+                    if (this.className == "aTa") {
+                      this.style="display: none;"
+                    }
+                });
+            }
+        });
+
+        printDeck(0);printDeck(1);printDeck(2);printDeck(3);
+
+        var playerLife = parseInt(document.getElementById("player-life").innerHTML);
+        var enemyLife = parseInt(document.getElementById("enemy-life").innerHTML);
+        setInitialMana();
+
+
+        function startPlayerFightTurn() {
+            readBattlefield();
+            console.log("PLAYER ATTACK");
+            for (var i = 0; i < 6; i++) {
+                if (activeSlots[i] == EnemyActiveSlots[i] + 6) {
+                    var actualLife = document.getElementById('space' + EnemyActiveSlots[i]).getElementsByClassName('life-indicator')[0].innerHTML;
+                    var newLife = actualLife - cardsAttacks[i];
+                    if (newLife <= 0) {
+                      var attackAnimation = document.createElement('h3');
+                      attackAnimation.innerHTML = "-" + cardsAttacks[i];
+                      attackAnimation.style = "position:absolute;top:-70%;color:red;";
+                      attackAnimation.className = "aTa";
+                      document.getElementById('space' + activeSlots[i]).appendChild(attackAnimation);
+                      $('#space' + activeSlots[i]).animateCss('bounce');
+                      $('#space' + activeSlots[i]).find('h3').animateCss('fadeOutUp');
+                        document.getElementById('space' + EnemyActiveSlots[i]).innerHTML = "<img src='img/blank.png' alt=''>";
+                    } else {
+                      var attackAnimation = document.createElement('h3');
+                      attackAnimation.innerHTML = "-" + cardsAttacks[i];
+                      attackAnimation.style = "position:absolute;top:-70%;color:red;";
+                      attackAnimation.className = "aTa";
+                      document.getElementById('space' + activeSlots[i]).appendChild(attackAnimation);
+                      $('#space' + activeSlots[i]).animateCss('bounce');
+                      $('#space' + activeSlots[i]).find('h3').animateCss('fadeOutUp');
+                        document.getElementById('space' + EnemyActiveSlots[i]).getElementsByClassName('life-indicator')[0].innerHTML = newLife;
+                    }
+                    console.log("Attack to Card: -" + cardsAttacks[i]);
+                }
+                if (EnemyActiveSlots[i] === undefined && activeSlots[i] !== undefined) {
+                    console.log("Attack to Owner: -" + cardsAttacks[i]);
+                    enemyLife -= cardsAttacks[i];
+
+                    var attackAnimation = document.createElement('h3');
+                    attackAnimation.innerHTML = "-" + cardsAttacks[i];
+                    attackAnimation.style = "position:absolute;top:-70%;color:red;";
+                    attackAnimation.className = "aTa";
+                    document.getElementById('space' + activeSlots[i]).appendChild(attackAnimation);
+                    $('#space' + activeSlots[i]).animateCss('bounce');
+                    $('#space' + activeSlots[i]).find('h3').animateCss('fadeOutUp');
+
+                    document.getElementById("enemy-life").innerHTML = enemyLife;
+
+                }
+            }
+            setTimeout(function(){ moveCardIa(); }, 1000);
+        }
+        var randomSlot = Math.floor(Math.random() * 6) + 1;
+        document.getElementById('space'+randomSlot).innerHTML = "<img src='img/cards/wizard.png' alt='card'><div class='life-indicator'>18</div><div class='attack-indicator'>3</div><div class='cost-indicator'>2</div>";
+    </script>
+</body>
+
+</html>

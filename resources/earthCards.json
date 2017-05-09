@@ -1,0 +1,33 @@
+[{
+    "id": "forestsprite",
+    "type": "card",
+    "ElementalType": "earth",
+    "image": "forestsprite.png",
+    "life": 22,
+    "attack": 1,
+    "cost": 3
+}, {
+    "id": "elfhermite",
+    "type": "card",
+    "ElementalType": "earth",
+    "image": "elfhermite.png",
+    "life": 13,
+    "attack": 1,
+    "cost": 5
+}, {
+    "id": "hydra",
+    "type": "card",
+    "ElementalType": "earth",
+    "image": "hydra.png",
+    "life": 40,
+    "attack": 3,
+    "cost": 12
+}, {
+    "id": "spider",
+    "type": "card",
+    "ElementalType": "earth",
+    "image": "spider.png",
+    "life": 22,
+    "attack": 4,
+    "cost": 5
+}]
