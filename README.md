@@ -14,7 +14,7 @@ A free, open source and multiplatform cards game inspired by Spectromancer, Magi
 First Alpha release 0.1.0 is expected at the end of May 2017. **Alpha** releases are expected until the end of the year.
 
 ### Installation
-Until first releases, you can download this master and run it by:
+Until first installable releases you can download this master and run it by:
 
 ```sh
 $ wget "https://dl.nwjs.io/v0.22.1/nwjs-sdk-v0.22.1-linux-x64.tar.gz" && tar -xvzf nwjs-sdk-v0.22.1-linux-x64.tar.gz
