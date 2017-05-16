@@ -26,7 +26,7 @@ Make sure nwjs-sdk-v0.22.1-linux-x64/nw file has execute permissions
 
 
 ### Development
-Want to contribute? Great! At thins time we mainly need art designers to create more cards and other assets but you can contribute to the code too opening issues if you find bugs and making suggestions. Feel free to write me at joancipria@gmail.com
+Want to contribute? Great! At this time we mainly need art designers to create more cards and other assets but you can contribute to the code too opening issues if you find bugs and making suggestions. Feel free to write me at joancipria@gmail.com
 
 
 License
