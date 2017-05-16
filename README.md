@@ -18,14 +18,15 @@ Until first releases, you can download this master and run it by:
 
 ```sh
 $ wget "https://dl.nwjs.io/v0.22.1/nwjs-sdk-v0.22.1-linux-x64.tar.gz" && tar -xvzf nwjs-sdk-v0.22.1-linux-x64.tar.gz
-$ wget "https://github.com/joancipria/Necromancer/archive/master.zip" && apt-get install unzip && unzip master.zip
-$ ./nwjs-sdk-v0.22.1-linux-x64/nw ./
+$ wget "https://github.com/joancipria/Necromancer/archive/master.tar.gz" && tar -xvzf Necromancer-master.tar.gz
+$ ./nwjs-sdk-v0.22.1-linux-x64/nw ./Necromancer-master.tar.gz
 ```
+Make sure nwjs-sdk-v0.22.1-linux-x64/nw file has execute permissions
 
 
 
 ### Development
-Want to contribute? Great! We mainly need art designers to create more cards, but you can contribute to the code too opening issues if you find bugs and making suggestions. Feel free to write me at joancipria@gmail.com
+Want to contribute? Great! At thins time we mainly need art designers to create more cards and other assets but you can contribute to the code too opening issues if you find bugs and making suggestions. Feel free to write me at joancipria@gmail.com
 
 
 License
