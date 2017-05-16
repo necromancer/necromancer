@@ -11,7 +11,15 @@ A free, open source and multiplatform cards game inspired by Spectromancer, Magi
   ![Screenshot of Necromancer](https://joancipria.files.wordpress.com/2017/05/screenshot.png)
 
 ### Releases
-First Alpha release 0.1.0 is expected at the end of May 2017. **Alpha** releases are expected until the end of the year.
+First Alpha release 0.1.0 is expected at the end of May 2017. It can be flexible and for sure it will release when "To do" list had been achieved. You can follow the progress below. **Alpha** releases are expected until the end of the year.
+
+**To do List** Alpha 0.1.0
+- [x] Battle System
+- [x] Simple deck for testing
+- [x] Basic AI for testing duels
+- [ ] Single Duels
+- [x] Basic player profile
+- [ ] Fix known bugs
 
 ### Installation
 Until first installable releases you can download this master and run it by:
