@@ -15,12 +15,20 @@ Releases
 ----
 First Alpha release 0.1.0 is expected at the end of May 2017. It can be flexible and for sure it will release when "To do" list had been achieved. You can follow the progress below. **Alpha** releases are expected until the end of the year.
 
-**To do List** - Alpha 0.1.0
+**To do List** - Alpha 0.1.0 end of May 2017
 - [x] Battle System
 - [x] Simple deck for testing
 - [x] Basic AI for testing duels
 - [ ] Single Duels
 - [x] Basic player profile
+- [ ] Fix known bugs
+
+**To do List** - Alpha 0.2.0 end of June 2017
+- [ ] Add visual effects.
+- [ ] Polish the pace of the game (make it less hectic)
+- [ ] Improve AI behaviour and implement basic (Easy - Medium - Hard) modes
+- [ ] Increase cards variety (about 40 new cards)
+- [ ] General improvements
 - [ ] Fix known bugs
 
 Installation
