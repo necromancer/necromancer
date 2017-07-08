@@ -18,10 +18,6 @@ First Alpha release 0.1.0 is expected at the end of Summer 2017. It can be flexi
 **Roadmap**
 
 Alpha 0.1.0 end of summer 2017
-- [x] Battle System
-- [x] Simple deck for testing
-- [x] Basic AI for testing duels
-- [x] Basic player profile
 - [x] Migrate to Electron
 - [ ] Config reports and auto-updates
 - [ ] Rewrite Battle System (to add more features)
