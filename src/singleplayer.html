@@ -12,8 +12,8 @@
     <script src="js/system.js"></script>
     <script src="js/game.js"></script>
     <script src="js/IA.js"></script>
-    <script src="js/jquery-3.1.1.min.js"></script>
-
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    
     <link rel="preload" href="./img/combat/backgrounds/bg0.png" as="image">
     <link rel="preload" href="./img/bg.jpg" as="image">
     <link rel="preload" href="./img/enemyStausBar.png" as="image">
@@ -31,7 +31,8 @@
     var fileCardTypes = ["fire", "water", "air", "earth","enemy"];
 
     for (var z = 0; z < 5; z++) {
-      var cardsFiles = JSON.parse(fs.readFileSync("resources/" + fileCardTypes[z] + "Cards.json", "utf8"));
+      var filesPath = path.join(__dirname, '..', 'src', 'resources',fileCardTypes[z]+'Cards.json');
+      var cardsFiles = JSON.parse(fs.readFileSync(filesPath, "utf8"));
 
       for (var i = 0; i < 4; i++) {
           var link = document.createElement("link");

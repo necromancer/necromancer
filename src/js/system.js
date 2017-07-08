@@ -1,19 +1,15 @@
 /*----------------------------------
 ----------SYSTEM FUNCTIONS----------
 ------------------------------------*/
-fs = require("fs");
-
-// Full window NW.js
-var ngui = require('nw.gui');
-var nwin = ngui.Window.get();
-nwin.enterFullscreen();
-
+var app = require('electron').remote;
+const fs = require("fs");
+var path = require('path');
 
 // Exit from Necromancer
 function exitApp(){
 var confirmExit = confirm("Are you sure do you want to exit?");
 if (confirmExit == true) {
-    ngui.App.quit();
+  window.close();
 }
 }
 
@@ -61,7 +57,6 @@ function initLoading(){
 
 
 // Profile settings functions
-
 function nextImageProfile(){
 actualPlayerImageProfile++;
 document.getElementById('PlayerImageProfile').src = "./img/faces/face"+actualPlayerImageProfile+".png";
@@ -90,7 +85,8 @@ var settings = `{
 
 function readPlayerProfile(){
   // Read settings.json file and parse it
-  settings = JSON.parse(fs.readFileSync("settings.json", "utf8"));
+  var filePath = path.join(__dirname, '..', 'src', 'settings.json');
+  settings = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
   // Input fields
   var inputPlayerName = document.getElementById('playerName');
@@ -111,7 +107,9 @@ function printDeck(row) {
    var types = ["fire","water","air","earth"];
 
     for (var i = 0; i < 4; i++) {
-      var cards = JSON.parse(fs.readFileSync("resources/"+types[i]+"Cards.json", "utf8"));
+      var filePath = path.join(__dirname, '..', 'src', 'resources',types[i]+'Cards.json');
+      var cards = JSON.parse(fs.readFileSync(filePath, "utf8"));
+
 
       //Create card
       var card = document.createElement("div");
@@ -163,7 +161,6 @@ document.body.style.backgroundRepeat = "repeat";// Background repeat
 
 function closeWindow(element) {
     element.parentElement.parentElement.style.display = "none";
-
 }
 
 function openOptions() {

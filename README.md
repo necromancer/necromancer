@@ -13,35 +13,23 @@ Features
 
 Releases
 ----
-First Alpha release 0.1.0 is expected at the end of May 2017. It can be flexible and for sure it will release when "To do" list had been achieved. You can follow the progress below in the roadmap section. **Alpha** releases are expected until the end of the year.
+First Alpha release 0.1.0 is expected at the end of Summer 2017. It can be flexible and for sure it will release when "To do" list had been achieved. You can follow the progress below in the roadmap section. **Alpha** releases are expected until the end of the year.
 
 **Roadmap**
 
-Alpha 0.1.0 end of May 2017
+Alpha 0.1.0 end of summer 2017
 - [x] Battle System
 - [x] Simple deck for testing
 - [x] Basic AI for testing duels
-- [ ] Single Duels
 - [x] Basic player profile
-- [ ] Fix known bugs
-
-Alpha 0.2.0 end of June 2017
+- [x] Migrate to Electron
+- [ ] Config reports and auto-updates
+- [ ] Rewrite Battle System (to add more features)
+- [ ] Single Duels
 - [ ] Add visual effects.
 - [ ] Polish the pace of the game (make it less hectic)
 - [ ] Improve AI behaviour and implement basic (Easy - Medium - Hard) modes
 - [ ] Increase cards variety (about 40 new cards)
-- [ ] General improvements
-- [ ] Fix known bugs
-
-Alpha 0.2.5 end of July 2017
-- [ ] Migrate to Electron
-- [ ] Fix known bugs
-
-Alpha 0.3.0 Summer
-- [ ] Build installable packages for Win, Linux and OS X
-- [ ] Config reports and auto-updates
-- [ ] Project Website
-- [ ] AI improvements
 - [ ] General improvements
 - [ ] Fix known bugs
 
@@ -51,17 +39,16 @@ Installation
 Until first installable releases you can download this master and run it by:
 
 ```sh
-$ wget "https://dl.nwjs.io/v0.22.1/nwjs-sdk-v0.22.1-linux-x64.tar.gz" && tar -xvzf nwjs-sdk-v0.22.1-linux-x64.tar.gz
-$ wget "https://github.com/joancipria/Necromancer/archive/master.tar.gz" && tar -xvzf Necromancer-master.tar.gz
-$ ./nwjs-sdk-v0.22.1-linux-x64/nw ./Necromancer-master.tar.gz
+$ git clone https://github.com/joancipria/Necromancer.git
+$ cd Necromancer
+$ npm install
+$ npm start
 ```
-Make sure nwjs-sdk-v0.22.1-linux-x64/nw file has execute permissions
-
 
 
 Development
 ----
-Want to contribute? Great! At this time we mainly need art designers to create more cards and other assets but you can contribute to the code too opening issues if you find bugs and making suggestions. Feel free to write me at joancipria@gmail.com
+Want to contribute? Great! At this time we mainly need art designers to create more cards and other assets but you can contribute to the code too opening issues and sending reports. Feel free to write me at joancipria@gmail.com
 
 
 License

@@ -1,5 +1,26 @@
 {
   "name": "Necromancer",
-  "version": "0.0.1",
-  "main": "index.html"
+  "version": "1.0.0",
+  "description": "A free, open source cards game inspired by Spectromancer, Magic: The Gathering, and the like.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/joancipria/Necromancer",
+  "keywords": [
+    "Necromancer",
+    "cards",
+    "game",
+    "magic",
+    "gathering",
+    "spectromancer"
+  ],
+  "author": "Joan Ciprià",
+  "license": "GPL 3.0",
+  "devDependencies": {
+    "electron": "~1.6.2"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
 }

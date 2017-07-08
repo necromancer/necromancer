@@ -2,7 +2,8 @@
 ---------IA Bot for single player---------
 ------------------------------------------*/
 // Enemy file cards
-var enemyCards = JSON.parse(fs.readFileSync("resources/enemyCards.json", "utf8"));
+var filePath = path.join(__dirname, '..', 'src', 'resources','enemyCards.json');
+var enemyCards = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
 // EnemyMna (Fire,Water,Air,Earth)
 var enemyMana = [5, 5, 5, 5];
