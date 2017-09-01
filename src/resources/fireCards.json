@@ -7,14 +7,6 @@
     "attack": 0,
     "cost": 2
 }, {
-    "id": "orc",
-    "type": "card",
-    "ElementalType": "fire",
-    "image": "orc.png",
-    "life": 16,
-    "attack": 3,
-    "cost": 5
-}, {
     "id": "priest",
     "type": "card",
     "ElementalType": "fire",
@@ -23,11 +15,19 @@
     "attack": 3,
     "cost": 3
 }, {
+    "id": "orc",
+    "type": "card",
+    "ElementalType": "fire",
+    "image": "orc.png",
+    "life": 20,
+    "attack": 6,
+    "cost": 7
+}, {
     "id": "drake",
     "type": "card",
     "ElementalType": "fire",
     "image": "drake.png",
-    "life": 18,
-    "attack": 4,
-    "cost": 1
+    "life": 40,
+    "attack": 9,
+    "cost": 9
 }]

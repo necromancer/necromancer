@@ -12,7 +12,8 @@
     <script src="js/system.js"></script>
     <script src="js/game.js"></script>
     <script src="js/IA.js"></script>
-    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>window.$ = window.jQuery = require('./js/jquery-3.1.1.min');</script>
+
     
     <link rel="preload" href="./img/combat/backgrounds/bg0.png" as="image">
     <link rel="preload" href="./img/bg.jpg" as="image">
@@ -106,45 +107,27 @@
             readBattlefield();
             console.log("PLAYER ATTACK");
             for (var i = 0; i < 6; i++) {
-                if (activeSlots[i] == EnemyActiveSlots[i] + 6) {
-                    var actualLife = document.getElementById('space' + EnemyActiveSlots[i]).getElementsByClassName('life-indicator')[0].innerHTML;
-                    var newLife = actualLife - cardsAttacks[i];
-                    if (newLife <= 0) {
-                      var attackAnimation = document.createElement('h3');
-                      attackAnimation.innerHTML = "-" + cardsAttacks[i];
-                      attackAnimation.style = "position:absolute;top:-70%;color:red;";
-                      attackAnimation.className = "aTa";
-                      document.getElementById('space' + activeSlots[i]).appendChild(attackAnimation);
-                      $('#space' + activeSlots[i]).animateCss('bounce');
-                      $('#space' + activeSlots[i]).find('h3').animateCss('fadeOutUp');
-                        document.getElementById('space' + EnemyActiveSlots[i]).innerHTML = "<img src='img/blank.png' alt=''>";
-                    } else {
-                      var attackAnimation = document.createElement('h3');
-                      attackAnimation.innerHTML = "-" + cardsAttacks[i];
-                      attackAnimation.style = "position:absolute;top:-70%;color:red;";
-                      attackAnimation.className = "aTa";
-                      document.getElementById('space' + activeSlots[i]).appendChild(attackAnimation);
-                      $('#space' + activeSlots[i]).animateCss('bounce');
-                      $('#space' + activeSlots[i]).find('h3').animateCss('fadeOutUp');
-                        document.getElementById('space' + EnemyActiveSlots[i]).getElementsByClassName('life-indicator')[0].innerHTML = newLife;
+                if (activeSlots[i] != undefined){
+
+                    attackAnimationCard(activeSlots[i],cardsAttacks[i]);   
+
+                    if (activeSlots[i] == EnemyActiveSlots[i] + 6) {
+                        var actualLife = document.getElementById('space' + EnemyActiveSlots[i]).getElementsByClassName('life-indicator')[0].innerHTML;
+                        var newLife = actualLife - cardsAttacks[i];
+
+                        if (newLife <= 0) {
+                            document.getElementById('space' + EnemyActiveSlots[i]).innerHTML = "<img src='img/blank.png' alt=''>";
+                        } else {
+                            document.getElementById('space' + EnemyActiveSlots[i]).getElementsByClassName('life-indicator')[0].innerHTML = newLife;
+                        }
+                        console.log("Attack to Card: -" + cardsAttacks[i]);
                     }
-                    console.log("Attack to Card: -" + cardsAttacks[i]);
-                }
-                if (EnemyActiveSlots[i] === undefined && activeSlots[i] !== undefined) {
-                    console.log("Attack to Owner: -" + cardsAttacks[i]);
-                    enemyLife -= cardsAttacks[i];
-
-                    var attackAnimation = document.createElement('h3');
-                    attackAnimation.innerHTML = "-" + cardsAttacks[i];
-                    attackAnimation.style = "position:absolute;top:-70%;color:red;";
-                    attackAnimation.className = "aTa";
-                    document.getElementById('space' + activeSlots[i]).appendChild(attackAnimation);
-                    $('#space' + activeSlots[i]).animateCss('bounce');
-                    $('#space' + activeSlots[i]).find('h3').animateCss('fadeOutUp');
-
-                    document.getElementById("enemy-life").innerHTML = enemyLife;
-
-                }
+                    if (EnemyActiveSlots[i] === undefined && activeSlots[i] !== undefined) {
+                        console.log("Attack to Owner: -" + cardsAttacks[i]);
+                        enemyLife -= cardsAttacks[i];
+                        document.getElementById("enemy-life").innerHTML = enemyLife;
+                    }
+                } 
             }
             setTimeout(function(){ moveCardIa(); }, 1000);
         }

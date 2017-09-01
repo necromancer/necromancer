@@ -17,7 +17,7 @@ function createWindow () {
   mainWindow.setFullScreen(true)
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'src/index.html'),
+    pathname: path.join(__dirname, 'src/singleplayer.html'),
     protocol: 'file:',
     slashes: true
   }))

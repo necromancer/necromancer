@@ -3,17 +3,25 @@
     "type": "card",
     "ElementalType": "earth",
     "image": "forestsprite.png",
-    "life": 22,
-    "attack": 1,
-    "cost": 3
+    "life": 12,
+    "attack": 2,
+    "cost": 1
 }, {
     "id": "elfhermite",
     "type": "card",
     "ElementalType": "earth",
     "image": "elfhermite.png",
-    "life": 13,
-    "attack": 1,
-    "cost": 5
+    "life": 15,
+    "attack": 2,
+    "cost": 4
+}, {
+    "id": "spider",
+    "type": "card",
+    "ElementalType": "earth",
+    "image": "spider.png",
+    "life": 26,
+    "attack": 6,
+    "cost": 8
 }, {
     "id": "hydra",
     "type": "card",
@@ -22,12 +30,4 @@
     "life": 40,
     "attack": 3,
     "cost": 12
-}, {
-    "id": "spider",
-    "type": "card",
-    "ElementalType": "earth",
-    "image": "spider.png",
-    "life": 22,
-    "attack": 4,
-    "cost": 5
 }]

@@ -95,33 +95,26 @@ slot = undefined;
 function startIaFightTurn() {
     console.log("IA ATTACK");
     for (var i = 0; i < 6; i++) {
-        if (activeSlots[i] == EnemyActiveSlots[i] + 6) {
-            var actualLife = document.getElementById('space' + activeSlots[i]).getElementsByClassName('life-indicator')[0].innerHTML;
-            var newLife = actualLife - EnemyCardsAttacks[i];
-            if (newLife <= 0) {
-                document.getElementById('space' + activeSlots[i]).innerHTML = "<img src='img/blank.png' alt=''>";
-            } else {
+        if (EnemyActiveSlots[i] != undefined){
 
-                var attackAnimation = document.createElement('h3');
-                attackAnimation.innerHTML = "-" + EnemyCardsAttacks[i];
-                attackAnimation.style = "position:absolute;top:140%;color:red;z-index:9999;";
-                attackAnimation.className = "aTa";
-                document.getElementById('space' + EnemyActiveSlots[i]).appendChild(attackAnimation);
-                $('#space' + EnemyActiveSlots[i]).animateCss('bounce');
-                $('#space' + EnemyActiveSlots[i]).find('h3').animateCss('fadeOutUp');
-                document.getElementById('space' + activeSlots[i]).getElementsByClassName('life-indicator')[0].innerHTML = newLife;
+            attackAnimationCard(EnemyActiveSlots[i],EnemyCardsAttacks[i]);   
+
+            if (activeSlots[i] == EnemyActiveSlots[i] + 6) {
+                var actualLife = document.getElementById('space' + activeSlots[i]).getElementsByClassName('life-indicator')[0].innerHTML;
+                var newLife = actualLife - EnemyCardsAttacks[i];
+                if (newLife <= 0) {
+                    document.getElementById('space' + activeSlots[i]).innerHTML = "<img src='img/blank.png' alt=''>";
+                } else {
+                    document.getElementById('space' + activeSlots[i]).getElementsByClassName('life-indicator')[0].innerHTML = newLife;
+                }
+                console.log("Attack to Card: -" + EnemyCardsAttacks[i]);
             }
-            console.log("Attack to Card: -" + EnemyCardsAttacks[i]);
-        }
-        if (activeSlots[i] === undefined && EnemyActiveSlots[i] !== undefined) {
-            console.log("Attack to Owner: -" + EnemyCardsAttacks[i]);
-            playerLife -= EnemyCardsAttacks[i];
-
-
-
-            document.getElementById("player-life").innerHTML = playerLife;
-
-        }
+            if (activeSlots[i] === undefined && EnemyActiveSlots[i] !== undefined) {
+                console.log("Attack to Owner: -" + EnemyCardsAttacks[i]);
+                playerLife -= EnemyCardsAttacks[i];
+                document.getElementById("player-life").innerHTML = playerLife;
+            }
+    }
     }
     inncreasePlayerMana();
 }

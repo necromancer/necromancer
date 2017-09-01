@@ -11,23 +11,23 @@
     "type": "card",
     "ElementalType": "air",
     "image": "faerie.png",
-    "life": 12,
+    "life": 19,
     "attack": 4,
-    "cost": 1
+    "cost": 4
 }, {
     "id": "phoenix",
     "type": "card",
     "ElementalType": "air",
     "image": "phoenix.png",
-    "life": 12,
-    "attack": 4,
-    "cost": 1
+    "life": 16,
+    "attack": 7,
+    "cost": 7
 }, {
     "id": "storm",
     "type": "card",
     "ElementalType": "air",
     "image": "storm.png",
-    "life": 12,
+    "life": 20,
     "attack": 4,
-    "cost": 1
+    "cost": 9
 }]

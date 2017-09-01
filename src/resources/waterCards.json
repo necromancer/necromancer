@@ -3,8 +3,8 @@
     "type": "card",
     "ElementalType": "water",
     "image": "meditation.png",
-    "life": 1,
-    "attack": 1,
+    "life": 0,
+    "attack": 0,
     "cost": 1
 }, {
     "id": "golem",
@@ -19,15 +19,15 @@
     "type": "card",
     "ElementalType": "water",
     "image": "seamaid.png",
-    "life": 22,
+    "life": 16,
     "attack": 5,
-    "cost": 2
+    "cost": 7
 }, {
     "id": "merfolk",
     "type": "card",
     "ElementalType": "water",
     "image": "merfolk.png",
-    "life": 10,
-    "attack": 3,
-    "cost": 3
+    "life": 35,
+    "attack": 6,
+    "cost": 11
 }]

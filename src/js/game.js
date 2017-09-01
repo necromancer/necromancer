@@ -93,6 +93,16 @@ function moveCard(space) {
     }
 }
 
+function attackAnimationCard(card,num){
+        var attackAnimation = document.createElement('h3');
+        attackAnimation.innerHTML = "-" + num;
+        attackAnimation.style = "position:absolute;top:140%;color:red;z-index:9999;";
+        attackAnimation.className = "aTa";
+        document.getElementById('space' + card).appendChild(attackAnimation);
+        $('#space' + card).animateCss('bounce');
+        $('#space' + card).find('h3').animateCss('fadeOutUp');
+}
+
 function calcMana(elementaltype) {
     // Manas
     var manaAmount = parseInt(document.getElementById(elementaltype + 'Mana').innerHTML);
