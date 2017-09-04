@@ -2,7 +2,7 @@
 ---------IA Bot for single player---------
 ------------------------------------------*/
 // Enemy file cards
-var filePath = path.join(__dirname, '..', 'src', 'resources','enemyCards.json');
+var filePath = path.join(__dirname, '..', 'src', 'decks',gameDeck,'enemyCards.json');
 var enemyCards = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
 // EnemyMna (Fire,Water,Air,Earth)
@@ -128,7 +128,7 @@ function printCard(slot, cardVector) {
 
     // Card's element
     var img = document.createElement("img");
-    img.setAttribute("src", "img/cards/" + enemyCards[cardVector].image);
+    img.setAttribute("src", "decks/" +gameDeck+"/img/"+ enemyCards[cardVector].image);
     img.setAttribute("alt", "card");
 
     var life = document.createElement("div");

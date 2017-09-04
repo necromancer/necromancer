@@ -1,4 +1,5 @@
 {
     "PlayerName": "Joane",
-    "PlayerImageProfile": 1
+    "PlayerImageProfile": 1,
+    "GameDeck": "default"
 }

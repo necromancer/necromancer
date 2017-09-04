@@ -83,31 +83,30 @@ var settings = `{
 });
 }
 
-function readPlayerProfile(){
   // Read settings.json file and parse it
-  var filePath = path.join(__dirname, '..', 'src', 'settings.json');
+  var filePath = path.join(__dirname, '..', 'settings.json');
   settings = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
   // Input fields
-  var inputPlayerName = document.getElementById('playerName');
-  var inputPlayerImageProfile = document.getElementById('PlayerImageProfile');
+ // var inputPlayerName = document.getElementById('playerName');
+ // var inputPlayerImageProfile = document.getElementById('PlayerImageProfile');
 
 
   // Apply information
-  inputPlayerName.value = settings.PlayerName; // For settings window
-  inputPlayerName.innerHTML = settings.PlayerName; // For SinglePlayer
-  inputPlayerImageProfile.src = "./img/faces/face"+settings.PlayerImageProfile+".png";
+//  inputPlayerName.value = settings.PlayerName; // For settings window
+//  inputPlayerName.innerHTML = settings.PlayerName; // For SinglePlayer
+//  inputPlayerImageProfile.src = "./img/faces/face"+settings.PlayerImageProfile+".png";
+  gameDeck =  settings.GameDeck;
 
   actualPlayerImageProfile = settings.PlayerImageProfile;
 
-}
 
 // Change the menu when detect a change in the screen size
 function printDeck(row) {
    var types = ["fire","water","air","earth"];
 
     for (var i = 0; i < 4; i++) {
-      var filePath = path.join(__dirname, '..', 'src', 'resources',types[i]+'Cards.json');
+      var filePath = path.join(__dirname, '..', 'src', 'decks',gameDeck,types[i]+'Cards.json');
       var cards = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
 
@@ -119,7 +118,7 @@ function printDeck(row) {
 
       // Card's element
       var img = document.createElement("img");
-      img.setAttribute("src", "img/cards/"+cards[row].image);
+      img.setAttribute("src", "decks/"+gameDeck+"/img/"+cards[row].image);
       img.setAttribute("alt", "card");
 
       var life = document.createElement("div");

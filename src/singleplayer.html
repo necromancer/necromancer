@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <script src="js/system.js"></script>
     <script src="js/game.js"></script>
-    <script src="js/IA.js"></script>
+    <script src="js/AI.js"></script>
     <script>window.$ = window.jQuery = require('./js/jquery-3.1.1.min');</script>
 
     
@@ -32,13 +32,13 @@
     var fileCardTypes = ["fire", "water", "air", "earth","enemy"];
 
     for (var z = 0; z < 5; z++) {
-      var filesPath = path.join(__dirname, '..', 'src', 'resources',fileCardTypes[z]+'Cards.json');
+      var filesPath = path.join(__dirname, '..', 'src', 'decks',gameDeck,fileCardTypes[z]+'Cards.json');
       var cardsFiles = JSON.parse(fs.readFileSync(filesPath, "utf8"));
 
       for (var i = 0; i < 4; i++) {
           var link = document.createElement("link");
           link.setAttribute("rel", "preload");
-          link.setAttribute("href", "img/cards/" + cardsFiles[i].image);
+          link.setAttribute("href", "decks/" +gameDeck+ "/img/"+cardsFiles[i].image);
           link.setAttribute("as", "image");
           document.head.appendChild(link);
       }
@@ -79,9 +79,6 @@
         </div>
     </div>
     <div id="cards-deck" class="cards-deck"></div>
-    <script type="text/javascript">
-      readPlayerProfile();
-    </script>
 
     <script type="text/javascript">
         $.fn.extend({
@@ -132,7 +129,7 @@
             setTimeout(function(){ moveCardIa(); }, 1000);
         }
         var randomSlot = Math.floor(Math.random() * 6) + 1;
-        document.getElementById('space'+randomSlot).innerHTML = "<img src='img/cards/wizard.png' alt='card'><div class='life-indicator'>18</div><div class='attack-indicator'>3</div><div class='cost-indicator'>2</div>";
+        document.getElementById('space'+randomSlot).innerHTML = "<img src='decks/default/img/wizard.png' alt='card'><div class='life-indicator'>18</div><div class='attack-indicator'>3</div><div class='cost-indicator'>2</div>";
     </script>
 </body>
 
