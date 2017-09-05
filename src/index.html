@@ -5,21 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="js/system.js" charset="utf-8"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
-
     <!--Preload some resources-->
-
-    <!--CSS Files-->
-    <link rel="preload" href="./css/singlePlayer.css" as="style">
-    <link rel="preload" href="./css/style.css" as="style">
-    <link rel="preload" href="./css/index.css" as="style">
-
-    <!--JS Files-->
-    <link rel="preload" href="./js/system.js" as="script">
-    <link rel="preload" href="./js/game.js" as="script">
-    <link rel="preload" href="./js/IA.js" as="script">
 
     <!-- Sound Assets -->
     <link rel="preload" href="./audio/music1.ogg" as="media">
@@ -39,13 +27,6 @@
     <link rel="preload" href="./img/buttons/OBack.png" as="image">
 </head>
 <body>
-    <div id="overlay">
-        <div id="progstat"></div>
-        <div id="progress"></div>
-    </div>
-    <script type="text/javascript">
-        initLoading();
-    </script>
     <audio autoplay="" controls="" loop="" preload="">
     <source src="audio/music1.ogg" type="audio/ogg"></source>
     Your browser does not support the audio element.
@@ -64,10 +45,12 @@
     <div class="window" id="options" style="display:none;">
         <div style="text-align:right;color:#901805;" id="newMets_handle"><a onclick="closeWindow(this);">&#x2716;&nbsp;</a></div>
         <img class="faces" id="PlayerImageProfile" src="" alt="">
-        <input id="playerName" onclick="savePlayerProfile();" type="text" name=""><br>
+        <input id="playerName" type="text" name=""><br>
+        <select id="deckSelection"></select>
         <img class="small-back-button back-button" onclick="previousImageProfile()" src="img/buttons/NBack.png" alt="">
         <img class="small-back-button next-button" onclick="nextImageProfile()" src="img/buttons/NNext.png" alt="">
         <img class="save-button" onclick="savePlayerProfile();" src="img/buttons/NSave.png" alt=""><br>
     </div>
 </body>
+<script src="js/system.js" charset="utf-8"></script>
 </html>
