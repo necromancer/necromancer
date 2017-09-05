@@ -13,7 +13,7 @@ Features
 
 Releases
 ----
-First Alpha release 0.1.0 is expected at the end of Summer 2017. It can be flexible and for sure it will release when "To do" list had been achieved. You can follow the progress below in the roadmap section. **Alpha** releases are expected until the end of the year.
+First Alpha release 0.1.0 is expected at the end of the year 2017. It can be flexible and for sure it will release when "To do" list had been achieved. You can follow the progress below in the roadmap section. **Alpha** releases are expected until 0.2.0
 
 **Roadmap**
 
@@ -41,6 +41,46 @@ $ npm install
 $ npm start
 ```
 
+Custom Decks
+----
+You can play Necromancer with any custom deck compatible with the game. To create a custom deck just create a folder with this structure:
+```
+Custom Deck
+│   fireCards.json
+│   waterCards.json    
+│   airCards.json
+│   earthCards.json
+│   airCards.json
+│   enemyCards.json
+└───img
+│   │   monster.png
+│   │   wizard.png
+```
+
+Each JSON file should contain this syntax:
+```json
+[{
+    "id": "firewall",
+    "type": "card",
+    "ElementalType": "fire",
+    "image": "firewall.png",
+    "life": 5,
+    "attack": 0,
+    "cost": 2
+}, {
+    "id": "priest",
+    "type": "card",
+    "ElementalType": "fire",
+    "image": "priest.png",
+    "life": 13,
+    "attack": 3,
+    "cost": 3
+}, ... ]
+
+```
+
+Once you have the custom deck folder put it inside src/decks/ and select it from the game Options window (see video).
+[linkname](https://www.youtube.com/watch?v=SBXIMQAQU5A)
 
 Development
 ----

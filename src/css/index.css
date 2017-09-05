@@ -122,3 +122,12 @@ a:hover, a:active, a:focus {
 .small-back-button {
     width: 4%;
 }
+#deckSelection{
+    width: 15%;
+    position: absolute;
+    padding: 0;
+    margin: 1%;
+    float: right;
+    bottom: 1%;
+    left: 1%;
+}

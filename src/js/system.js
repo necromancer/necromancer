@@ -1,9 +1,60 @@
+// System dependencies
+const app = require('electron').remote;
+const fs = require("fs");
+const path = require('path');
+
+// Decks diretory 
+const decksFolder = path.join(__dirname, 'decks');
+
+// -- LOAD SETTINGS ---
+// Read settings.json file and parse it
+const settingsFile = path.join(__dirname, '..', 'settings.json');
+const settingsFileJSON = JSON.parse(fs.readFileSync(settingsFile, "utf8"));
+
+// Load Player Name
+var playerName = settingsFileJSON.PlayerName;
+
+// Load Player Image Profile
+var playerImageProfile = settingsFileJSON.PlayerImageProfile;
+
+// Load selected Deck
+gameDeck =  settingsFileJSON.GameDeck;
+
+
+
+// -- APPLY INFORMATION TO DOM
+//HTML Input fields
+const inputPlayerName = document.getElementById('playerName');
+const inputPlayerImageProfile = document.getElementById('PlayerImageProfile');
+const inputDeck = document.getElementById("deckSelection");
+
+// Apply Name
+inputPlayerName.value = settingsFileJSON.PlayerName; // For settings window
+inputPlayerName.innerHTML = settingsFileJSON.PlayerName; // For SinglePlayer
+
+// Apply profile Image
+inputPlayerImageProfile.src = "./img/faces/face"+settingsFileJSON.PlayerImageProfile+".png";
+
+// Apply decks
+// Get a list of installed decks
+const installedDecks = [];
+fs.readdirSync(decksFolder).forEach(file => {
+installedDecks.push(file);
+})
+
+// Fill select with avaible decks and selected saved deck
+for (var i = 0; i < installedDecks.length; i++) {
+    if(installedDecks[i] == gameDeck){
+        inputDeck.innerHTML += "<option selected>"+installedDecks[i]+"</option>";
+    }else{
+        inputDeck.innerHTML += "<option>"+installedDecks[i]+"</option>";
+    }
+}
+
+
 /*----------------------------------
 ----------SYSTEM FUNCTIONS----------
 ------------------------------------*/
-var app = require('electron').remote;
-const fs = require("fs");
-var path = require('path');
 
 // Exit from Necromancer
 function exitApp(){
@@ -13,50 +64,8 @@ if (confirmExit == true) {
 }
 }
 
-// Loading animation
-function initLoading(){
-  ;
-  (function() {
-      function id(v) {
-          return document.getElementById(v);
-      }
-
-      function loadbar() {
-          var ovrl = id("overlay"),
-              prog = id("progress"),
-              stat = id("progstat"),
-              img = document.images,
-              c = 0,
-              tot = img.length;
-          if (tot == 0) return doneLoading();
-
-          function imgLoaded() {
-              c += 1;
-              var perc = ((100 / tot * c) << 0) + "%";
-              prog.style.width = perc;
-              stat.innerHTML = "Loading " + perc;
-              if (c === tot) return doneLoading();
-          }
-
-          function doneLoading() {
-              ovrl.style.opacity = 0;
-              setTimeout(function() {
-                  ovrl.style.display = "none";
-              }, 1200);
-          }
-          for (var i = 0; i < tot; i++) {
-              var tImg = new Image();
-              tImg.onload = imgLoaded;
-              tImg.onerror = imgLoaded;
-              tImg.src = img[i].src;
-          }
-      }
-      document.addEventListener('DOMContentLoaded', loadbar, false);
-  }());
-}
-
-
 // Profile settings functions
+var actualPlayerImageProfile = playerImageProfile;
 function nextImageProfile(){
 actualPlayerImageProfile++;
 document.getElementById('PlayerImageProfile').src = "./img/faces/face"+actualPlayerImageProfile+".png";
@@ -68,40 +77,27 @@ function previousImageProfile(){
 }
 
 function savePlayerProfile(){
-// Input fields
-var playerName = document.getElementById('playerName').value;
+// Collect new values from fields
+var newPlayerName = document.getElementById('playerName').value;
+var newPlayerImageProfile = actualPlayerImageProfile;
+var newDeck = inputDeck.value;
 
-var settings = `{
-    "PlayerName": "${playerName}",
-    "PlayerImageProfile": ${actualPlayerImageProfile}
+// Compose the new settings file
+var newSettings = `{
+    "PlayerName": "${newPlayerName}",
+    "PlayerImageProfile": ${newPlayerImageProfile},
+    "GameDeck": "${newDeck}"
 }`;
 
-  fs.writeFile("settings.json", settings, function(err) {
+// Write
+  fs.writeFile("settings.json", newSettings, function(err) {
     if(err) {
-        alert("error");
+        alert("Error writing settings json file.");
     }
 });
 }
 
-  // Read settings.json file and parse it
-  var filePath = path.join(__dirname, '..', 'settings.json');
-  settings = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
-  // Input fields
- // var inputPlayerName = document.getElementById('playerName');
- // var inputPlayerImageProfile = document.getElementById('PlayerImageProfile');
-
-
-  // Apply information
-//  inputPlayerName.value = settings.PlayerName; // For settings window
-//  inputPlayerName.innerHTML = settings.PlayerName; // For SinglePlayer
-//  inputPlayerImageProfile.src = "./img/faces/face"+settings.PlayerImageProfile+".png";
-  gameDeck =  settings.GameDeck;
-
-  actualPlayerImageProfile = settings.PlayerImageProfile;
-
-
-// Change the menu when detect a change in the screen size
 function printDeck(row) {
    var types = ["fire","water","air","earth"];
 
@@ -148,15 +144,6 @@ function printDeck(row) {
     document.getElementById('cards-deck').appendChild(document.createElement("br"));
 
   }
-
-
-// *NOT IN USE* Change battlefield background
-var totalCount = 3;
-function ChangeIt(){
-var num = Math.ceil( Math.random() * totalCount );
-document.body.background = '../img/backgrounds/bg'+num+'.png';
-document.body.style.backgroundRepeat = "repeat";// Background repeat
-}
 
 function closeWindow(element) {
     element.parentElement.parentElement.style.display = "none";
