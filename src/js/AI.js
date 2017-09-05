@@ -72,10 +72,13 @@ slot = undefined;
         //print medium
         var cardVector = findCardById(mediumCards[0]);
         printCard(slot, cardVector);
-      }else {
+      }else if (avaibleCards.length >= 1){
         //print avaible
         var cardVector = findCardById(avaibleCards[0]);
         printCard(slot, cardVector);
+      }else{
+        setTimeout(function(){ moveCardIa(); }, 500);
+        return false;
       }
     }
 
