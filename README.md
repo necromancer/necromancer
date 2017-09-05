@@ -79,8 +79,7 @@ Each JSON file should contain this syntax:
 
 ```
 
-Once you have the custom deck folder put it inside src/decks/ and select it from the game Options window (see video).
-[linkname](https://www.youtube.com/watch?v=SBXIMQAQU5A)
+Once you have the custom deck folder put it inside src/decks/ and select it from the game Options window. [See Video How to install](https://www.youtube.com/watch?v=SBXIMQAQU5A)
 
 Development
 ----
