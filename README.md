@@ -1,5 +1,5 @@
 # Necromancer
-A free, open source and multiplatform cards game inspired by Spectromancer, Magic: The Gathering, and the like. Build in web technologies such as HTML5, JS and CSS in top of NW.js.
+A free, open source and multiplatform cards game inspired by Spectromancer, Magic: The Gathering, and the like. Build in web technologies such as HTML5, JS and CSS in top of Electron.
 
 :exclamation: **Attention** This is an early experimental version of the game, and still has several bugs and missing features. Just for testing since it is not playable yet (maybe in a  few months?).
 
