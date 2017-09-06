@@ -13,21 +13,29 @@ Features
 
 Releases
 ----
-First Alpha release 0.1.0 is expected at the end of the year 2017. It can be flexible and for sure it will release when "To do" list had been achieved. You can follow the progress below in the roadmap section. **Alpha** releases are expected until 0.2.0
+First Alpha release 0.1.0 is expected at the end of the year 2017. It can be flexible and for sure it will release when "To do" list had been achieved. You can follow the progress below in the roadmap section. **Alpha** releases are expected until 0.3.0
 
 **Roadmap**
 
-Alpha 0.1.0 end of summer 2017
+Alpha 0.1.0 end of september 2017
 - [x] Migrate to Electron
-- [ ] Config reports and auto-updates
-- [ ] Rewrite Battle System (to add more features)
-- [ ] Single Duels
-- [ ] Add visual effects.
-- [ ] Polish the pace of the game (make it less hectic)
-- [ ] Improve AI behaviour and implement basic (Easy - Medium - Hard) modes
-- [ ] Increase cards variety (about 40 new cards)
-- [ ] General improvements
+- [x] Experimental Custom Decks support
+- [ ] Single Duel System
 - [ ] Fix known bugs
+- [ ] General improvements
+
+Alpha 0.2.0 end of october 2017
+- [ ] Rewrite battle system (experimental support for spells)
+- [ ] Add different AI levels and improve it.
+- [ ] Add visual effects (make the game less hectic)
+- [ ] Fix known bugs
+- [ ] General improvements
+
+Alpha 0.2.5 November 2017
+- [ ] Create a verification system for custom decks
+- [ ] Fix known bugs
+- [ ] General improvements
+
 
 
 Installation
