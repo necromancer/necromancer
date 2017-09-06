@@ -1,5 +1,5 @@
 # Necromancer
-A free, open source and multiplatform cards game inspired by Spectromancer, Magic: The Gathering, and the like. Build in web technologies such as HTML5, JS and CSS in top of Electron.
+A free, open source and multiplatform card game inspired by Spectromancer, Magic: The Gathering, and the like. Build in web technologies such as HTML5, JS and CSS in top of Electron.
 
 :exclamation: **Attention** This is an early experimental version of the game, and still has several bugs and missing features. Just for testing since it is not playable yet (maybe in a  few months?).
 
@@ -40,46 +40,6 @@ $ cd Necromancer
 $ npm install
 $ npm start
 ```
-
-Custom Decks
-----
-You can play Necromancer with any custom deck compatible with the game. To create a custom deck just create a folder with this structure:
-```
-Custom Deck
-│   fireCards.json
-│   waterCards.json    
-│   airCards.json
-│   earthCards.json
-│   airCards.json
-│   enemyCards.json
-└───img
-│   │   monster.png
-│   │   wizard.png
-```
-
-Each JSON file should contain this syntax:
-```json
-[{
-    "id": "firewall",
-    "type": "card",
-    "ElementalType": "fire",
-    "image": "firewall.png",
-    "life": 5,
-    "attack": 0,
-    "cost": 2
-}, {
-    "id": "priest",
-    "type": "card",
-    "ElementalType": "fire",
-    "image": "priest.png",
-    "life": 13,
-    "attack": 3,
-    "cost": 3
-}, ... ]
-
-```
-
-Once you have the custom deck folder put it inside src/decks/ and select it from the game Options window. [See Video How to install](https://www.youtube.com/watch?v=SBXIMQAQU5A)
 
 Development
 ----
