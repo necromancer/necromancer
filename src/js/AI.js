@@ -6,7 +6,7 @@ var filePath = path.join(__dirname, '..', 'src', 'decks',gameDeck,'enemyCards.js
 var enemyCards = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
 // EnemyMna (Fire,Water,Air,Earth)
-var enemyMana = [5, 5, 5, 5];
+var enemyMana = [3,2,1,19];
 var enemyManaNames = ["fire", "water", "air", "earth"];
 
 function moveCardIa() {
@@ -39,7 +39,7 @@ slot = undefined;
 
 
     // Choose random Elemental
-    var elementalType = Math.floor(Math.random() * 3) + 0;
+    var elementalType = Math.floor(Math.random() * 4) + 0;
 
     // Create array with avaible cards, medium cards and the best cards
     var avaibleCards = [];
