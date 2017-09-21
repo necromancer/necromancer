@@ -9,11 +9,6 @@
     <link rel="stylesheet" href="css/singlePlayer.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.min.css">
-    <script src="js/system.js"></script>
-    <script src="js/game.js"></script>
-    <script src="js/AI.js"></script>
-    <script>window.$ = window.jQuery = require('./js/jquery-3.1.1.min');</script>
-
     
     <link rel="preload" href="./img/combat/backgrounds/bg0.png" as="image">
     <link rel="preload" href="./img/bg.jpg" as="image">
@@ -23,9 +18,6 @@
     <link rel="preload" href="./img/blank.png" as="image">
     <link rel="preload" href="./img/paper.jpg" as="image">
     <link rel="preload" href="./img/paperborder.png" as="image">
-
-
-
 
     <!-- Cards Image Assets -->
     <script type="text/javascript">
@@ -80,6 +72,11 @@
     </div>
     <div id="cards-deck" class="cards-deck"></div>
 
+    <script src="js/system.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/AI.js"></script>
+    <script>window.$ = window.jQuery = require('./js/jquery-3.1.1.min');</script>
+
     <script type="text/javascript">
         $.fn.extend({
             animateCss: function(animationName) {
@@ -129,7 +126,7 @@
             setTimeout(function(){ moveCardIa(); }, 1000);
         }
         var randomSlot = Math.floor(Math.random() * 6) + 1;
-        document.getElementById('space'+randomSlot).innerHTML = "<img src='decks/default/img/wizard.png' alt='card'><div class='life-indicator'>18</div><div class='attack-indicator'>3</div><div class='cost-indicator'>2</div>";
+        document.getElementById('space'+randomSlot).innerHTML = "<img src='decks/default/img/warlock.png' alt='card'><div class='life-indicator'>18</div><div class='attack-indicator'>3</div><div class='cost-indicator'>2</div>";
     </script>
 </body>
 
