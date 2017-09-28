@@ -6,7 +6,7 @@ var filePath = path.join(__dirname, '..', 'src', 'decks',gameDeck,'enemyCards.js
 var enemyCards = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
 // EnemyMna (Fire,Water,Air,Earth)
-var enemyMana = [3,2,1,19];
+var enemyMana = [5,5,5,5];
 var enemyManaNames = ["fire", "water", "air", "earth"];
 
 function moveCardIa() {
