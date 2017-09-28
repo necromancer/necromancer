@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Necromancer</title>
     <link rel="stylesheet" href="css/singlePlayer.css">
@@ -14,11 +14,13 @@
     <link rel="preload" href="./img/bg.jpg" as="image">
     <link rel="preload" href="./img/enemyStausBar.png" as="image">
     <link rel="preload" href="./img/playerStausBar.png" as="image">
-    <link rel="preload" href="./img/line.png" as="image">
+    <!--<link rel="preload" href="./img/line.png" as="image">-->
     <link rel="preload" href="./img/blank.png" as="image">
     <link rel="preload" href="./img/paper.jpg" as="image">
     <link rel="preload" href="./img/paperborder.png" as="image">
 
+    <script src="js/system.js"></script>
+    
     <!-- Cards Image Assets -->
     <script type="text/javascript">
     var fileCardTypes = ["fire", "water", "air", "earth","enemy"];
@@ -72,7 +74,7 @@
     </div>
     <div id="cards-deck" class="cards-deck"></div>
 
-    <script src="js/system.js"></script>
+    <script src="js/load.js"></script>    
     <script src="js/game.js"></script>
     <script src="js/AI.js"></script>
     <script>window.$ = window.jQuery = require('./js/jquery-3.1.1.min');</script>
