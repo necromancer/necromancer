@@ -18,26 +18,7 @@
     <link rel="preload" href="./img/blank.png" as="image">
     <link rel="preload" href="./img/paper.jpg" as="image">
     <link rel="preload" href="./img/paperborder.png" as="image">
-
     <script src="js/system.js"></script>
-    
-    <!-- Cards Image Assets -->
-    <script type="text/javascript">
-    var fileCardTypes = ["fire", "water", "air", "earth","enemy"];
-
-    for (var z = 0; z < 5; z++) {
-      var filesPath = path.join(__dirname, '..', 'src', 'decks',gameDeck,fileCardTypes[z]+'Cards.json');
-      var cardsFiles = JSON.parse(fs.readFileSync(filesPath, "utf8"));
-
-      for (var i = 0; i < 4; i++) {
-          var link = document.createElement("link");
-          link.setAttribute("rel", "preload");
-          link.setAttribute("href", "decks/" +gameDeck+ "/img/"+cardsFiles[i].image);
-          link.setAttribute("as", "image");
-          document.head.appendChild(link);
-      }
-    }
-    </script>
 </head>
 
 <body>
@@ -131,5 +112,4 @@
         document.getElementById('space'+randomSlot).innerHTML = "<img src='decks/default/img/warlock.png' alt='card'><div class='life-indicator'>18</div><div class='attack-indicator'>3</div><div class='cost-indicator'>2</div>";
     </script>
 </body>
-
 </html>
