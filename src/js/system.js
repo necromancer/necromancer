@@ -21,6 +21,25 @@ var playerImageProfile = settingsFileJSON.PlayerImageProfile;
 gameDeck =  settingsFileJSON.GameDeck;
 
 
+/*----------------------------------
+---------- PRELOAD ASSETS ----------
+------------------------------------*/
+
+var fileCardTypes = ["fire", "water", "air", "earth","enemy"];
+
+    for (var z = 0; z < fileCardTypes.length; z++) {
+      var filesPath = path.join(__dirname, '..', 'src', 'decks',gameDeck,fileCardTypes[z]+'Cards.json');
+      var cardsFiles = JSON.parse(fs.readFileSync(filesPath, "utf8"));
+
+      for (var i = 0; i < cardsFiles.length; i++) {
+          var link = document.createElement("link");
+          link.setAttribute("rel", "preload");
+          link.setAttribute("href", "decks/" +gameDeck+ "/img/"+cardsFiles[i].image);
+          link.setAttribute("as", "image");
+          document.head.appendChild(link);
+      }
+    }
+
 
 /*----------------------------------
 ----------SYSTEM FUNCTIONS----------
