@@ -56,12 +56,16 @@ if (confirmExit == true) {
 // Profile settings functions
 var actualPlayerImageProfile = playerImageProfile;
 function nextImageProfile(){
-actualPlayerImageProfile++;
+    if(actualPlayerImageProfile <=2){
+        actualPlayerImageProfile++;        
+    }
 document.getElementById('PlayerImageProfile').src = "./img/faces/face"+actualPlayerImageProfile+".png";
 }
 
 function previousImageProfile(){
-  actualPlayerImageProfile--;
+    if(actualPlayerImageProfile >=2){
+        actualPlayerImageProfile--;        
+    }
   document.getElementById('PlayerImageProfile').src = "./img/faces/face"+actualPlayerImageProfile+".png";
 }
 
