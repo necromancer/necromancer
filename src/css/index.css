@@ -109,7 +109,7 @@ a:hover, a:active, a:focus {
     right: 1%;
 }
 
-.save-button:hover {
+.save-button .enabled:hover {
     content: url("../img/buttons/OSave.png");
 }
 

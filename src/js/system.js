@@ -86,8 +86,25 @@ var newSettings = `{
   fs.writeFile("settings.json", newSettings, function(err) {
     if(err) {
         alert("Error writing settings json file.");
+    }else{
+        controlSaveButton(false);
     }
 });
+}
+
+function controlSaveButton(status){
+    if(status){
+        var button = document.getElementById('save-button');
+        button.src = "img/buttons/NSave.png";
+        button.setAttribute("class", "save-button enabled");
+        button.addEventListener("click", function() { savePlayerProfile(); });
+    }
+    if (status == false){
+        var button = document.getElementById('save-button');
+        button.src = "img/buttons/BSave.png";
+        button.setAttribute("class", "save-button");
+        button.removeEventListener("click", function() { savePlayerProfile(); });
+    }
 }
 
 
