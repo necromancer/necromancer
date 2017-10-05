@@ -113,7 +113,7 @@ function calcMana(elementaltype) {
     for (var i = 0; i < allCards.length; i++) {
         if (allCards[i].getAttribute("elementaltype") == elementaltype) {
             if (parseInt(allCards[i].getElementsByClassName('cost-indicator')[0].innerHTML) > manaAmount) {
-                allCards[i].style = "-webkit-filter: grayscale(65%);";
+                allCards[i].style = "-webkit-filter: grayscale(100%);";
                 allCards[i].setAttribute("available", "false");
             } else {
                 allCards[i].style = "";

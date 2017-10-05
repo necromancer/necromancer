@@ -5,8 +5,7 @@ html {
 
 body {
     background-image: url('../img/bg.jpg');
-    /*background-size: cover;*/
-    padding: 0;
+    /*background-size: cover;*/     padding: 0;
     margin: 0;
     overflow: hidden;
 }
@@ -25,8 +24,11 @@ a:hover, a:active, a:focus {
 }
 
 .menu {
+    float: right;
+    margin-right: 2%;
+    /* left: 20px; */
     box-sizing: border-box;
-    width: 100%;
+    width: 15%;
     text-align: center;
     border: 32px solid transparent;
     -o-border-image: url(../img/paperborder.png) 32 round;
@@ -39,7 +41,7 @@ a:hover, a:active, a:focus {
 .menu img {
     margin-right: 2%;
     margin-left: 2%;
-    width: 10%;
+    width: 87%;
 }
 
 #options {
