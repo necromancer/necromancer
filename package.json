@@ -1,5 +1,6 @@
 {
   "name": "Necromancer",
+  "productName": "Necromancer",
   "version": "0.1.0",
   "description": "A free, open source cards game inspired by Spectromancer, Magic: The Gathering, and the like.",
   "main": "main.js",
