@@ -3,6 +3,15 @@ const app = require('electron').remote;
 const fs = require("fs");
 const path = require('path');
 
+// -- LOAD PACKAGE INFO ---
+// Read package.json file and parse it
+const packageFile = path.join(__dirname, '..', 'package.json');
+const packageFileJSON = JSON.parse(fs.readFileSync(packageFile, "utf8"));
+
+// Store version
+const installedVersion = (packageFileJSON["version"]);
+
+
 // Decks diretory 
 const decksFolder = path.join(__dirname, 'decks');
 
