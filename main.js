@@ -7,6 +7,10 @@ const BrowserWindow = electron.BrowserWindow
 const path = require('path')
 const url = require('url')
 
+// Just place this code at the entry point of your application:
+const updater = require('electron-simple-updater');
+updater.init('https://raw.githubusercontent.com/joancipria/Necromancer/master/updates.json');
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -58,7 +62,3 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-
-// Just place this code at the entry point of your application:
-const updater = require('electron-simple-updater');
-updater.init('https://raw.githubusercontent.com/joancipria/Necromancer/master/updates.json');
