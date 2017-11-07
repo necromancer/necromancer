@@ -5,7 +5,12 @@
   "description": "A free, open source cards game inspired by Spectromancer, Magic: The Gathering, and the like.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack:win64": "electron-packager . $npm_package_productName --overwrite --out=release-builds/win --platform=win32 --arch=x64 --icon=src/icons/win/icon.ico --prune=true",
+    "pack:linux": "electron-packager . $npm_package_productName --overwrite --out=release-builds/linux --platform=linux --arch=x64 --icon=src/icons/mac/icon.icns --prune=true",
+    "package": "npm run pack:win64 && npm run pack:linux",
+    "build:linux": "electron-installer-debian --src release-builds/linux/Necromancer-linux-x64 --arch amd64 --config debian.json",
+    "build": "npm run build:linux"
   },
   "repository": "https://github.com/joancipria/Necromancer",
   "keywords": [
@@ -21,8 +26,5 @@
   "devDependencies": {
     "electron": "~1.7.8",
     "electron-packager": "^9.1.0"
-  },
-  "dependencies": {
-    "electron-simple-updater": "^1.2.2"
   }
 }
