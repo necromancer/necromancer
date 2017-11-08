@@ -10,7 +10,7 @@ Features
   - With more than 40 different cards (of 4 different elemental types)
   - Very basic AI implementation for testing battle system
 
-  ![Screenshot of Necromancer](https://joancipria.files.wordpress.com/2017/05/screenshot.png)
+  ![Screenshot of Necromancer](https://joancipria.files.wordpress.com/2017/10/2017-10-22-221141_3286x1080_scrot.png)
 
 Releases
 ----
