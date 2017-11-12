@@ -50,8 +50,12 @@
         <div class="mana"><img src="img/combat/water_rune.png" alt=""><span id="waterMana"></span></div>
         <div class="mana"><img src="img/combat/air_rune.png" alt=""><span id="airMana"></span></div>
         <div class="mana"><img src="img/combat/earth_rune.png" alt=""><span id="earthMana"></span></div>
-
-        </div>
+        <img onclick="skipTurn();" src="img/buttons/skipTurn.png" alt="" style="
+        top: 7px;
+        width: 2.5%;
+        position: absolute;
+        right: -50px;
+">        </div>
     </div>
     <div id="cards-deck" class="cards-deck"></div>
 
@@ -106,6 +110,7 @@
                     }
                 } 
             }
+            checkLife("enemy");
             setTimeout(function(){ moveCardIa(); }, 1000);
         }
         var randomSlot = Math.floor(Math.random() * 6) + 1;

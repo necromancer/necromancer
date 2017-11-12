@@ -119,7 +119,9 @@ function startIaFightTurn() {
             }
     }
     }
+    checkLife("player");
     inncreasePlayerMana();
+    switchPlayerTurn(true);
 }
 
 function printCard(slot, cardVector) {

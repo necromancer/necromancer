@@ -69,8 +69,10 @@ function selectDeckCard(card) {
     }
 }
 
+var playerTurn = true;
 function moveCard(space) {
-    if (cardSelected == true) {
+    if (cardSelected == true && playerTurn == true) {
+        switchPlayerTurn(false);            
         var numberOfCards = 0;
         for (var i = 1; i < 12; i++) {
             if (document.getElementById('space' + i).getElementsByTagName('img')[0].alt == "card") {
@@ -157,4 +159,21 @@ function inncreasePlayerMana(){
 
 function decreaseMana(points,elementaltype){
   document.getElementById(elementaltype+'Mana').innerHTML = parseInt(document.getElementById(elementaltype+'Mana').innerHTML)-points;
+}
+
+function checkLife (player){
+    var life = eval(player+"Life");
+    if (life <= 0){
+        alert(player+" has lost the duel");
+        location.href='index.html';
+    }   
+}
+
+function switchPlayerTurn (status){
+   playerTurn =  status;
+}
+
+function skipTurn (){
+    switchPlayerTurn(false);
+    startPlayerFightTurn();
 }
