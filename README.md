@@ -6,7 +6,7 @@ A free, open source and multiplatform card game inspired by Spectromancer, Magic
 Features
 ----
   - Play singleplayer duels
-  - Custom Decks (totally customizable like texturepacks/mods concept.[See wiki for how-to](https://github.com/joancipria/Necromancer/wiki/Custom-Decks))
+  - Custom Decks (totally customizable like texturepacks/mods concept. [See wiki for how-to](https://github.com/joancipria/Necromancer/wiki/Custom-Decks))
   - With more than 40 different cards (of 4 different elemental types)
   - Very basic AI implementation for testing battle system
 
