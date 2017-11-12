@@ -91,6 +91,7 @@ function moveCard(space) {
         space.innerHTML = document.getElementById(selectedCard).innerHTML;
         space.getElementsByTagName('img')[0].style = "";
         document.getElementById(selectedCard).getElementsByTagName('img')[0].style = "";
+        selectedCard = undefined;                
         cardSelected = false;
     }
 }
