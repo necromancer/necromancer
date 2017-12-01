@@ -68,7 +68,7 @@
       "target": [
         "AppImage",
         "deb"
-]
+      ]
     }
   },
   "dependencies": {
