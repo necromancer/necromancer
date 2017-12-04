@@ -20,8 +20,8 @@ You can download this master and run it by:
 ```sh
 $ git clone https://github.com/joancipria/Necromancer.git
 $ cd Necromancer
-$ npm install
-$ npm start
+$ yarn
+$ yarn run dev
 ```
 [See wiki for details](https://github.com/joancipria/Necromancer/wiki/Development) 
 
