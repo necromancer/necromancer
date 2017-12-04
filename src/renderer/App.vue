@@ -1,6 +1,7 @@
+
 <template>
   <div id="app">
-    <transition name="fade" mode="out-in" v-on:after-enter="afterEnter" appear>
+    <transition name="fade" mode="out-in" appear>
       <router-view></router-view>
     </transition>
   </div>
