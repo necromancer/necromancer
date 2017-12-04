@@ -1,6 +1,5 @@
 <template>
   <div id="wrapper">
-      <link rel="preload" href="~@/assets/img/table.jpg" as="image">
     <div class="title">
       <img id="logo" src="~@/assets/img/title.png" alt="electron-vue">
     </div>
@@ -23,11 +22,11 @@
         <input onkeyup="controlSaveButton(true);" id="playerName" type="text" name="">
         <br>
         <select onchange="controlSaveButton(true);" id="deckSelection"></select>
-        <img class="small-back-button back-button" onclick="previousImageProfile();controlSaveButton(true);" src="img/buttons/NBack.png"
+        <img class="small-back-button back-button" onclick="previousImageProfile();controlSaveButton(true);" src="~@/assets/img/buttons/NBack.png"
           alt="">
-        <img class="small-back-button next-button" onclick="nextImageProfile();controlSaveButton(true);" src="img/buttons/NNext.png"
+        <img class="small-back-button next-button" onclick="nextImageProfile();controlSaveButton(true);" src="~@/assets/img/buttons/NNext.png"
           alt="">
-        <img id="save-button" class="save-button" src="img/buttons/BSave.png" alt="">
+        <img id="save-button" class="save-button" src="~@/assets/img/buttons/BSave.png" alt="">
         <br>
       </div>
       <audio autoplay="" controls="" loop="" preload="">
@@ -54,6 +53,6 @@
   };
 </script>
 
-<style>
+<style scope>
   @import "~@/assets/css/landingPage.css";
 </style>

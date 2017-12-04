@@ -77,6 +77,6 @@
 
 
 
-<style>
+<style scoped>
     @import "~@/assets/css/singlePlayer.css";
 </style>
