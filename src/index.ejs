@@ -16,7 +16,48 @@
     <script>
       if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
     </script>
+<!-- webpack builds are automatically injected -->
+</body>
+<script>
+  // Disable Drag and dropping on the app
+  document.addEventListener(
+    "dragover",
+    function (event) {
+      event.preventDefault();
+      return false;
+    },
+    false
+  );
 
-    <!-- webpack builds are automatically injected -->
-  </body>
-</html>
+  document.addEventListener(
+    "drop",
+    function (event) {
+      event.preventDefault();
+      return false;
+    },
+    false
+  );
+
+  document.addEventListener(
+    "dragstart",
+    function (event) {
+      event.preventDefault();
+      return false;
+    },
+    false
+  );
+
+function exitApp(){
+      var confirmExit = confirm("Do you really want to exit?");
+      if (confirmExit == true) {
+        window.close();
+      }
+}
+
+function exitMainMenu(){
+      var confirmExit = confirm("Do you really want to exit main menu?");
+      if (confirmExit == true) {
+        this.$router.push('/')
+      }
+}
+</script>
