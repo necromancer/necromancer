@@ -65,7 +65,17 @@
                 right: -50px;
         ">        </div>-->
         </div>
-        <div id="cards-deck" class="cards-deck"></div>
+        <div id="cards-deck" class="cards-deck">
+            <Card 
+            v-for="(card, index) in cards"
+            :key="index"
+            :elementaltype="card.elementaltype"
+            :id="card.id"
+            :life="card.life"
+            :attack="card.attack"
+            :cost="card.cost">
+            </Card>
+        </div>
         <main>
             <router-link to="/">
                 <h2>Main Menu!</h2>
@@ -81,12 +91,22 @@
 
 //const settingsContent = JSON.parse(fs.readFileSync("settings.json", "utf8"));
 
+import Card from './Card.vue'
+
+
 export default {
+    components: {
+		Card
+	},
     data() {
     return {
       playerName: "settingsContent.PlayerName",
       playerImage:require("./../assets/img/faces/face" +2+".png"),
-      seen: false
+      seen: false,
+      cards: [
+         {id: "priest", elementaltype: "fire", life: 5, attack: 4, cost: 3},
+         {id: "hamala", elementaltype: "water", life: 3, attack: 6, cost: 3} 
+      ]
     };
   },
   methods: {
