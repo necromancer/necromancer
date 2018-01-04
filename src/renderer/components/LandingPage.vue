@@ -92,7 +92,7 @@ export default {
   },
   created: function() {
     document.addEventListener('keyup', this.escapeKeyListener);
-    document.body.style.backgroundImage = "url('"+require('./../assets/img/table.jpg')+"')";
+    document.body.style.backgroundImage = "url('"+require('./../assets/img/bg.jpg')+"')";
   },
   destroyed: function() {
     document.removeEventListener('keyup', this.escapeKeyListener);
