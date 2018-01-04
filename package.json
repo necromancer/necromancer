@@ -1,9 +1,23 @@
 {
   "name": "necromancer",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "author": "Joan Ciprià <joancipria@gmail.com>",
   "description": "A free, open source and multiplatform card game inspired by Spectromancer, Magic: The Gathering, and the like",
-  "license": null,
+  "license": "GPL-3.0",
+  "repository": "https://github.com/joancipria/Necromancer",
+  "keywords": [
+    "Necromancer",
+    "cards",
+    "game",
+    "magic",
+    "gathering",
+    "spectromancer"
+  ],
+  "author": {
+    "name": "Joan Ciprià",
+    "email": "joancipria@gmail.com",
+    "url": "joancipria.com"
+  },
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
@@ -17,7 +31,7 @@
     "postinstall": ""
   },
   "build": {
-    "productName": "necromancer",
+    "productName": "Necromancer",
     "appId": "org.simulatedgreg.electron-vue",
     "directories": {
       "output": "build"
@@ -47,7 +61,11 @@
       "icon": "build/icons/icon.ico"
     },
     "linux": {
-      "icon": "build/icons"
+      "icon": "build/icons",
+      "target": [
+        "AppImage",
+        "deb"
+      ]
     }
   },
   "dependencies": {
