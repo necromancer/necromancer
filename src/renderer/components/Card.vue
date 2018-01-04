@@ -48,4 +48,49 @@ export default {
   max-height: 80px;
   clip: rect(0px, 80px, 80px, 0px);
 }
+.spell {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-table;
+    text-align: center;
+    font-size: 70%;
+    font-weight: bold;
+    padding: 0;
+    margin-right: 1%;
+    margin-top: 0%;
+}
+
+.spell img {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.spell .cost-indicator {
+    color: blue;
+    position: absolute;
+    right: 12px;
+    top: 10px;
+}
+
+.life-indicator {
+    color: green;
+    position: relative;
+    right: -78px;
+    bottom: -82px;
+}
+
+.attack-indicator {
+    color: red;
+    position: relative;
+    left: 9px;
+    bottom: -70px;
+}
+
+.cost-indicator {
+    color: blue;
+    position: relative;
+    right: -78px;
+    top: -22px;
+}
 </style>
