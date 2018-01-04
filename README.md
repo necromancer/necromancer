@@ -1,5 +1,5 @@
 # Necromancer
-A free, open source and multiplatform card game inspired by Spectromancer, Magic: The Gathering, and the like. Build in web technologies such as HTML5, JS and CSS in top of Electron.
+A free, open source and multiplatform fantasy card game inspired by Spectromancer, Magic: The Gathering, and the like. Build in web technologies such as HTML5, JS and CSS in top of Electron.
 
 :exclamation: **Attention** This is an early experimental version of the game, and still has several bugs and missing features. Just for testing since it is not playable yet (maybe in a  few months?).
 
@@ -10,16 +10,16 @@ Features
   - With more than 40 different cards (of 4 different elemental types)
   - Very basic AI implementation for testing battle system
 
-  ![Screenshot of Necromancer](https://joancipria.files.wordpress.com/2017/10/2017-10-22-221141_3286x1080_scrot.png)
 
 
 Development
 ----
-You can download this master and run it by:
+You can download this branch and run it by:
 
 ```sh
 $ git clone https://github.com/joancipria/Necromancer.git
 $ cd Necromancer
+$ git checkout develop
 $ yarn
 $ yarn run dev
 ```
