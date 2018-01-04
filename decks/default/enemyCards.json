@@ -1,0 +1,129 @@
+[{
+    "id": "goblin",
+    "type": "card",
+    "ElementalType": "fire",
+    "image": "goblin.png",
+    "life": 16,
+    "attack": 4,
+    "cost": 5
+}, {
+    "id": "knight",
+    "type": "card",
+    "ElementalType": "fire",
+    "image": "knight.png",
+    "life": 10,
+    "attack": 4,
+    "cost": 10
+}, {
+    "id": "warlock",
+    "type": "card",
+    "ElementalType": "fire",
+    "image": "warlock.png",
+    "life": 20,
+    "attack": 7,
+    "cost": 6
+}, {
+    "id": "witcher",
+    "type": "card",
+    "ElementalType": "fire",
+    "image": "witcher.png",
+    "life": 37,
+    "attack": 7,
+    "cost": 10
+},{
+    "id": "merfolk",
+    "type": "card",
+    "ElementalType": "water",
+    "image": "merfolk.png",
+    "life": 10,
+    "attack": 3,
+    "cost": 3
+}, {
+    "id": "seamaid",
+    "type": "card",
+    "ElementalType": "water",
+    "image": "seamaid.png",
+    "life": 22,
+    "attack": 5,
+    "cost": 5
+}, {
+    "id": "merfolks",
+    "type": "card",
+    "ElementalType": "water",
+    "image": "merfolks.png",
+    "life": 20,
+    "attack": 8,
+    "cost": 7
+}, {
+    "id": "mindmaster",
+    "type": "card",
+    "ElementalType": "water",
+    "image": "mindmaster.png",
+    "life": 23,
+    "attack": 6,
+    "cost": 11
+},{
+    "id": "forestsprite",
+    "type": "card",
+    "ElementalType": "earth",
+    "image": "forestsprite.png",
+    "life": 12,
+    "attack": 2,
+    "cost": 1
+}, {
+    "id": "healer",
+    "type": "card",
+    "ElementalType": "earth",
+    "image": "healer.png",
+    "life": 19,
+    "attack": 4,
+    "cost": 4
+}, {
+    "id": "troll",
+    "type": "card",
+    "ElementalType": "earth",
+    "image": "troll.png",
+    "life": 26,
+    "attack": 6,
+    "cost": 8
+}, {
+    "id": "spider",
+    "type": "card",
+    "ElementalType": "earth",
+    "image": "spider.png",
+    "life": 45,
+    "attack": 7,
+    "cost": 10
+}, {
+    "id": "gryphon",
+    "type": "card",
+    "ElementalType": "air",
+    "image": "gryphon.png",
+    "life": 12,
+    "attack": 4,
+    "cost": 2
+}, {
+    "id": "darkfaerie",
+    "type": "card",
+    "ElementalType": "air",
+    "image": "darkfaerie.png",
+    "life": 19,
+    "attack": 4,
+    "cost": 4
+}, {
+    "id": "phoenix",
+    "type": "card",
+    "ElementalType": "air",
+    "image": "phoenix.png",
+    "life": 17,
+    "attack": 7,
+    "cost": 7
+}, {
+    "id": "masterelven",
+    "type": "card",
+    "ElementalType": "air",
+    "image": "masterelven.png",
+    "life": 40,
+    "attack": 9,
+    "cost": 12
+}]
