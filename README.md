@@ -1,7 +1,10 @@
 # Necromancer
-A free, open source and multiplatform fantasy card game inspired by Spectromancer, Magic: The Gathering, and the like. Build in web technologies such as HTML5, JS and CSS in top of Electron.
+Necromancer is a a free, open source and multiplatform fantasy card game inspired by Spectromancer, Magic: The Gathering, Gwent and the like.
 
-:exclamation: **Attention** This is an early experimental version of the game, and still has several bugs and missing features. Just for testing since it is not playable yet (maybe in a  few months?).
+Participate in a magical duel against other mages by strategically summoning creatures and casting spells. Use the power of the four magical elements - Fire, Water, Air and Earth plus a fifth related to your specific mage type. You will be able to duel against the computer or against other online players.
+
+Choose your cards and start fighting!
+
 
 Features
 ----
