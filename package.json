@@ -4,7 +4,7 @@
   "author": "Joan Ciprià <joancipria@gmail.com>",
   "description": "A free, open source and multiplatform card game inspired by Spectromancer, Magic: The Gathering, and the like",
   "license": "GPL-3.0",
-  "repository": "https://github.com/joancipria/Necromancer",
+  "repository": "https://github.com/necromancer/Necromancer",
   "keywords": [
     "Necromancer",
     "cards",
