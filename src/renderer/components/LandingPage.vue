@@ -2,43 +2,29 @@
   <div id="wrapper">
     <div class="title">
       <!-- Title  -->
-      <img id="logo" src="~@/assets/img/title.png" alt="electron-vue">
+      <img src="~@/assets/img/title.png" alt="Necromancer">
     </div>
     <main>
       <!-- Menu -->
       <div class="menu">
-        <router-link to="singleplayer">
-          <img class="singleplayer-button" src="~@/assets/img/buttons/NSinglePlayer.png" alt="">
-        </router-link>
-        <img onclick="#" src="~@/assets/img/buttons/BMultiPlayer.png" alt="">
-        <img onclick="#" src="~@/assets/img/buttons/BMyDeck.png" alt="">
-        <router-link to="#">
-          <img class="options-button" v-on:click="seen = true" src="~@/assets/img/buttons/NOptions.png" alt="">
-        </router-link>
-        <router-link to="#">
-          <img class="exit-button" onclick="exitApp();" src="~@/assets/img/buttons/NExit.png" alt="">
-        </router-link>
+        <div class="buttonMenu">
+          <router-link to="singleplayer">
+            <Button buttonText="Singleplayer"></Button>
+          </router-link>
+        </div>
+        <div class="buttonMenu">
+          <router-link to="">
+            <Button buttonText="Multiplayer"></Button>
+          </router-link>
+        </div> 
+
       </div>
       <!-- -->
       
-      <!-- Options Window -->
+      <!-- Windows -->
       <transition name="fade">
-      <div class="window" id="options" v-if="seen">
-        <div style="text-align:right;color:#901805;">
-          <a v-on:click="seen = false">&#x2716;&nbsp;</a>
-        </div>
-        <img class="faces" id="PlayerImageProfile" v-bind:src="playerImage" alt="">
-        <input id="playerName" type="text" v-on:change="changeHandler" v-model="playerName">
-        <br>
-        <select onchange="controlSaveButton(true);" id="deckSelection"></select>
-        <img class="small-back-button back-button" onclick="previousImageProfile();controlSaveButton(true);" src="~@/assets/img/buttons/NBack.png"
-          alt="">
-        <img class="small-back-button next-button" onclick="nextImageProfile();controlSaveButton(true);" src="~@/assets/img/buttons/NNext.png"
-          alt="">
-        <img id="save-button" class="save-button" src="~@/assets/img/buttons/BSave.png" alt="">
-        <br>
-      </div>
-       </transition>
+
+      </transition>
        <!-- -->
 
       <!-- Audio -->
@@ -55,7 +41,12 @@
 
 //const settingsContent = JSON.parse(fs.readFileSync("settings.json", "utf8"));
 
+import Button from './gui/Button.vue';
+
 export default {
+  components: {
+    Button
+  },
   data() {
     return {
       playerName: "settingsContent.PlayerName",
@@ -102,123 +93,61 @@ export default {
 
 <!-- Styles -->
 <style scope>
-.title {
-    width: 100%;
-    text-align: center;
+html {
+  min-height: 100%;
+  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.678);
+}
+body {
+  /* Location of the image */
+  /*background-image: url(bg.jpg);*/
+  
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
 }
 
-.title img{
-    width: 60%;
+.title {
+  width: 100%;
+}
+
+.title img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 }
 
 .menu {
-    float: right;
-    margin-right: 2%;
-    /* left: 20px; */
-    box-sizing: border-box;
-    width: 15%;
-    text-align: center;
-    border: 32px solid transparent;
-    -o-border-image: url(~@/assets/img/paperborder.png) 32 round;
-    border-image: url(~@/assets/img/paperborder.png) 32 round;
-    background-image: url(~@/assets/img/paper.jpg);
-    background-clip: padding-box;
-    background-color: #d2bfa0;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .menu img {
-    margin-right: 2%;
-    margin-left: 2%;
-    width: 87%;
+  width: 20%;
 }
 
-#options {
-    border: 32px solid transparent;
-    -o-border-image: url('~@/assets/img/paperborder.png') 32 round;
-    border-image: url('~@/assets/img/paperborder.png') 32 round;
-    background-image: url('~@/assets/img/paper.jpg');
-    background-clip: padding-box;
-    background-color: #d2bfa0;
-    padding: 0px;
-    overflow: hidden;
+.menu a {
+  text-decoration: none;
 }
 
-#options .faces {
-    padding: 0;
-    margin-left: 1%;
-    vertical-align: middle;
-    width: 20%;
-}
-
-.button-change {
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 16px;
-}
-
-.button-change:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.previous {
-    background-color: #f1f1f1;
-    color: black;
-}
-
-.next {
-    background-color: #f1f1f1;
-    color: black;
-}
-
-.round {
-    border-radius: 50%;
-}
-
-.singleplayer-button:hover {
-    content: url("~@/assets/img/buttons/OSinglePlayer.png");
-}
-
-.options-button:hover {
-    content: url("~@/assets/img/buttons/OOptions.png");
-}
-
-.exit-button:hover {
-    content: url("~@/assets/img/buttons/OExit.png");
-}
-
-.save-button {
-    width: 15%;
-    position: absolute;
-    padding: 0;
-    margin: 1%;
-    float: right;
-    bottom: 1%;
-    right: 1%;
-}
-
-.save-button .enabled:hover {
-    content: url("~@/assets/img/buttons/OSave.png");
-}
-
-.next-button:hover {
-    content: url("~@/assets/img/buttons/ONext.png");
-}
-
-.back-button:hover {
-    content: url("~@/assets/img/buttons/OBack.png");
-}
-
-.small-back-button {
-    width: 4%;
-}
-#deckSelection{
-    width: 15%;
-    position: absolute;
-    padding: 0;
-    margin: 1%;
-    float: right;
-    bottom: 1%;
-    left: 1%;
+.buttonMenu {
+  margin-top: 2%;
 }
 </style>
