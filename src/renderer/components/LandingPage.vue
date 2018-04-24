@@ -9,14 +9,14 @@
       <div class="menu">
         <div class="buttonMenu">
           <router-link to="singleplayer">
-            <Button buttonText="Singleplayer"></Button>
+            <Button :buttonText="$globals.langText.Singleplayer"></Button>
           </router-link>
         </div>
         <div class="buttonMenu">
           <router-link to="">
-            <Button buttonText="Multiplayer"></Button>
+            <Button :buttonText="$globals.langText.Multiplayer"></Button>
           </router-link>
-        </div> 
+        </div>
 
       </div>
       <!-- -->
@@ -29,18 +29,15 @@
 
       <!-- Audio -->
       <audio autoplay="" controls="" loop="" preload="">
-        <source src="~@/assets/audio/music1.ogg" type="audio/ogg"></source>
+        <source src="~@/assets/audio/music1.ogg" type="audio/ogg"/>
         Your browser does not support the audio element.
       </audio>
     </main>
   </div>
 </template>
 <script>
-//import fs from "fs";
-//import path from "path";
 
-//const settingsContent = JSON.parse(fs.readFileSync("settings.json", "utf8"));
-
+// Import components
 import Button from './gui/Button.vue';
 
 export default {
