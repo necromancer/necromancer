@@ -1,5 +1,6 @@
 {
     "PlayerName": "Joan",
     "PlayerImageProfile": 2,
-    "GameDeck": "default"
+    "GameDeck": "default",
+    "lang": "en"
 }
