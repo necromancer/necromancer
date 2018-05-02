@@ -1,13 +1,39 @@
 <template>
   <div id="app">
     <transition name="fade" mode="out-in" appear>
-      <router-view></router-view>
+      <router-view :globalMethods="globalMethods" :locales="locales"></router-view>
     </transition>
   </div>
 </template>
 <script>
+// Get settings
+import settings  from './config.js';
+
+var locale = settings.locale;
+
 export default {
-  name: "Necromancer"
+  name: "Necromancer",
+  data(){
+    return{
+      locales: locale, // Export locales
+      globalMethods: {
+        // Exit App
+        exitApp: function (){
+              var confirmExit = confirm(locale.confirm_exit_app);
+              if (confirmExit == true) {
+                window.close();
+              }
+        },  
+        // Go to main menu
+        exitMainMenu: function(){
+              var confirmExit = confirm(locale.confirm_exit_menu);
+              if (confirmExit == true) {
+                this.$router.push('/')
+              }
+        }
+      }
+    }
+  }
 };
 </script>
 

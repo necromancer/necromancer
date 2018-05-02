@@ -9,14 +9,14 @@
       <div class="menu">
         <div class="buttonMenu">
           <router-link to="singleplayer">
-            <Button :buttonText="$globals.langText.Singleplayer"></Button>
+            <Button :buttonText="locales.Singleplayer"></Button>
           </router-link>
         </div>
         <div class="buttonMenu">
           <router-link to="">
-            <Button :buttonText="$globals.langText.Multiplayer"></Button>
+            <Button :buttonText="locales.Multiplayer"></Button>
           </router-link>
-        </div>
+        </div>  
 
       </div>
       <!-- -->
@@ -41,6 +41,7 @@
 import Button from './gui/Button.vue';
 
 export default {
+  props:["locales","globalMethods"],
   components: {
     Button
   },
@@ -49,7 +50,7 @@ export default {
       playerName: "settingsContent.PlayerName",
       playerImage:require("./../assets/img/faces/face" +2+".png"),
       seen: false
-    };
+  };
   },
   methods: {
     changeHandler: function(event) {
@@ -73,7 +74,7 @@ export default {
     },
     escapeKeyListener: function(evt) {
       if (evt.keyCode === 27) {
-      exitApp();
+      this.globalMethods.exitApp();
       }
     }
 

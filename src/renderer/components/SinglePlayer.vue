@@ -70,6 +70,7 @@
             v-for="(card, index) in cards"
             :key="index"
             :elementaltype="card.elementaltype"
+            :src="require('./../assets/decks/default/img/'+card.img)"
             :id="card.id"
             :life="card.life"
             :attack="card.attack"
@@ -86,33 +87,26 @@
 </template>
 
 <script>
-//import fs from "fs";
-//import path from "path";
-
-//const settingsContent = JSON.parse(fs.readFileSync("settings.json", "utf8"));
-
 import Card from './Card.vue'
 
 
 export default {
+    props:["locales","globalMethods"],
     components: {
 		Card
 	},
     data() {
     return {
-      playerName: "settingsContent.PlayerName",
+      playerName: settings.PlayerName,
       playerImage:require("./../assets/img/faces/face" +2+".png"),
       seen: false,
-      cards: [
-         {id: "priest", elementaltype: "fire", life: 5, attack: 4, cost: 3},
-         {id: "hamala", elementaltype: "water", life: 3, attack: 6, cost: 3} 
-      ]
+      cards: deck
     };
   },
   methods: {
     escapeKeyListener: function(evt) {
       if (evt.keyCode === 27) {
-        exitMainMenu();
+        this.globalMethods.exitMainMenu();
       }
     }
   },

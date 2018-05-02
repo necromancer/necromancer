@@ -19,47 +19,31 @@
 <!-- webpack builds are automatically injected -->
 </body>
 <script>
-// Disable Drag and dropping on the app
-document.addEventListener(
-  "dragover",
-  function (event) {
-    event.preventDefault();
-    return false;
-  },
-  false
-);
-
-document.addEventListener(
-  "drop",
-  function (event) {
-    event.preventDefault();
-    return false;
-  },
-  false
-);
-
-document.addEventListener(
-  "dragstart",
-  function (event) {
-    event.preventDefault();
-    return false;
-  },
-  false
-);
-
-// Exit App
-function exitApp(){
-      var confirmExit = confirm();
-      if (confirmExit == true) {
-        window.close();
-      }
-}
-
-// Go to main menu
-function exitMainMenu(){
-      var confirmExit = confirm();
-      if (confirmExit == true) {
-        this.$router.push('/')
-      }
-}
+    // Disable Drag and dropping on the app
+    document.addEventListener(
+    "dragover",
+    function (event) {
+      event.preventDefault();
+      return false;
+    },
+    false
+  );
+  
+  document.addEventListener(
+    "drop",
+    function (event) {
+      event.preventDefault();
+      return false;
+    },
+    false
+  );
+  
+  document.addEventListener(
+    "dragstart",
+    function (event) {
+      event.preventDefault();
+      return false;
+    },
+    false
+  );
 </script>
