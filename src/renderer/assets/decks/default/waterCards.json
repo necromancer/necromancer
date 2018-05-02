@@ -2,7 +2,7 @@
     "id": "meditation",
     "type": "card",
     "ElementalType": "water",
-    "image": "meditation.png",
+    "img": "meditation.png",
     "life": 0,
     "attack": 0,
     "cost": 1
@@ -10,7 +10,7 @@
     "id": "golem",
     "type": "card",
     "ElementalType": "water",
-    "image": "golem.png",
+    "img": "golem.png",
     "life": 12,
     "attack": 4,
     "cost": 4
@@ -18,7 +18,7 @@
     "id": "seamaid",
     "type": "card",
     "ElementalType": "water",
-    "image": "seamaid.png",
+    "img": "seamaid.png",
     "life": 16,
     "attack": 5,
     "cost": 7
@@ -26,7 +26,7 @@
     "id": "merfolk",
     "type": "card",
     "ElementalType": "water",
-    "image": "merfolk.png",
+    "img": "merfolk.png",
     "life": 35,
     "attack": 6,
     "cost": 11

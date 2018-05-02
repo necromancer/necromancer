@@ -2,7 +2,7 @@
     "id": "griffin",
     "type": "card",
     "ElementalType": "air",
-    "image": "griffin.png",
+    "img": "griffin.png",
     "life": 15,
     "attack": 3,
     "cost": 2
@@ -10,7 +10,7 @@
     "id": "faerie",
     "type": "card",
     "ElementalType": "air",
-    "image": "faerie.png",
+    "img": "faerie.png",
     "life": 19,
     "attack": 4,
     "cost": 4
@@ -18,7 +18,7 @@
     "id": "phoenix",
     "type": "card",
     "ElementalType": "air",
-    "image": "phoenix.png",
+    "img": "phoenix.png",
     "life": 16,
     "attack": 7,
     "cost": 7
@@ -26,7 +26,7 @@
     "id": "storm",
     "type": "card",
     "ElementalType": "air",
-    "image": "storm.png",
+    "img": "storm.png",
     "life": 20,
     "attack": 4,
     "cost": 9
