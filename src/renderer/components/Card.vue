@@ -1,7 +1,7 @@
 <template>
-    <div v-bind:id="id" class="card" v-bind:elementaltype="elementaltype" available="true">
-        <img src="decks/default/img/priest.png" alt="card" class="character">
-        <img src="decks/default/img/card.png" alt="card">
+    <div onclick="selectDeckCard(this);" v-bind:id="id" class="card" v-bind:elementaltype="elementaltype" available="true">
+        <img v-bind:src="src" alt="card" class="character">
+        <img src="./../assets/decks/default/img/card.png" alt="card">
         <div class="life-indicator">{{life}}</div>
         <div class="attack-indicator">{{attack}}</div>
         <div class="cost-indicator">{{cost}}</div>
@@ -14,6 +14,7 @@ export default {
     props:{
         id: String,
         elementaltype: String,
+        src: String,
         life: Number,
         attack: Number,
         cost: Number
