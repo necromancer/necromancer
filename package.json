@@ -1,7 +1,11 @@
 {
   "name": "necromancer",
   "version": "0.2.0",
-  "author": "Joan Ciprià <joancipria@gmail.com>",
+  "author": {
+    "name": "Joan Ciprià",
+    "email": "joancipria@gmail.com",
+    "url": "joancipria.com"
+  },
   "description": "A free, open source and multiplatform card game inspired by Spectromancer, Magic: The Gathering, and the like",
   "license": "GPL-3.0",
   "repository": "https://github.com/necromancer/Necromancer",
@@ -13,11 +17,6 @@
     "gathering",
     "spectromancer"
   ],
-  "author": {
-    "name": "Joan Ciprià",
-    "email": "joancipria@gmail.com",
-    "url": "joancipria.com"
-  },
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
@@ -69,6 +68,8 @@
     }
   },
   "dependencies": {
+    "electron-log": "^2.2.14",
+    "velocity-animate": "^1.5.1",
     "vue": "^2.3.3",
     "vue-electron": "^1.0.6",
     "vue-router": "^2.5.3"
@@ -89,9 +90,9 @@
     "del": "^3.0.0",
     "devtron": "^1.4.0",
     "electron": "^1.7.5",
+    "electron-builder": "^19.19.1",
     "electron-debug": "^1.4.0",
     "electron-devtools-installer": "^2.2.0",
-    "electron-builder": "^19.19.1",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.30.1",

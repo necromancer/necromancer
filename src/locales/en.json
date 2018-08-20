@@ -1,6 +1,15 @@
 {
     "Singleplayer": "Singleplayer",
     "Multiplayer": "Multiplayer",
+    "Settings": "Settings",
+    "Exit": "Exit",
     "confirm_exit_app": "Do you really want to exit?",
-    "confirm_exit_menu": "Do you really want to exit main menu?"
+    "confirm_exit_menu": "Do you really want to exit main menu?",
+    "Options": "Options",
+    "MyDeck": "My Deck",
+    "ElementalFire": "Fire",
+    "ElementalWater": "Water",
+    "ElementalAir": "Air",
+    "ElementalEarth": "Earth",
+    "ElementalDeath": "Death"
 }

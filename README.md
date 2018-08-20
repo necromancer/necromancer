@@ -6,31 +6,22 @@ Participate in a magical duel against other mages by strategically summoning cre
 Choose your cards and start fighting!
 
 
-Features
-----
-  - Play singleplayer duels
-  - Custom Decks (totally customizable like texturepacks/mods concept. [See wiki for how-to](https://github.com/joancipria/Necromancer/wiki/Custom-Decks))
-  - With more than 40 different cards (of 4 different elemental types)
-  - Very basic AI implementation for testing battle system
-
-
-
 Development
 ----
 You can download this branch and run it by:
 
 ```sh
-$ git clone https://github.com/joancipria/Necromancer.git
+$ git clone https://github.com/necromancer/necromancer.git
 $ cd Necromancer
 $ git checkout develop
 $ yarn
 $ yarn run dev
 ```
-[See wiki for details](https://github.com/joancipria/Necromancer/wiki/Development) 
+[See wiki for details](https://github.com/necromancer/necromancer/wiki/Development) 
 
 Contribute
 ----
-Want to contribute? Great! At this time we mainly need art designers to create more cards and other assets but you can contribute to the code too opening issues and sending reports. Feel free to write me at joancipria@gmail.com
+Want to contribute? Great! At this time we mainly need art designers to create more cards and other assets but you can contribute to the code too opening issues, requesting  and sending reports. Feel free to write me at joancipria@gmail.com
 
 
 License

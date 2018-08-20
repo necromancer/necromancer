@@ -16,7 +16,19 @@
           <router-link to="">
             <Button :buttonText="locales.Multiplayer"></Button>
           </router-link>
-        </div>  
+        </div>
+
+        <div class="buttonMenu">
+          <router-link to="">
+            <Button :buttonText="locales.Settings"></Button>
+          </router-link>
+        </div>
+
+        <div class="buttonMenu">
+          <router-link to="">
+            <Button :buttonText="locales.Exit"></Button>
+          </router-link>
+        </div>   
 
       </div>
       <!-- -->
@@ -93,7 +105,7 @@ export default {
 <style scope>
 html {
   min-height: 100%;
-  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.678);
+  /*box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.678);*/
 }
 body {
   /* Location of the image */
@@ -120,32 +132,29 @@ body {
 
 .title {
   width: 100%;
+  margin-top: 1%;
 }
 
 .title img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
 }
 
 .menu {
-  width: 100%;
+  width: 93%;
   display: block;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-}
-
-.menu img {
-  width: 20%;
-}
-
-.menu a {
-  text-decoration: none;
+  border: 32px solid transparent;
+  -o-border-image: url('~@/assets/img/paperborder.png') 32 round;
+  border-image: url('~@/assets/img/paperborder.png') 32 round;
+  background-image: url('~@/assets/img/paper.jpg');
+  background-clip: padding-box;
 }
 
 .buttonMenu {
-  margin-top: 2%;
+  margin-top: 1%;
 }
 </style>

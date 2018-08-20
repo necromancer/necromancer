@@ -1,32 +1,32 @@
-[{
+[ {
     "id": "goblin",
     "type": "card",
     "ElementalType": "fire",
     "img": "goblin.png",
-    "life": 16,
-    "attack": 4,
-    "cost": 5
-}, {
-    "id": "knight",
-    "type": "card",
-    "ElementalType": "fire",
-    "img": "knight.png",
     "life": 10,
     "attack": 4,
     "cost": 10
 }, {
-    "id": "warlock",
+    "id": "troll",
     "type": "card",
     "ElementalType": "fire",
-    "img": "warlock.png",
+    "img": "troll.png",
+    "life": 16,
+    "attack": 4,
+    "cost": 5
+}, {
+    "id": "antorlach",
+    "type": "card",
+    "ElementalType": "fire",
+    "img": "antorlach.png",
     "life": 20,
     "attack": 7,
     "cost": 6
 }, {
-    "id": "witcher",
+    "id": "firedrake",
     "type": "card",
     "ElementalType": "fire",
-    "img": "witcher.png",
+    "img": "firedrake.png",
     "life": 37,
     "attack": 7,
     "cost": 10
@@ -39,18 +39,18 @@
     "attack": 3,
     "cost": 3
 }, {
-    "id": "seamaid",
+    "id": "seaserpent",
     "type": "card",
     "ElementalType": "water",
-    "img": "seamaid.png",
+    "img": "seaserpent.png",
     "life": 22,
     "attack": 5,
     "cost": 5
 }, {
-    "id": "merfolks",
+    "id": "overlordmerfolk",
     "type": "card",
     "ElementalType": "water",
-    "img": "merfolks.png",
+    "img": "overlordmerfolk.png",
     "life": 20,
     "attack": 8,
     "cost": 7
@@ -63,34 +63,34 @@
     "attack": 6,
     "cost": 11
 },{
-    "id": "forestsprite",
+    "id": "elvish",
     "type": "card",
     "ElementalType": "earth",
-    "img": "forestsprite.png",
+    "img": "elvish.png",
     "life": 12,
     "attack": 2,
     "cost": 1
 }, {
-    "id": "healer",
+    "id": "earthfaerie",
     "type": "card",
     "ElementalType": "earth",
-    "img": "healer.png",
+    "img": "earthfaerie.png",
     "life": 19,
     "attack": 4,
     "cost": 4
 }, {
-    "id": "troll",
+    "id": "eyeofdisdain",
     "type": "card",
     "ElementalType": "earth",
-    "img": "troll.png",
+    "img": "eyeofdisdain.png",
     "life": 26,
     "attack": 6,
     "cost": 8
 }, {
-    "id": "spider",
+    "id": "ancientwose",
     "type": "card",
     "ElementalType": "earth",
-    "img": "spider.png",
+    "img": "ancientwose.png",
     "life": 45,
     "attack": 7,
     "cost": 10
@@ -98,7 +98,7 @@
     "id": "gryphon",
     "type": "card",
     "ElementalType": "air",
-    "img": "gryphon.png",
+    "img": "exampleCard.png",
     "life": 12,
     "attack": 4,
     "cost": 2
@@ -106,7 +106,7 @@
     "id": "darkfaerie",
     "type": "card",
     "ElementalType": "air",
-    "img": "darkfaerie.png",
+    "img": "exampleCard.png",
     "life": 19,
     "attack": 4,
     "cost": 4
@@ -114,7 +114,7 @@
     "id": "phoenix",
     "type": "card",
     "ElementalType": "air",
-    "img": "phoenix.png",
+    "img": "exampleCard.png",
     "life": 17,
     "attack": 7,
     "cost": 7
@@ -122,8 +122,41 @@
     "id": "masterelven",
     "type": "card",
     "ElementalType": "air",
-    "img": "masterelven.png",
+    "img": "exampleCard.png",
     "life": 40,
     "attack": 9,
     "cost": 12
+},
+{
+    "id": "deatharchmage",
+    "type": "card",
+    "ElementalType": "death",
+    "img": "deatharchmage.png",
+    "life": 32,
+    "attack": 7,
+    "cost": 5
+}, {
+    "id": "banshee",
+    "type": "card",
+    "ElementalType": "death",
+    "img": "banshee.png",
+    "life": 19,
+    "attack": 6,
+    "cost": 5
+}, {
+    "id": "dementor",
+    "type": "card",
+    "ElementalType": "death",
+    "img": "dementor.png",
+    "life": 10,
+    "attack": 5,
+    "cost": 4
+}, {
+    "id": "death4",
+    "type": "card",
+    "ElementalType": "death",
+    "img": "exampleCard.png",
+    "life": 27,
+    "attack": 5,
+    "cost": 2
 }]

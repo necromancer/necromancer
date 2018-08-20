@@ -1,6 +1,6 @@
 {
-    "PlayerName": "Joan",
-    "PlayerImageProfile": 2,
-    "GameDeck": "default",
+    "playerName": "Maya",
+    "playerImageProfile": 2,
+    "gameDeck": "default",
     "lang": "en"
 }

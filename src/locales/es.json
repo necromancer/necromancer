@@ -1,6 +1,15 @@
 {
     "Singleplayer": "Un Jugador",
     "Multiplayer": "Multijugador",
+    "Settings": "Ajustes",
+    "Exit": "Salir",
     "confirm_exit_app": "Realmente quieres salir?",
-    "confirm_exit_menu": "Realmente quieres salir al menú principal?"
+    "confirm_exit_menu": "Realmente quieres salir al menú principal?",
+    "Options": "Opciones",
+    "MyDeck": "Mi baraja",
+    "ElementalFire": "Fuego",
+    "ElementalWater": "Agua",
+    "ElementalAir": "Aire",
+    "ElementalEarth": "Tierra",
+    "ElementalDeath": "Muerte"
 }

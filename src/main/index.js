@@ -1,3 +1,7 @@
+var log = require('electron-log');
+log.transports.file.level = 'info';
+//console.log = log.info
+
 import { app, BrowserWindow } from 'electron'
 
 /**
@@ -43,6 +47,18 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+log.info(` Necromancer started!
+------------------------------------------- 
+** System Info **
+
+Necromancer: require('package.json').version
+Electron: ${process.versions['atom-shell']}
+Node: ${process.versions['atom-shell']}
+Platfornm: ${require('os').platform()}
+Vue: ${require('vue/package.json').version}
+--------------------------------------------`
+);
 
 /**
  * Auto Updater

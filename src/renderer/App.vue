@@ -1,34 +1,37 @@
 <template>
   <div id="app">
     <transition name="fade" mode="out-in" appear>
-      <router-view :globalMethods="globalMethods" :locales="locales"></router-view>
+      <router-view :globalMethods="globalMethods" :settings="settings" :locales="locales" :gameDeck="gameDeck"></router-view>
     </transition>
   </div>
 </template>
 <script>
+import Router from './router';
 // Get settings
 import settings  from './config.js';
-
-var locale = settings.locale;
 
 export default {
   name: "Necromancer",
   data(){
     return{
-      locales: locale, // Export locales
+      locales: settings.locale, // Export locales
+      gameDeck: settings.deck,
+      settings: {
+        playerName: settings.playerName
+      },
       globalMethods: {
         // Exit App
         exitApp: function (){
-              var confirmExit = confirm(locale.confirm_exit_app);
+              var confirmExit = confirm(settings.locale.confirm_exit_app);
               if (confirmExit == true) {
                 window.close();
               }
         },  
         // Go to main menu
         exitMainMenu: function(){
-              var confirmExit = confirm(locale.confirm_exit_menu);
+              var confirmExit = confirm(settings.locale.confirm_exit_menu);
               if (confirmExit == true) {
-                this.$router.push('/')
+                Router.push('/');
               }
         }
       }
