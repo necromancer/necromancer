@@ -57,6 +57,7 @@
                     :available="true"
                     :src="require('./../assets/decks/default/img/'+card.img)"
                     :id="card.id"
+                    :ref="card.id"
                     :life="card.life"
                     :attack="card.attack"
                     :cost="card.cost">
@@ -74,6 +75,7 @@
                     :available="true"
                     :src="require('./../assets/decks/default/img/'+card.img)"
                     :id="card.id"
+                    :ref="card.id"
                     :life="card.life"
                     :attack="card.attack"
                     :cost="card.cost">
@@ -92,6 +94,7 @@
                     :available="true"
                     :src="require('./../assets/decks/default/img/'+card.img)"
                     :id="card.id"
+                    :ref="card.id"
                     :life="card.life"
                     :attack="card.attack"
                     :cost="card.cost">
@@ -109,6 +112,7 @@
                     :available="true"
                     :src="require('./../assets/decks/default/img/'+card.img)"
                     :id="card.id"
+                    :ref="card.id"
                     :life="card.life"
                     :attack="card.attack"
                     :cost="card.cost">
@@ -126,6 +130,7 @@
                     :available="true"
                     :src="require('./../assets/decks/default/img/'+card.img)"
                     :id="card.id"
+                    :ref="card.id"
                     :life="card.life"
                     :attack="card.attack"
                     :cost="card.cost">
@@ -253,26 +258,24 @@ export default {
         selectDeckCard: function(cardObj) {
                 // Actual selected card
                 let card = cardObj.id;
-
-                // If there was a previus card selected, then clean its style
-                if(this.selectedCard != undefined){
-                    //document.getElementById(this.selectedCard.id).getElementsByTagName('img')[1].style = "";  
-                }
-                
+                //eval(`this.$refs.${this.selectedCard.id}[0].selected = false`);
+             
                 // Only if selected card is avaible
                 //if (card.available !== "false") {
 
                     // Store selected card
                     this.selectedCard = cardObj;
                     this.cardSelected = true;
+
+
+                    log.info(`Turn ${this.turn}`);
+                    if (this.turn == true){
+                        eval(`this.$refs.${cardObj.id}[0].selected = true`);
+                    }
+
                     // Log
                     log.info(`Selected ${cardObj.id} card (${cardObj.ElementalType})`);
 
-
-                    // Apply style
-                    //card.getElementsByTagName('img')[1].style = "";
-                    //card.style = "";
-                    //card.getElementsByTagName('img')[1].style = "-webkit-box-shadow: 0px 0px 54px 0px rgba(0,145,148,1);-moz-box-shadow: 0px 0px 54px 0px rgba(68,145,148,1);box-shadow: 0px 0px 54px 0px rgba(68,145,148,1);";
                 //}        
         },
         moveCard: function (spaceObj,astralFluxCallback) {

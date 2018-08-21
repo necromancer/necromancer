@@ -1,5 +1,5 @@
 <template>
-    <div v-bind:id="id" class="card" v-bind:elementaltype="elementaltype" v-bind:available="available">
+    <div v-bind:id="id" class="card" v-bind:elementaltype="elementaltype">
         <img v-bind:src="src" alt="card" class="character">
         <img class="frame" src="~@/assets/decks/default/img/card.png" alt="card">
         <div class="life-indicator">{{life}}</div>
@@ -18,7 +18,25 @@ export default {
         life: Number,
         attack: Number,
         cost: Number,
-        available: Boolean
+        available: Boolean,
+    },
+    data() {
+        return {
+            selected: false
+        }
+    },
+    watch: {
+        selected: function(){
+            let card = document.getElementById(this.id);
+
+            if (this.selected == true){
+                card.getElementsByTagName('img')[1].style = "";
+                card.style = "";
+                card.getElementsByTagName('img')[1].style = "-webkit-box-shadow: 0px 0px 54px 0px rgba(0,145,148,1);-moz-box-shadow: 0px 0px 54px 0px rgba(68,145,148,1);box-shadow: 0px 0px 54px 0px rgba(68,145,148,1);";
+            }//else{
+             //   document.getElementById(this.selectedCard.id).getElementsByTagName('img')[1].style = "";  
+            //}
+        }
     }
 };
 </script>
