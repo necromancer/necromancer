@@ -1,4 +1,6 @@
-# Necromancer
+# Necromancer 
+[![Build Status](https://travis-ci.org/necromancer/necromancer.svg?branch=develop)](https://travis-ci.org/necromancer/necromancer)
+
 Necromancer is a a free, open source and multiplatform fantasy card game inspired by Spectromancer, Magic: The Gathering, Gwent and the like.
 
 Participate in a magical duel against other mages by strategically summoning creatures and casting spells. Use the power of the four magical elements - Fire, Water, Air and Earth plus a fifth related to your specific mage type. You will be able to duel against the computer or against other online players.
