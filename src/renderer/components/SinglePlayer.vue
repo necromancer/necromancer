@@ -260,7 +260,7 @@ export default {
                 let card = cardObj.id;
                 
                 if (this.selectedCard != undefined){
-                    eval(`this.$refs.${this.selectedCard.id}[0].selected = false`);
+                    this.$refs[this.selectedCard.id][0].selected = false;
                 }
              
                 // Only if selected card is avaible
@@ -272,7 +272,7 @@ export default {
 
                     // Select style for player
                     if (this.turn == true){
-                        eval(`this.$refs.${cardObj.id}[0].selected = true`);
+                        this.$refs[cardObj.id][0].selected = true;
                     }
 
                     // Log
@@ -318,7 +318,7 @@ export default {
                 space.style = "";
 
                 if (this.turn == true){
-                    eval(`this.$refs.${this.selectedCard.id}[0].selected = false`);
+                    this.$refs[this.selectedCard.id][0].selected = false;
                 }
 
 
@@ -417,15 +417,14 @@ export default {
                         vm.AIlife -= vm.playerSpaces[i].attack;
 
                         // Animate (todo: create a specific function with attack values)
-                        eval(`vm.$refs.${id}[0].animate("attack up")`);
+                        vm.$refs[id][0].animate("attack up");
                     }
                     // If space with card against card
                     if (vm.playerSpaces[i].attack != null && vm.AIspaces[i].attack != null){
                         vm.AIspaces[i].life -= vm.playerSpaces[i].attack;
 
                         // Animate (todo: create a specific function with attack values)
-                        eval(`vm.$refs.${id}[0].animate("attack up")`);
-
+                        vm.$refs[id][0].animate("attack up");
 
                     }
                 }
