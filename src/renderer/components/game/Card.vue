@@ -33,9 +33,9 @@ export default {
                 card.getElementsByTagName('img')[1].style = "";
                 card.style = "";
                 card.getElementsByTagName('img')[1].style = "-webkit-box-shadow: 0px 0px 54px 0px rgba(0,145,148,1);-moz-box-shadow: 0px 0px 54px 0px rgba(68,145,148,1);box-shadow: 0px 0px 54px 0px rgba(68,145,148,1);";
-            }//else{
-             //   document.getElementById(this.selectedCard.id).getElementsByTagName('img')[1].style = "";  
-            //}
+            }else{
+                document.getElementById(this.id).getElementsByTagName('img')[1].style = "";  
+            }
         }
     }
 };

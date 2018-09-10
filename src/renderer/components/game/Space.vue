@@ -66,25 +66,25 @@ export default {
 }
 .life-indicator {
     color: green;
-    position: relative;
+    position: absolute;
     z-index: 10;
-    right: -33px;
-    top: -19px;
+    right: 3px;
+    bottom: 3px;
 }
 
 .attack-indicator {
     color: red;
-    position: relative;
+    position: absolute;
     z-index: 10;
-    left: -33px;
-    top: -35px;
+    left: 3px;
+    bottom: 3px;
 }
 
 .cost-indicator {
     color: blue;
-    position: relative;
+    position: absolute;
     z-index: 10;
-    right: -33px;
-    top: -130px;
+    right: 6px;
+    top: 1px;
 }
 </style>

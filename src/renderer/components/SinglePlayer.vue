@@ -258,7 +258,10 @@ export default {
         selectDeckCard: function(cardObj) {
                 // Actual selected card
                 let card = cardObj.id;
-                //eval(`this.$refs.${this.selectedCard.id}[0].selected = false`);
+                
+                if (this.selectedCard != undefined){
+                    eval(`this.$refs.${this.selectedCard.id}[0].selected = false`);
+                }
              
                 // Only if selected card is avaible
                 //if (card.available !== "false") {
@@ -267,8 +270,7 @@ export default {
                     this.selectedCard = cardObj;
                     this.cardSelected = true;
 
-
-                    log.info(`Turn ${this.turn}`);
+                    // Select style for player
                     if (this.turn == true){
                         eval(`this.$refs.${cardObj.id}[0].selected = true`);
                     }
@@ -314,7 +316,15 @@ export default {
 
                 // Clear style
                 space.style = "";
-                //document.getElementById(this.selectedCard.id).getElementsByTagName('img')[1].style = "";
+
+                if (this.turn == true){
+                    eval(`this.$refs.${this.selectedCard.id}[0].selected = false`);
+                }
+
+
+                // Clear selectedCard
+                this.selectedCard = undefined;
+                this.cardSelected = false;
 
                 // Start astral flux control
                 astralFluxCallback();
@@ -388,7 +398,7 @@ export default {
   
             return promise;
         },
-        fightTurn: function (player){
+        fightTurn: function (){
             // View Model for scoped context
             var vm = this;
 
@@ -455,6 +465,14 @@ export default {
                 vm.selectDeckCard(testCard);
                 vm.moveCard(space,vm.astralGameFlux);
 
+                }else{
+                    // Skip Turn
+                    try {
+                        const switchTurnStatus = await vm.switchTurn();
+                        log.info(`Skipped turn ${switchTurnStatus}`);
+                    } catch (err) {
+                        return log.info('Error: '+err.message);
+                    }
                 }
                 }, 1000);
         },

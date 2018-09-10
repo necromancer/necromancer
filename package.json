@@ -30,8 +30,8 @@
     "postinstall": ""
   },
   "build": {
-    "productName": "Necromancer",
-    "appId": "org.simulatedgreg.electron-vue",
+    "productName": "necromancer",
+    "appId": "org.joancipria.necromancer",
     "directories": {
       "output": "build"
     },
@@ -90,9 +90,9 @@
     "del": "^3.0.0",
     "devtron": "^1.4.0",
     "electron": "^1.7.5",
-    "electron-builder": "^19.19.1",
     "electron-debug": "^1.4.0",
     "electron-devtools-installer": "^2.2.0",
+    "electron-builder": "^19.19.1",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.30.1",
