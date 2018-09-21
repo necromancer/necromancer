@@ -13,6 +13,7 @@
             :src="require('./../assets/decks/default/img/'+card.img)"
             :cardSrc="require('./../assets/decks/default/img/'+card.cardSrc)"
             :id="card.id"
+            :ref="card.id"
             :life="card.life"
             :attack="card.attack"
             :cost="card.cost">
@@ -359,7 +360,7 @@ export default {
             
             // Fight Turn
             try {
-                var fightTurn = await this.fightTurn();
+                var fightTurn = await this.fightTurn(this.turn);
                 log.info(fightTurn);
             } catch (err) {
                 return log.info('Error: '+err.message);
@@ -398,7 +399,7 @@ export default {
   
             return promise;
         },
-        fightTurn: function (){
+        fightTurn: function (turn){
             // View Model for scoped context
             var vm = this;
 
@@ -406,27 +407,53 @@ export default {
                 // Log
                 log.info(`--- Started fight turn ---`);
 
-                // Walk spaces
-                for (var i = 0; i < vm.AIspaces.length; i++) {
-                
-                    let spaceHTML = document.getElementById(vm.playerSpaces[i].id);
-                    let id = vm.playerSpaces[i].id;
+                if (turn == true){
+                    // Walk spaces
+                    for (var i = 0; i < vm.AIspaces.length; i++) {
+                    
+                        let spaceHTML = document.getElementById(vm.playerSpaces[i].id);
+                        let id = vm.playerSpaces[i].id;
 
-                    // If space with card against empty
-                    if(vm.playerSpaces[i].attack != null && vm.AIspaces[i].attack == null ){
-                        vm.AIlife -= vm.playerSpaces[i].attack;
+                        // If space with card against empty
+                        if(vm.playerSpaces[i].attack != null && vm.AIspaces[i].attack == null ){
+                            vm.AIlife -= vm.playerSpaces[i].attack;
 
-                        // Animate (todo: create a specific function with attack values)
-                        vm.$refs[id][0].animate("attack up");
+                            // Animate (todo: create a specific function with attack values)
+                            vm.$refs[id][0].animate("attack up");
+                        }
+                        // If space with card against card
+                        if (vm.playerSpaces[i].attack != null && vm.AIspaces[i].attack != null){
+                            vm.AIspaces[i].life -= vm.playerSpaces[i].attack;
+
+                            // Animate (todo: create a specific function with attack values)
+                            vm.$refs[id][0].animate("attack up");
+
+                        }
                     }
-                    // If space with card against card
-                    if (vm.playerSpaces[i].attack != null && vm.AIspaces[i].attack != null){
-                        vm.AIspaces[i].life -= vm.playerSpaces[i].attack;
+                }else{
+                    // Walk spaces
+                    for (var i = 0; i < vm.playerSpaces.length; i++) {
+                    
+                        let spaceHTML = document.getElementById(vm.AIspaces[i].id);
+                        let id = vm.AIspaces[i].id;
 
-                        // Animate (todo: create a specific function with attack values)
-                        vm.$refs[id][0].animate("attack up");
+                        // If space with card against empty
+                        if(vm.AIspaces[i].attack != null && vm.playerSpaces[i].attack == null ){
+                            vm.playerLife -= vm.AIspaces[i].attack;
 
+                            // Animate (todo: create a specific function with attack values)
+                            vm.$refs[id][0].animate("attack down");
+                        }
+                        // If space with card against card
+                        if (vm.AIspaces[i].attack != null && vm.playerSpaces[i].attack != null){
+                            vm.playerSpaces[i].life -= vm.AIspaces[i].attack;
+
+                            // Animate (todo: create a specific function with attack values)
+                            vm.$refs[id][0].animate("attack down");
+
+                        }
                     }
+
                 }
 
                 var text = "--- Finished fight turn ---";
