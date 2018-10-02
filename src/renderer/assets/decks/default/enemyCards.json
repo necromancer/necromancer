@@ -55,10 +55,10 @@
     "attack": 8,
     "cost": 7
 }, {
-    "id": "mindmaster",
+    "id": "brawler",
     "type": "card",
     "ElementalType": "water",
-    "img": "mindmaster.png",
+    "img": "brawler.png",
     "life": 23,
     "attack": 6,
     "cost": 11
@@ -98,7 +98,7 @@
     "id": "gryphon",
     "type": "card",
     "ElementalType": "air",
-    "img": "exampleCard.png",
+    "img": "gryphon.png",
     "life": 12,
     "attack": 4,
     "cost": 2
@@ -152,10 +152,10 @@
     "attack": 5,
     "cost": 4
 }, {
-    "id": "death4",
+    "id": "wraith",
     "type": "card",
     "ElementalType": "death",
-    "img": "exampleCard.png",
+    "img": "wraith.png",
     "life": 27,
     "attack": 5,
     "cost": 2
