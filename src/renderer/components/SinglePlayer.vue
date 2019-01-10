@@ -41,9 +41,9 @@
             <img id="PlayerImageProfile" class="player-bar-profile" v-bind:src="playerImage" alt="">
 
             <h4 id="playerName">{{ playerName }} {{ playerLife }}</h4>
-            <!--
-                <img onclick="skipTurn();" src="~@/assets/img/buttons/skipTurn.png" alt="" style="top: 7px;width: 2.5%;position: absolute;right: -50px;">
-            -->
+            
+                <img v-on:click="skipTurn();" src="~@/assets/img/skipTurn.png" alt="" style="top: 7px;width: 2.5%;position: absolute;right:0px;">
+            
         </div>
         <div id="cards-deck" class="cards-deck">
 
@@ -163,7 +163,6 @@ export default {
         return {
         playerName: this.settings.playerName,
         playerImage:require("./../assets/img/faces/face" +2+".png"),
-        seen: false,
         cards: require(`../assets/decks/${this.gameDeck}/enemyCards.json`),
         playerSpaces: [],
         AIspaces: [],
@@ -248,12 +247,34 @@ export default {
             if (this.turn == false){
                 this.AI();
             }
+        },
+        playerLife: function () {
+            if (this.playerLife <= 0){
+                alert("You lose");
+                this.$router.push("landing-page");
+            }
+        },
+        AIlife: function () {
+            if (this.AIlife <= 0){
+                alert("You win");
+                this.$router.push("landing-page");
+            }
         }
     },
     methods: {
         escapeKeyListener: function(evt) {
             if (evt.keyCode === 27) {
             this.globalMethods.exitMainMenu();
+            }
+        },
+        skipTurn: function (){
+            // Skip Turn
+            try {
+                //const switchTurnStatus = await vm.switchTurn();
+                log.info(`Skipped turn`);
+                this.astralGameFlux();
+            } catch (err) {
+                return log.info('Error: '+err.message);
             }
         },
         selectDeckCard: function(cardObj) {
@@ -406,6 +427,7 @@ export default {
             const promise = new Promise(function (resolve, reject) {
                 // Log
                 log.info(`--- Started fight turn ---`);
+                let lifeResult;
 
                 if (turn == true){
                     // Walk spaces
@@ -423,10 +445,28 @@ export default {
                         }
                         // If space with card against card
                         if (vm.playerSpaces[i].attack != null && vm.AIspaces[i].attack != null){
-                            vm.AIspaces[i].life -= vm.playerSpaces[i].attack;
+                            
+                            lifeResult = vm.AIspaces[i].life - vm.playerSpaces[i].attack;
+                            
+                            if (lifeResult > 0){
+                                vm.AIspaces[i].life -= vm.playerSpaces[i].attack;
 
+                            }else {
+                                let space = {};
+                                space.id = `space${i+1}`;
+                                space.type = "card";
+                                space.ElementalType = "";
+                                space.img = "charBlank.png";
+                                space.cardSrc = "blank.png";
+                                space.life = null;
+                                space.attack = null;
+                                space.cost = null;
+                                vm.AIspaces[i] = space;
+                            }
+                            
                             // Animate (todo: create a specific function with attack values)
                             vm.$refs[id][0].animate("attack up");
+ 
 
                         }
                     }
@@ -446,8 +486,25 @@ export default {
                         }
                         // If space with card against card
                         if (vm.AIspaces[i].attack != null && vm.playerSpaces[i].attack != null){
-                            vm.playerSpaces[i].life -= vm.AIspaces[i].attack;
 
+                            lifeResult = vm.playerSpaces[i].life - vm.AIspaces[i].attack;
+                            
+                            if (lifeResult > 0){
+                                vm.playerSpaces[i].life -= vm.AIspaces[i].attack;
+
+                            }else {
+                                let space = {};
+                                space.id = `space${i+7}`;
+                                space.type = "card";
+                                space.ElementalType = "";
+                                space.img = "charBlank.png";
+                                space.cardSrc = "blank.png";
+                                space.life = null;
+                                space.attack = null;
+                                space.cost = null;
+                                vm.playerSpaces[i] = space;
+                            }
+                            
                             // Animate (todo: create a specific function with attack values)
                             vm.$refs[id][0].animate("attack down");
 
@@ -492,15 +549,9 @@ export default {
                 vm.moveCard(space,vm.astralGameFlux);
 
                 }else{
-                    // Skip Turn
-                    try {
-                        const switchTurnStatus = await vm.switchTurn();
-                        log.info(`Skipped turn ${switchTurnStatus}`);
-                    } catch (err) {
-                        return log.info('Error: '+err.message);
-                    }
+                    vm.skipTurn();
                 }
-                }, 1000);
+                }, 2000);
         },
         decreaseMana: function (target, elementalTypeTarget, value){
 
@@ -512,7 +563,7 @@ export default {
     created: function() {
     /* INIT SCRIPT */
 
-    // Log player mode
+    // Log game mode
     log.info('*** Singleplayer Game ***');
 
     // Add escape key event
