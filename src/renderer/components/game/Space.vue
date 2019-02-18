@@ -25,12 +25,12 @@ export default {
             var spaceHTML = document.getElementById(this.id);
 
             if (animation == 'attack up'){
-                Velocity(spaceHTML, { top: "-50px" }, { duration: 1000 });
+                Velocity(spaceHTML, { top: "-50px" }, { duration: 800 });
                 Velocity(spaceHTML, "reverse");
             }
 
             if (animation == 'attack down'){
-                Velocity(spaceHTML, { top: "50px" }, { duration: 1000 });
+                Velocity(spaceHTML, { top: "50px" }, { duration: 800 });
                 Velocity(spaceHTML, "reverse");
             }
 
