@@ -8,12 +8,12 @@ export default new Router({
     {
       path: '/',
       name: 'landing-page',
-      component: require('@/components/LandingPage').default
+      component: require('@/views/LandingPage').default
     },
     {
       path: '/singleplayer',
       name: 'SinglePlayer',
-      component: require('@/components/SinglePlayer').default
+      component: require('@/views/SinglePlayer').default
     },
     {
       path: '*',
