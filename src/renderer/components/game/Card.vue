@@ -67,7 +67,7 @@ width: 86px;
     position: relative;
     z-index: 10;
     right: -33px;
-    top: -19px;
+    top: -21px;
 }
 
 .attack-indicator {
@@ -75,7 +75,7 @@ width: 86px;
     position: relative;
     z-index: 10;
     left: -33px;
-    top: -35px;
+    top: -38px;
 }
 
 .cost-indicator {
@@ -83,6 +83,6 @@ width: 86px;
     position: relative;
     z-index: 10;
     right: -33px;
-    top: -130px;
+    top: -136px;
 }
 </style>
