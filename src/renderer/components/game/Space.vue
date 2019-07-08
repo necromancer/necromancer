@@ -3,6 +3,7 @@
         <img v-bind:src="src" alt="card" class="character">
         <img class="frame" v-bind:src="cardSrc" alt="card">
         <div class="life-indicator">{{life}}</div>
+        <div class="life-deal"></div>
         <div class="attack-indicator">{{attack}}</div>
         <div class="cost-indicator">{{cost}}</div>
     </div>
@@ -21,17 +22,33 @@ export default {
         cost: Number,
     },
     methods:{
-        animate: function (animation) {
+        animate: function (animation, data) {
             var spaceHTML = document.getElementById(this.id);
 
             if (animation == 'attack up'){
-                Velocity(spaceHTML, { top: "-50px" }, { duration: 800 });
+                Velocity(spaceHTML, { translateY: "-50px" }, { duration: 600 });
                 Velocity(spaceHTML, "reverse");
             }
 
             if (animation == 'attack down'){
-                Velocity(spaceHTML, { top: "50px" }, { duration: 800 });
+                Velocity(spaceHTML, { translateY: "50px" }, { duration: 600 });
                 Velocity(spaceHTML, "reverse");
+            }
+
+            if(animation == 'die'){
+                Velocity(spaceHTML, "fadeOut", {display: "inline-table"},{duration: 600});
+                Velocity(spaceHTML, "reverse", {delay: 600});
+            }
+
+            if (animation == 'summon'){
+                Velocity(spaceHTML, "fadeIn", {display: "inline-table"},{duration: 800});  
+            }
+
+            if (animation == 'deal'){
+                spaceHTML.getElementsByClassName('life-deal')[0].style = "";     
+                spaceHTML.getElementsByClassName('life-deal')[0].innerHTML = "-"+data;
+                Velocity(spaceHTML.getElementsByClassName('life-deal')[0], { top: "50px" },{duration: 400});            
+                Velocity(spaceHTML.getElementsByClassName('life-deal')[0], "fadeOut",{duration: 800});
             }
 
         }
@@ -53,7 +70,7 @@ export default {
 .frame {
     position: relative;
     z-index: 9;
-    width: 86px;;
+    width: 86px;
 }
 
 
@@ -66,6 +83,13 @@ export default {
 }
 .life-indicator {
     color: green;
+    position: absolute;
+    z-index: 10;
+    right: 3px;
+    bottom: 3px;
+}
+.life-deal {
+    color: red;
     position: absolute;
     z-index: 10;
     right: 3px;
