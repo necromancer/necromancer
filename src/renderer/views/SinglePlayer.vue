@@ -364,11 +364,15 @@ export default {
   
             return promise;
         },
-        fightTurn: function (turn){
+        sleep: function (ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        },
+        fightTurn: async function (turn){
             // View Model for scoped context
             var vm = this;
+            var sleep = this.sleep;
+            var timeBtwIteractions = 1200;
 
-            const promise = new Promise(function (resolve, reject) {
                 // Log
                 log.info(`--- Started fight turn ---`);
                 let lifeResult;
@@ -386,6 +390,7 @@ export default {
 
                             // Animate (todo: create a specific function with attack values)
                             vm.$refs[id][0].animate("attack up");
+                            await sleep(timeBtwIteractions);
                         }
                         // If space with card against card
                         if (vm.playerSpaces[i].attack != null && vm.AIspaces[i].attack != null){
@@ -394,8 +399,11 @@ export default {
                             
                             if (lifeResult > 0){
                                 vm.AIspaces[i].life -= vm.playerSpaces[i].attack;
+                                vm.$refs[vm.AIspaces[i].id][0].animate("deal", vm.playerSpaces[i].attack);
 
                             }else {
+                                vm.$refs[vm.AIspaces[i].id][0].animate("die");
+                                vm.$refs[vm.AIspaces[i].id][0].animate("deal", vm.playerSpaces[i].attack);
                                 let space = {};
                                 space.id = `space${i+1}`;
                                 space.type = "card";
@@ -410,8 +418,7 @@ export default {
                             
                             // Animate (todo: create a specific function with attack values)
                             vm.$refs[id][0].animate("attack up");
- 
-
+                            await sleep(timeBtwIteractions);
                         }
                     }
                 }else{
@@ -427,6 +434,7 @@ export default {
 
                             // Animate (todo: create a specific function with attack values)
                             vm.$refs[id][0].animate("attack down");
+                            await sleep(timeBtwIteractions);
                         }
                         // If space with card against card
                         if (vm.AIspaces[i].attack != null && vm.playerSpaces[i].attack != null){
@@ -435,8 +443,11 @@ export default {
                             
                             if (lifeResult > 0){
                                 vm.playerSpaces[i].life -= vm.AIspaces[i].attack;
+                                vm.$refs[vm.playerSpaces[i].id][0].animate("deal", vm.AIspaces[i].attack);
 
                             }else {
+                                vm.$refs[vm.playerSpaces[i].id][0].animate("die");
+                                vm.$refs[vm.playerSpaces[i].id][0].animate("deal", vm.AIspaces[i].attack);
                                 let space = {};
                                 space.id = `space${i+7}`;
                                 space.type = "card";
@@ -451,12 +462,13 @@ export default {
                             
                             // Animate (todo: create a specific function with attack values)
                             vm.$refs[id][0].animate("attack down");
-
+                            await sleep(timeBtwIteractions);
                         }
                     }
 
                 }
 
+            const promise = new Promise(function (resolve, reject) {
                 var text = "--- Finished fight turn ---";
                 resolve(text);
 
