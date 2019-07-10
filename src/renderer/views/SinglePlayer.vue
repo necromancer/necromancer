@@ -265,6 +265,7 @@ export default {
                 spaceObj.life = this.selectedCard.life;
                 spaceObj.cost = this.selectedCard.cost;
                 spaceObj.attack = this.selectedCard.attack;
+                spaceObj.fastAttack = this.selectedCard.fastAttack;
                 spaceObj.cardSrc = "card.png";
 
                 // Log
@@ -289,6 +290,7 @@ export default {
 
 
                 // Clear selectedCard
+                this.latestSlot = spaceObj;
                 this.selectedCard = undefined;
                 this.cardSelected = false;
 
@@ -380,6 +382,13 @@ export default {
                 if (turn == true){
                     // Walk spaces
                     for (var i = 0; i < vm.AIspaces.length; i++) {
+                    
+                        // Skip latest moves card
+                        if(vm.playerSpaces[i].id == this.latestSlot.id){
+                            if(!this.latestSlot.fastAttack){
+                                break;
+                            }
+                        }
                     
                         let spaceHTML = document.getElementById(vm.playerSpaces[i].id);
                         let id = vm.playerSpaces[i].id;
@@ -563,6 +572,9 @@ export default {
 
     // Selected card ?
     this.cardSelected = false;
+
+    // Latest moved card
+    this.latestSlot = undefined;
 
         
     

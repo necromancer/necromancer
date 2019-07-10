@@ -16,6 +16,7 @@ function generateSpaces (start, end){
         space.life = null;
         space.attack = null;
         space.cost = null;
+        space.fastAttack = false;
         spaces.push(space);
     }
 
