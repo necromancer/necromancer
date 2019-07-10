@@ -433,7 +433,14 @@ export default {
                 }else{
                     // Walk spaces
                     for (var i = 0; i < vm.playerSpaces.length; i++) {
-                    
+                        
+                        // Skip latest moves card
+                        if(vm.AIspaces[i].id == this.latestSlot.id){
+                            if(!this.latestSlot.fastAttack){
+                                break;
+                            }
+                        }
+
                         let spaceHTML = document.getElementById(vm.AIspaces[i].id);
                         let id = vm.AIspaces[i].id;
 
@@ -507,7 +514,8 @@ export default {
                     "img": "exampleCard.png",
                     "life": 20,
                     "attack": 6,
-                    "cost": 7
+                    "cost": 7,
+                    "fastAttack": false,
                 };
 
                 vm.selectDeckCard(testCard);
