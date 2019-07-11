@@ -1,5 +1,10 @@
 <template>
-    <div v-bind:id="id" class="card" v-bind:elementaltype="elementaltype">
+    <div v-bind:id="id" class="card tooltip" v-bind:elementaltype="elementaltype">
+        <span class="tooltiptext">
+            <h4>{{id}}</h4>
+            <h5>{{elementaltype}} creature, Cost {{cost}}, Attack {{attack}}, Life {{life}}</h5>
+            <p>{{description}}</p>
+        </span>
         <img v-bind:src="src" alt="card" class="character">
         <img class="frame" src="~@/assets/decks/default/img/card.png" alt="card">
         <div class="life-indicator">{{life}}</div>
@@ -19,6 +24,7 @@ export default {
         attack: Number,
         cost: Number,
         available: Boolean,
+        description: String,
     },
     data() {
         return {
@@ -84,5 +90,67 @@ width: 86px;
     z-index: 10;
     right: -33px;
     top: -136px;
+}
+.tooltip {
+  position: relative;
+      z-index: 99999;
+
+}
+
+.tooltip .tooltiptext {
+    z-index: 99999;
+    border: 1px solid #98774b;
+  visibility: hidden;
+  width: 240px;
+  background-color: #bba077;
+  color: black;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 110%;
+  left: 50%;
+  margin-left: -120px;
+
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+.tooltip .tooltiptext h4{
+    color: #441200;
+    padding: 0;
+    margin: 0;
+}
+
+.tooltip .tooltiptext h5{
+    color: #49682d;
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize
+}
+
+.tooltip .tooltiptext p{
+    color: #3a2d13;
+    padding: 0;
+    margin: 0;
+}
+
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #98774b transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+    opacity: 1;
+
 }
 </style>
