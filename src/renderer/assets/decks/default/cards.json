@@ -6,7 +6,8 @@
     "life": 16,
     "attack": 4,
     "cost": 1,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Fire Drake",
     "type": "card",
@@ -15,7 +16,8 @@
     "life": 18,
     "attack": 4,
     "cost": 4,
-    "fastAttack": true
+    "fastAttack": true,
+    "description": "Fire Drake attacks the turn it enters play"
 }, {
     "id": "Troll",
     "type": "card",
@@ -24,7 +26,8 @@
     "life": 16,
     "attack": 4,
     "cost": 5,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Antorlach",
     "type": "card",
@@ -33,7 +36,8 @@
     "life": 37,
     "attack": 8,
     "cost": 10,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Merfolk",
     "type": "card",
@@ -42,7 +46,8 @@
     "life": 10,
     "attack": 3,
     "cost": 3,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Sea Serpent",
     "type": "card",
@@ -51,7 +56,8 @@
     "life": 22,
     "attack": 5,
     "cost": 5,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Overlord Merfolk",
     "type": "card",
@@ -60,7 +66,8 @@
     "life": 20,
     "attack": 8,
     "cost": 7,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Brawler",
     "type": "card",
@@ -69,7 +76,8 @@
     "life": 23,
     "attack": 6,
     "cost": 11,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 },{
     "id": "Elvish",
     "type": "card",
@@ -78,7 +86,8 @@
     "life": 12,
     "attack": 2,
     "cost": 1,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Earth Faerie",
     "type": "card",
@@ -87,7 +96,8 @@
     "life": 19,
     "attack": 4,
     "cost": 4,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Eye of Disdain",
     "type": "card",
@@ -96,7 +106,8 @@
     "life": 26,
     "attack": 6,
     "cost": 8,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Ancient Wose",
     "type": "card",
@@ -105,7 +116,8 @@
     "life": 45,
     "attack": 7,
     "cost": 10,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Gryphon",
     "type": "card",
@@ -114,7 +126,8 @@
     "life": 12,
     "attack": 4,
     "cost": 2,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Dark Faerie",
     "type": "card",
@@ -123,7 +136,8 @@
     "life": 19,
     "attack": 4,
     "cost": 4,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Phoenix",
     "type": "card",
@@ -132,7 +146,8 @@
     "life": 17,
     "attack": 7,
     "cost": 7,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Master Elven",
     "type": "card",
@@ -141,7 +156,8 @@
     "life": 40,
     "attack": 9,
     "cost": 12,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 },
 {
     "id": "Death Arch Mage",
@@ -151,7 +167,8 @@
     "life": 32,
     "attack": 7,
     "cost": 5,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Banshee",
     "type": "card",
@@ -160,7 +177,8 @@
     "life": 19,
     "attack": 6,
     "cost": 5,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Dementor",
     "type": "card",
@@ -169,7 +187,8 @@
     "life": 10,
     "attack": 5,
     "cost": 4,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }, {
     "id": "Wraith",
     "type": "card",
@@ -178,5 +197,6 @@
     "life": 27,
     "attack": 5,
     "cost": 2,
-    "fastAttack": false
+    "fastAttack": false,
+    "description": "Common card"
 }]
