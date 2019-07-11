@@ -24,10 +24,8 @@
           </router-link>
         </div>
 
-        <div class="buttonMenu">
-          <router-link to="">
+        <div v-on:click="exit" class="buttonMenu">
             <Button :buttonText="locales.Exit"></Button>
-          </router-link>
         </div>   
 
       </div>
@@ -88,6 +86,9 @@ export default {
       if (evt.keyCode === 27) {
       this.globalMethods.exitApp();
       }
+    },
+    exit: function (){
+      this.globalMethods.exitApp();
     }
 
   },
