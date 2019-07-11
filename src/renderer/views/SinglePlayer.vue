@@ -61,7 +61,8 @@
                     :ref="card.id"
                     :life="card.life"
                     :attack="card.attack"
-                    :cost="card.cost">
+                    :cost="card.cost"
+                    :description="card.description">
                 </Card>
             </div>
 
@@ -79,7 +80,8 @@
                     :ref="card.id"
                     :life="card.life"
                     :attack="card.attack"
-                    :cost="card.cost">
+                    :cost="card.cost"
+                    :description="card.description">
                 </Card>
             </div>
 
@@ -98,7 +100,8 @@
                     :ref="card.id"
                     :life="card.life"
                     :attack="card.attack"
-                    :cost="card.cost">
+                    :cost="card.cost"
+                    :description="card.description">
                 </Card>
             </div>
 
@@ -116,7 +119,8 @@
                     :ref="card.id"
                     :life="card.life"
                     :attack="card.attack"
-                    :cost="card.cost">
+                    :cost="card.cost"
+                    :description="card.description">
                 </Card>
             </div>
 
@@ -134,7 +138,8 @@
                     :ref="card.id"
                     :life="card.life"
                     :attack="card.attack"
-                    :cost="card.cost">
+                    :cost="card.cost"
+                    :description="card.description">
                 </Card>
             </div>
 
