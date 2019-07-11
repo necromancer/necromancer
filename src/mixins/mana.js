@@ -9,39 +9,39 @@
                                         |___/                                  
 */
 
-// Mana object
-var mana = 
-    [
-        {
-            name:"fire",
-            value: 0,
-        },
-        {
-            name:"water",
-            value: 0,
-        },
-        {
-            name:"air",
-            value: 0,
-        },
-        {
-            name:"earth",
-            value: 0,
-        },
-        {
-            name:"death",
-            value: 0,
-        }
-    ];
-
 // Generate initial mana object based on player's turn
-function generateInitalMana (turn) {
+function generateInitalMana(turn) {
+
+    // Mana object
+    let mana =
+        [
+            {
+                name: "fire",
+                value: 0,
+            },
+            {
+                name: "water",
+                value: 0,
+            },
+            {
+                name: "air",
+                value: 0,
+            },
+            {
+                name: "earth",
+                value: 0,
+            },
+            {
+                name: "death",
+                value: 0,
+            }
+        ];
 
     // Set overall mana (19 for starting turn and 18 for second)
     let overall;
-    if(turn == false){
+    if (turn == false) {
         overall = 19;
-    }else{
+    } else {
         overall = 18;
     }
 
@@ -51,7 +51,7 @@ function generateInitalMana (turn) {
     mana[4].value = 2;
 
     // Set basic elementals
-    
+
     // Player
     let msgTotal = 0;
     while (msgTotal != overall) { // Generate random values until sum of them equal overall
@@ -60,23 +60,14 @@ function generateInitalMana (turn) {
         mana[2].value = Math.floor(Math.random() * (6 - 3 + 1) + 3);
         mana[3].value = Math.floor(Math.random() * (6 - 3 + 1) + 3);
 
-        msgTotal = (mana.reduce(function(prev, cur) {
-        return prev + cur.value;
-        }, 0))-2;
+        msgTotal = (mana.reduce(function (prev, cur) {
+            return prev + cur.value;
+        }, 0)) - 2;
     }
 
     return mana;
 }
 
 export default {
-    mana,
     generateInitalMana
 }
-
-
-    
-    
-
-    
-
-

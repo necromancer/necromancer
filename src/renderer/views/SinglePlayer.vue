@@ -186,8 +186,8 @@ export default {
         AIspaces: spacesJS.AISpaces,
         playerLife: 60,
         AIlife: 60,
-        playerMana: manaJS.mana,
-        AIMana: manaJS.mana,
+        playerMana: undefined,
+        AIMana: undefined,
         turn: Boolean(Math.round(Math.random()))
         };
     },
@@ -553,20 +553,14 @@ export default {
     // Starting turn (true == Player turn && false == AI turn)
     log.info(`Starting turn: ${this.turn}`);
 
-    // --- MANA DISTRIBUTION ALGORITHM ---
-    
-    // Set overall mana (19 for starting turn and 18 for second)
-    if(this.turn == false){
-        var AIOverall = 19;
-        var playerOverall = 18;
+    // Mana distribution
+    if(this.turn){
+        this.playerMana = manaJS.generateInitalMana(true);
+        this.AIMana = manaJS.generateInitalMana(false);
     }else{
-        var AIOverall = 18;
-        var playerOverall = 19;   
+        this.playerMana = manaJS.generateInitalMana(false);
+        this.AIMana = manaJS.generateInitalMana(true);
     }
-
-    this.playerMana = manaJS.generateInitalMana(true);
-    this.AIMana = manaJS.generateInitalMana(true);
-
 
     // Log
     log.info(`Player initial mana: ${JSON.stringify(this.playerMana, null, 4)}`);
