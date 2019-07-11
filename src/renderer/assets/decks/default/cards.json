@@ -1,5 +1,5 @@
 [ {
-    "id": "goblin",
+    "id": "Goblin",
     "type": "card",
     "ElementalType": "fire",
     "img": "goblin.png",
@@ -8,7 +8,7 @@
     "cost": 1,
     "fastAttack": false
 }, {
-    "id": "firedrake",
+    "id": "Fire Drake",
     "type": "card",
     "ElementalType": "fire",
     "img": "firedrake.png",
@@ -17,7 +17,7 @@
     "cost": 4,
     "fastAttack": true
 }, {
-    "id": "troll",
+    "id": "Troll",
     "type": "card",
     "ElementalType": "fire",
     "img": "troll.png",
@@ -26,7 +26,7 @@
     "cost": 5,
     "fastAttack": false
 }, {
-    "id": "antorlach",
+    "id": "Antorlach",
     "type": "card",
     "ElementalType": "fire",
     "img": "antorlach.png",
@@ -35,7 +35,7 @@
     "cost": 10,
     "fastAttack": false
 }, {
-    "id": "merfolk",
+    "id": "Merfolk",
     "type": "card",
     "ElementalType": "water",
     "img": "merfolk.png",
@@ -44,7 +44,7 @@
     "cost": 3,
     "fastAttack": false
 }, {
-    "id": "seaserpent",
+    "id": "Sea Serpent",
     "type": "card",
     "ElementalType": "water",
     "img": "seaserpent.png",
@@ -53,7 +53,7 @@
     "cost": 5,
     "fastAttack": false
 }, {
-    "id": "overlordmerfolk",
+    "id": "Overlord Merfolk",
     "type": "card",
     "ElementalType": "water",
     "img": "overlordmerfolk.png",
@@ -62,7 +62,7 @@
     "cost": 7,
     "fastAttack": false
 }, {
-    "id": "brawler",
+    "id": "Brawler",
     "type": "card",
     "ElementalType": "water",
     "img": "brawler.png",
@@ -71,7 +71,7 @@
     "cost": 11,
     "fastAttack": false
 },{
-    "id": "elvish",
+    "id": "Elvish",
     "type": "card",
     "ElementalType": "earth",
     "img": "elvish.png",
@@ -80,7 +80,7 @@
     "cost": 1,
     "fastAttack": false
 }, {
-    "id": "earthfaerie",
+    "id": "Earth Faerie",
     "type": "card",
     "ElementalType": "earth",
     "img": "earthfaerie.png",
@@ -89,7 +89,7 @@
     "cost": 4,
     "fastAttack": false
 }, {
-    "id": "eyeofdisdain",
+    "id": "Eye of Disdain",
     "type": "card",
     "ElementalType": "earth",
     "img": "eyeofdisdain.png",
@@ -98,7 +98,7 @@
     "cost": 8,
     "fastAttack": false
 }, {
-    "id": "ancientwose",
+    "id": "Ancient Wose",
     "type": "card",
     "ElementalType": "earth",
     "img": "ancientwose.png",
@@ -107,7 +107,7 @@
     "cost": 10,
     "fastAttack": false
 }, {
-    "id": "gryphon",
+    "id": "Gryphon",
     "type": "card",
     "ElementalType": "air",
     "img": "gryphon.png",
@@ -116,7 +116,7 @@
     "cost": 2,
     "fastAttack": false
 }, {
-    "id": "darkfaerie",
+    "id": "Dark Faerie",
     "type": "card",
     "ElementalType": "air",
     "img": "exampleCard.png",
@@ -125,7 +125,7 @@
     "cost": 4,
     "fastAttack": false
 }, {
-    "id": "phoenix",
+    "id": "Phoenix",
     "type": "card",
     "ElementalType": "air",
     "img": "exampleCard.png",
@@ -134,7 +134,7 @@
     "cost": 7,
     "fastAttack": false
 }, {
-    "id": "masterelven",
+    "id": "Master Elven",
     "type": "card",
     "ElementalType": "air",
     "img": "exampleCard.png",
@@ -144,7 +144,7 @@
     "fastAttack": false
 },
 {
-    "id": "deatharchmage",
+    "id": "Death Arch Mage",
     "type": "card",
     "ElementalType": "death",
     "img": "deatharchmage.png",
@@ -153,7 +153,7 @@
     "cost": 5,
     "fastAttack": false
 }, {
-    "id": "banshee",
+    "id": "Banshee",
     "type": "card",
     "ElementalType": "death",
     "img": "banshee.png",
@@ -162,7 +162,7 @@
     "cost": 5,
     "fastAttack": false
 }, {
-    "id": "dementor",
+    "id": "Dementor",
     "type": "card",
     "ElementalType": "death",
     "img": "dementor.png",
@@ -171,7 +171,7 @@
     "cost": 4,
     "fastAttack": false
 }, {
-    "id": "wraith",
+    "id": "Wraith",
     "type": "card",
     "ElementalType": "death",
     "img": "wraith.png",
