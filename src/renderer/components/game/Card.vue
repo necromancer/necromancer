@@ -1,6 +1,6 @@
 <template>
     <div v-bind:id="id" class="card tooltip" v-bind:elementaltype="elementaltype">
-        <span class="tooltiptext">
+        <span style="z-index: 999" class="tooltiptext">
             <h4>{{id}}</h4>
             <h5>{{elementaltype}} creature, Cost {{cost}}, Attack {{attack}}, Life {{life}}</h5>
             <p>{{description}}</p>
@@ -48,16 +48,16 @@ export default {
 </script>
 
 <style scoped>
-
-.card{
+.card {
     margin-bottom: -45px;
     padding: 0;
     cursor: url(~@/assets/img/cursors/pointer.png), pointer;
 }
-.frame{
-position: relative;
-z-index: 9;
-width: 86px;
+
+.frame {
+    position: relative;
+    z-index: 9;
+    width: 86px;
 }
 
 .card .character {
@@ -91,66 +91,62 @@ width: 86px;
     right: -33px;
     top: -136px;
 }
-.tooltip {
-  position: relative;
-      z-index: 99999;
 
+.tooltip {
+    position: relative;
 }
 
 .tooltip .tooltiptext {
-    z-index: 99999;
     border: 1px solid #98774b;
-  visibility: hidden;
-  width: 240px;
-  background-color: #bba077;
-  color: black;
-  text-align: left;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 110%;
-  left: 50%;
-  margin-left: -120px;
-
+    visibility: hidden;
+    width: 240px;
+    background-color: #bba077;
+    color: black;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -120px;
     /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
-  opacity: 0;
-  transition: opacity 0.7s;
+    opacity: 0;
+    transition: opacity 0.7s;
 }
-.tooltip .tooltiptext h4{
+
+.tooltip .tooltiptext h4 {
     color: #441200;
     padding: 0;
     margin: 0;
 }
 
-.tooltip .tooltiptext h5{
+.tooltip .tooltiptext h5 {
     color: #49682d;
     padding: 0;
     margin: 0;
     text-transform: capitalize
 }
 
-.tooltip .tooltiptext p{
+.tooltip .tooltiptext p {
     color: #3a2d13;
     padding: 0;
     margin: 0;
 }
 
-
 .tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -10px;
-  border-width: 10px;
-  border-style: solid;
-  border-color: #98774b transparent transparent transparent;
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #98774b transparent transparent transparent;
 }
 
 .tooltip:hover .tooltiptext {
-  visibility: visible;
+    visibility: visible;
     opacity: 1;
-
 }
 </style>
