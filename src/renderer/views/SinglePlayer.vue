@@ -304,12 +304,22 @@ export default {
             }
         },
         astralGameConsole: function (mode){
-            
+            let vm = this;
+
             const promise = new Promise(function (resolve, reject) {
                 if (mode =="init"){
-                var text = "(Init) Astral Console";
+                    // Log info
+                    var text = "(Init) Astral Console";
                 }else{
-                var text = "(End) Hi! I'm the Astral Console";
+                    // Log info
+                    var text = "(End) Hi! I'm the Astral Console";
+
+                    // Grow mana at the end of the turn
+                    if(vm.turn){
+                        manaJS.growMana(vm.AIMana);
+                    }else{
+                        manaJS.growMana(vm.playerMana);
+                    }
                 }
                 resolve(text);
 
@@ -501,17 +511,54 @@ export default {
             return promise;
         },
         AI: function (){
+            // *** OLD 0.1 AI BOT IMPLEMENTATION ***
+            // To-do: New truly AI
+
             var vm = this;
-            let randomSpace = Math.floor(Math.random() * 5) + 0;
 
             setTimeout( async function() { 
-                
-                // AI Test
                 //log.info("Hi! I'm the AI ");
-                let space= vm.AIspaces[randomSpace];
 
-                if (space.attack == null){
+                // List of slots where AI can move
+                let targetSpaces = {
+                    goodSpaces:[],
+                    mediumSpaces:[],
+                    badSpaces:[],
+                };
 
+                // Target space 
+                let targetSpace = undefined;
+
+                //  *** Choose the best free slot ***
+                for (var i = 0; i < vm.AIspaces.length; i++) {
+                    // Find the best slots (empty against filled)
+                    if(vm.AIspaces[i].attack == null && vm.playerSpaces[i].attack != null){
+                        targetSpaces.goodSpaces.push(vm.AIspaces[i]);
+                    }
+
+                    // Then, the next best free slot (empty against empty)
+                    if(vm.AIspaces[i].attack == null && vm.playerSpaces[i].attack == null){
+                        targetSpaces.mediumSpaces.push(vm.AIspaces[i]);
+                    }
+                    
+                    // Then just the empty ones
+                    if(vm.AIspaces[i].attack == null){
+                        targetSpaces.badSpaces.push(vm.AIspaces[i]);
+                    }
+                }
+
+                if(targetSpaces.goodSpaces.length > 0){
+                    targetSpace = targetSpaces.goodSpaces[Math.floor(Math.random()*targetSpaces.goodSpaces.length)]
+                }
+                else if(targetSpaces.mediumSpaces.length > 0){
+                    targetSpace = targetSpaces.mediumSpaces[Math.floor(Math.random()*targetSpaces.mediumSpaces.length)]
+                }else if (targetSpaces.mediumSpaces.length > 0){
+                    targetSpace = targetSpaces.badSpaces[Math.floor(Math.random()*targetSpaces.badSpaces.length)]
+                }else{
+                    vm.skipTurn();
+                }
+
+                // *** Choose card ***
                 let testCard = {
                     "id": "orc",
                     "type": "card",
@@ -523,12 +570,10 @@ export default {
                     "fastAttack": false,
                 };
 
-                vm.selectDeckCard(testCard);
-                vm.moveCard(space,vm.astralGameFlux);
 
-                }else{
-                    vm.skipTurn();
-                }
+                vm.selectDeckCard(testCard);
+                vm.moveCard(targetSpace,vm.astralGameFlux);
+
                 }, 2000);
         },
         decreaseMana: function (target, elementalTypeTarget, value){

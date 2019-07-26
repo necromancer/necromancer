@@ -68,6 +68,13 @@ function generateInitalMana(turn) {
     return mana;
 }
 
+function growMana(mana){
+    for (var i = 0; i < mana.length; i++) {
+        mana[i].value += 1;
+    }
+}
+
 export default {
-    generateInitalMana
+    generateInitalMana,
+    growMana
 }
