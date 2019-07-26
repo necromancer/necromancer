@@ -149,10 +149,10 @@
     "fastAttack": false,
     "description": "Common card"
 }, {
-    "id": "Master Elven",
+    "id": "Titan",
     "type": "card",
     "ElementalType": "air",
-    "img": "exampleCard.png",
+    "img": "titan.png",
     "life": 40,
     "attack": 9,
     "cost": 12,
