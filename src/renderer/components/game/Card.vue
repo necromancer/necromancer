@@ -62,6 +62,7 @@ export default {
 
 <style scoped>
 .card {
+    display: inline-grid;
     margin-bottom: -45px;
     padding: 0;
     cursor: url(~@/assets/img/cursors/pointer.png), pointer;
@@ -86,7 +87,7 @@ export default {
     position: relative;
     z-index: 10;
     right: -33px;
-    top: -21px;
+    top: -18px;
 }
 
 .attack-indicator {
@@ -94,7 +95,7 @@ export default {
     position: relative;
     z-index: 10;
     left: -33px;
-    top: -38px;
+    top: -35px;
 }
 
 .cost-indicator {
@@ -102,7 +103,7 @@ export default {
     position: relative;
     z-index: 10;
     right: -33px;
-    top: -136px;
+    top: -133px;
 }
 
 .cost-indicator-spell {
@@ -110,7 +111,7 @@ export default {
     position: relative;
     z-index: 10;
     right: -33px;
-    top: -93px;
+    top: -90px;
 }
 
 .tooltip {
