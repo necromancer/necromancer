@@ -62,6 +62,7 @@ export default {
 
 <style scoped>
 .card {
+    min-height: 150.05px;
     display: inline-grid;
     margin-bottom: -45px;
     padding: 0;
@@ -111,7 +112,7 @@ export default {
     position: relative;
     z-index: 10;
     right: -33px;
-    top: -90px;
+    top: -107px;
 }
 
 .tooltip {
