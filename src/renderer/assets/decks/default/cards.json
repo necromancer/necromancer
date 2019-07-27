@@ -7,7 +7,27 @@
     "attack": 4,
     "cost": 1,
     "fastAttack": false,
-    "description": "Common card"
+    "description": "At the beginning of its owners turn, Goblin deals 2 damage to its neighboring creatures."
+},{
+    "id": "Fire Wall",
+    "type": "card",
+    "ElementalType": "fire",
+    "img": "exampleCard.png",
+    "life": 5,
+    "attack": 0,
+    "cost": 2,
+    "fastAttack": false,
+    "description": "When Fire Wall is summoned it deals 5 damage to each of the opponent's creatures."
+},{
+    "id": "Priest",
+    "type": "card",
+    "ElementalType": "fire",
+    "img": "exampleCard.png",
+    "life": 13,
+    "attack": 3,
+    "cost": 3,
+    "fastAttack": false,
+    "description": "Priest of Fire increases the growth of its owner's Fire power by 1."
 }, {
     "id": "Fire Drake",
     "type": "card",
@@ -23,21 +43,72 @@
     "type": "card",
     "ElementalType": "fire",
     "img": "troll.png",
-    "life": 16,
-    "attack": 4,
+    "life": 17,
+    "attack": 3,
     "cost": 5,
     "fastAttack": false,
-    "description": "Common card"
+    "description": "Troll increases the attack of its neighboring creatures by 2 (except walls)."
 }, {
-    "id": "Antorlach",
+    "id": "Fire Wave",
+    "type": "spell",
+    "ElementalType": "fire",
+    "img": "exampleCard.png",
+    "cost": 6,
+    "description": "Fire Wave deals 9 damage to each of the opponent's creatures."
+},{
+    "id": "Minotaur",
     "type": "card",
     "ElementalType": "fire",
-    "img": "antorlach.png",
+    "img": "exampleCard.png",
+    "life": 20,
+    "attack": 6,
+    "cost": 7,
+    "fastAttack": false,
+    "description": "Minotaur Commander increases by 1 the attack of all other owner's creatures (except walls)."
+},{
+    "id": "Bargul",
+    "type": "card",
+    "ElementalType": "fire",
+    "img": "exampleCard.png",
+    "life": 26,
+    "attack": 8,
+    "cost": 8,
+    "fastAttack": false,
+    "description": "When Bargul is summoned it deals 4 damage to each other creature."
+},{
+    "id": "Hell",
+    "type": "spell",
+    "ElementalType": "fire",
+    "img": "exampleCard.png",
+    "cost": 9,
+    "description": "Hell deals 18 damage to target opponent's creature and 10 damage to each of the opponent's other creatures."
+},{
+    "id": "Fire Elemental",
+    "type": "card",
+    "ElementalType": "fire",
+    "img": "fireelemental.png",
     "life": 37,
     "attack": 8,
     "cost": 10,
     "fastAttack": false,
-    "description": "Common card"
+    "description": "When Fire Elemental is summoned it deals 3 damage to the opponent and to each of the opponent's creatures."
+},{
+    "id": "Sweep",
+    "type": "spell",
+    "ElementalType": "fire",
+    "img": "exampleCard.png",
+    "cost": 11,
+    "description": "Sweep deals (8 + its caster's Fire power) damage to the opponent and to each creature."
+},{
+    "id": "Dragon",
+    "type": "card",
+    "ElementalType": "fire",
+    "img": "exampleCard.png",
+    "life": 40,
+    "attack": 9,
+    "cost": 12,
+    "fastAttack": false,
+    "description": "Dragon increases the damage its owner's spells deal by 50% (total damage will be rounded up)."
 }, {
     "id": "Merfolk",
     "type": "card",
