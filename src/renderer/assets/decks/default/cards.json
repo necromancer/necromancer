@@ -1,6 +1,6 @@
 [ {
     "id": "Goblin",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "fire",
     "img": "goblin.png",
     "life": 16,
@@ -10,7 +10,7 @@
     "description": "At the beginning of its owners turn, Goblin deals 2 damage to its neighboring creatures."
 },{
     "id": "Fire Wall",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "fire",
     "img": "exampleCard.png",
     "life": 5,
@@ -20,7 +20,7 @@
     "description": "When Fire Wall is summoned it deals 5 damage to each of the opponent's creatures."
 },{
     "id": "Priest",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "fire",
     "img": "exampleCard.png",
     "life": 13,
@@ -30,7 +30,7 @@
     "description": "Priest of Fire increases the growth of its owner's Fire power by 1."
 }, {
     "id": "Fire Drake",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "fire",
     "img": "firedrake.png",
     "life": 18,
@@ -40,7 +40,7 @@
     "description": "Fire Drake attacks the turn it enters play"
 }, {
     "id": "Troll",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "fire",
     "img": "troll.png",
     "life": 17,
@@ -57,7 +57,7 @@
     "description": "Fire Wave deals 9 damage to each of the opponent's creatures."
 },{
     "id": "Minotaur",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "fire",
     "img": "exampleCard.png",
     "life": 20,
@@ -67,7 +67,7 @@
     "description": "Minotaur Commander increases by 1 the attack of all other owner's creatures (except walls)."
 },{
     "id": "Bargul",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "fire",
     "img": "exampleCard.png",
     "life": 26,
@@ -84,7 +84,7 @@
     "description": "Hell deals 18 damage to target opponent's creature and 10 damage to each of the opponent's other creatures."
 },{
     "id": "Fire Elemental",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "fire",
     "img": "fireelemental.png",
     "life": 37,
@@ -101,7 +101,7 @@
     "description": "Sweep deals (8 + its caster's Fire power) damage to the opponent and to each creature."
 },{
     "id": "Dragon",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "fire",
     "img": "exampleCard.png",
     "life": 40,
@@ -111,7 +111,7 @@
     "description": "Dragon increases the damage its owner's spells deal by 50% (total damage will be rounded up)."
 }, {
     "id": "Merfolk",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "water",
     "img": "merfolk.png",
     "life": 10,
@@ -121,7 +121,7 @@
     "description": "Common card"
 }, {
     "id": "Sea Serpent",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "water",
     "img": "seaserpent.png",
     "life": 22,
@@ -131,7 +131,7 @@
     "description": "Common card"
 }, {
     "id": "Overlord Merfolk",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "water",
     "img": "overlordmerfolk.png",
     "life": 20,
@@ -141,7 +141,7 @@
     "description": "Common card"
 }, {
     "id": "Brawler",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "water",
     "img": "brawler.png",
     "life": 23,
@@ -151,7 +151,7 @@
     "description": "Common card"
 },{
     "id": "Elvish",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "earth",
     "img": "elvish.png",
     "life": 12,
@@ -161,7 +161,7 @@
     "description": "Common card"
 }, {
     "id": "Earth Faerie",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "earth",
     "img": "earthfaerie.png",
     "life": 19,
@@ -171,7 +171,7 @@
     "description": "Common card"
 }, {
     "id": "Eye of Disdain",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "earth",
     "img": "eyeofdisdain.png",
     "life": 26,
@@ -181,7 +181,7 @@
     "description": "Common card"
 }, {
     "id": "Ancient Wose",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "earth",
     "img": "ancientwose.png",
     "life": 45,
@@ -191,7 +191,7 @@
     "description": "Common card"
 }, {
     "id": "Gryphon",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "air",
     "img": "gryphon.png",
     "life": 12,
@@ -201,7 +201,7 @@
     "description": "Common card"
 }, {
     "id": "Dark Faerie",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "air",
     "img": "exampleCard.png",
     "life": 19,
@@ -211,7 +211,7 @@
     "description": "Common card"
 }, {
     "id": "Phoenix",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "air",
     "img": "exampleCard.png",
     "life": 17,
@@ -221,7 +221,7 @@
     "description": "Common card"
 }, {
     "id": "Titan",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "air",
     "img": "titan.png",
     "life": 40,
@@ -232,7 +232,7 @@
 },
 {
     "id": "Death Arch Mage",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "death",
     "img": "deatharchmage.png",
     "life": 32,
@@ -242,7 +242,7 @@
     "description": "Common card"
 }, {
     "id": "Banshee",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "death",
     "img": "banshee.png",
     "life": 19,
@@ -252,7 +252,7 @@
     "description": "Common card"
 }, {
     "id": "Dementor",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "death",
     "img": "dementor.png",
     "life": 10,
@@ -262,7 +262,7 @@
     "description": "Common card"
 }, {
     "id": "Wraith",
-    "type": "card",
+    "type": "creature",
     "ElementalType": "death",
     "img": "wraith.png",
     "life": 27,

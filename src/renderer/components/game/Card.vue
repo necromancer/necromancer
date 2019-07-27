@@ -6,7 +6,7 @@
             <p>{{description}}</p>
         </span>
         <img v-bind:src="src" alt="card" class="character">
-        <img class="frame" src="~@/assets/decks/default/img/card.png" alt="card">
+        <img class="frame" src="~@/assets/decks/default/img/creature.png" alt="card">
         <div class="life-indicator">{{life}}</div>
         <div class="attack-indicator">{{attack}}</div>
         <div class="cost-indicator">{{cost}}</div>
