@@ -1,15 +1,27 @@
 <template>
     <div v-bind:id="id" class="card tooltip" v-bind:elementaltype="elementaltype">
+        <!-- Tooltip card info -->
         <span style="z-index: 999" class="tooltiptext">
             <h4>{{id}}</h4>
-            <h5>{{elementaltype}} creature, Cost {{cost}}, Attack {{attack}}, Life {{life}}</h5>
+            <h5>{{elementaltype}} {{type}}, Cost {{cost}}, Attack {{attack}}, Life {{life}}</h5>
             <p>{{description}}</p>
         </span>
+        <!-- Creature/spell image -->
         <img v-bind:src="src" alt="card" class="character">
-        <img class="frame" src="~@/assets/decks/default/img/creature.png" alt="card">
-        <div class="life-indicator">{{life}}</div>
-        <div class="attack-indicator">{{attack}}</div>
-        <div class="cost-indicator">{{cost}}</div>
+        
+        <!-- Frame for creature/spell -->
+        <img v-if="type === 'creature'" class="frame" src="~@/assets/decks/default/img/creature.png" alt="card">
+        <img v-else class="frame" src="~@/assets/decks/default/img/spell.png" alt="card">
+        
+        <!-- Life indicator (only creatures) -->
+        <div v-if="type === 'creature'" class="life-indicator">{{life}}</div>
+
+        <!-- Attack indicator (only creatures) -->
+        <div v-if="type === 'creature'" class="attack-indicator">{{attack}}</div>
+        
+        <!-- Cost indicator (2 styles depending on card type, creature or spell) -->
+        <div v-if="type === 'creature'" class="cost-indicator">{{cost}}</div>
+        <div v-else class="cost-indicator-spell">{{cost}}</div>
     </div>
 </template> 
 
@@ -19,6 +31,7 @@ export default {
     props:{
         id: String,
         elementaltype: String,
+        type: String,
         src: String,
         life: Number,
         attack: Number,
@@ -90,6 +103,14 @@ export default {
     z-index: 10;
     right: -33px;
     top: -136px;
+}
+
+.cost-indicator-spell {
+    color: blue;
+    position: relative;
+    z-index: 10;
+    right: -33px;
+    top: -93px;
 }
 
 .tooltip {
