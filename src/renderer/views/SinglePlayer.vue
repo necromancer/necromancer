@@ -276,7 +276,7 @@ export default {
                 spaceObj.cost = this.selectedCard.cost;
                 spaceObj.attack = this.selectedCard.attack;
                 spaceObj.fastAttack = this.selectedCard.fastAttack;
-                spaceObj.cardSrc = "card.png";
+                spaceObj.cardSrc = "creature.png";
 
                 // Log
                 log.info(`Moved ${this.selectedCard.id} card  to ${space.id}`);
