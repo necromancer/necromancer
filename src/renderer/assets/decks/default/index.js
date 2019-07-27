@@ -2,11 +2,11 @@
 var cards = require(`./cards.json`);
 
 // Elemental card's objects
-var fireCards = shuffle(filterCards('fire'));
-var waterCards = shuffle(filterCards('water'));
-var airCards = shuffle(filterCards('air'));
-var earthCards = shuffle(filterCards('earth'));
-var deathCards = shuffle(filterCards('death'));
+var fireCards = shuffle(filterCards('fire')).slice(0,4).sort((a, b) => a.cost - b.cost);
+var waterCards = shuffle(filterCards('water')).slice(0,4).sort((a, b) => a.cost - b.cost);
+var airCards = shuffle(filterCards('air')).slice(0,4).sort((a, b) => a.cost - b.cost);
+var earthCards = shuffle(filterCards('earth')).slice(0,4).sort((a, b) => a.cost - b.cost);
+var deathCards = shuffle(filterCards('death')).slice(0,4).sort((a, b) => a.cost - b.cost);
 
 
 // Filter cards by elemental
