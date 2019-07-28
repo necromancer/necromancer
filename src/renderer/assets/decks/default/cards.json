@@ -264,17 +264,34 @@
     "cost": 10,
     "fastAttack": false,
     "description": "Common card"
-}, {
+},{
+    "id": "Faerie Apprentice",
+    "type": "creature",
+    "ElementalType": "air",
+    "img": "exampleCard.png",
+    "life": 12,
+    "attack": 4,
+    "cost": 1,
+    "fastAttack": false,
+    "description": "Faerie Apprentice increases the damage its owner's spells deal by 1."
+},{
     "id": "Gryphon",
     "type": "creature",
     "ElementalType": "air",
     "img": "gryphon.png",
-    "life": 12,
-    "attack": 4,
+    "life": 15,
+    "attack": 3,
     "cost": 2,
     "fastAttack": false,
-    "description": "Common card"
-}, {
+    "description": "When Gryphon is summoned, if its owner's Air power is 5 or more, it deals 5 damage to the opponent."
+},{
+    "id": "Call to Thunder",
+    "type": "spell",
+    "ElementalType": "air",
+    "img": "calltothunder.png",
+    "cost": 3,
+    "description": "Call to Thunder deals 6 damage to target opponent's creature and 6 damage to the opponent."
+},{
     "id": "Dark Faerie",
     "type": "creature",
     "ElementalType": "air",
@@ -283,18 +300,69 @@
     "attack": 4,
     "cost": 4,
     "fastAttack": false,
-    "description": "Common card"
-}, {
+    "description": "When Faerie Sage is summoned it heals an amount of life to its owner equal to its owner's Earth power, but not more than 10."
+},{
+    "id": "Light Wall",
+    "type": "creature",
+    "ElementalType": "air",
+    "img": "exampleCard.png",
+    "life": 28,
+    "attack": 0,
+    "cost": 5,
+    "fastAttack": false,
+    "description": "At the beginning of its owner's turn, Light Wall deals 4 damage to the opponent."
+},{
+    "id": "Lightning Bolt",
+    "type": "spell",
+    "ElementalType": "air",
+    "img": "lightningbolt.png",
+    "cost": 6,
+    "description": "Lightning Bolt deals (5+its caster's Air power) damage to the opponent."
+},{
     "id": "Phoenix",
     "type": "creature",
     "ElementalType": "air",
     "img": "exampleCard.png",
-    "life": 17,
+    "life": 16,
     "attack": 7,
     "cost": 7,
     "fastAttack": false,
-    "description": "Common card"
-}, {
+    "description": "Each time Phoenix dies, if its owner's Fire power is 10 or greater, it rebirths (another Phoenix is put into the same slot). Phoenix cannot rebirth if a card says that it is 'destroyed'."
+},{
+    "id": "Chain Lightning",
+    "type": "spell",
+    "ElementalType": "air",
+    "img": "chainlightning.png",
+    "cost": 8,
+    "description": "Chain Lightning deals 9 damage to the opponent and to each of the opponent's creatures."
+},{
+    "id": "Lightning Cloud",
+    "type": "creature",
+    "ElementalType": "air",
+    "img": "exampleCard.png",
+    "life": 20,
+    "attack": 4,
+    "cost": 9,
+    "fastAttack": false,
+    "description": "Lightning Cloud's attack damages the opponent and each of the opponent's creatures."
+},{
+    "id": "Tornado",
+    "type": "spell",
+    "ElementalType": "air",
+    "img": "tornado.png",
+    "cost": 10,
+    "description": "Destroy target opponent's creature."
+},{
+    "id": "Air Elemental",
+    "type": "creature",
+    "ElementalType": "air",
+    "img": "airelemental.png",
+    "life": 44,
+    "attack": 8,
+    "cost": 11,
+    "fastAttack": false,
+    "description": "When Air Elemental is summoned it deals 8 damage to the opponent. Air Elemental increases the growth of its owner's Air power by 1."
+},{
     "id": "Titan",
     "type": "creature",
     "ElementalType": "air",
@@ -303,7 +371,7 @@
     "attack": 9,
     "cost": 12,
     "fastAttack": false,
-    "description": "Common card"
+    "description": "When Titan is summoned it deals 15 damage to the creature in the opposing slot."
 },
 {
     "id": "Death Arch Mage",
