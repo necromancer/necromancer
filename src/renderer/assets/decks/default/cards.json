@@ -6,6 +6,7 @@
     "life": 16,
     "attack": 4,
     "cost": 1,
+    "astral": "bowturn -2 life neighboring",
     "fastAttack": false,
     "description": "At the beginning of its owners turn, Goblin deals 2 damage to its neighboring creatures."
 },{
