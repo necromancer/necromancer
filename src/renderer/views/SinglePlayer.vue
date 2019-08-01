@@ -589,36 +589,19 @@ export default {
         }
     },
     created: function() {
-    /* INIT SCRIPT */
-
-    // Log game mode
-    log.info('*** Singleplayer Game ***');
-
+    /**** INIT SCRIPT ****/
+    
+    //  --- GAME VARIABLES ---
     // Add escape key event
     document.addEventListener('keyup', this.escapeKeyListener);
 
     // Update background
     document.body.style.backgroundImage = "url('"+require('./../assets/img/bg.jpg')+"')";
-  
-    // Starting turn (true == Player turn && false == AI turn)
-    log.info(`Starting turn: ${this.turn}`);
 
-    // Mana distribution
+    // Set initial mana distribution
     this.playerMana = manaJS.generateInitalMana(this.turn);
     this.AIMana = manaJS.generateInitalMana(!this.turn);
 
-    // Log
-    log.info(`Player initial mana: ${JSON.stringify(this.playerMana, null, 4)}`);
-
-
-    // Log
-    log.info(`AI initial mana: ${JSON.stringify(this.AIMana, null, 4)}`);
-
-
-
-
-
-    //  --- GAME VARIABLES ---
     // Selected card object
     this.selectedCard = undefined;
 
@@ -628,7 +611,18 @@ export default {
     // Latest moved card
     this.latestSlot = undefined;
 
-        
+    // --- LOG GAME INFO ---
+    // Game mode
+    log.info('*** Singlelayer Game ***');
+ 
+    // Starting turn (true == Player turn && false == AI turn)
+    log.info(`Starting turn: ${this.turn}`);
+
+    // Log
+    log.info(`Player initial mana: ${JSON.stringify(this.playerMana, null, 4)}`);
+
+    // Log
+    log.info(`AI initial mana: ${JSON.stringify(this.AIMana, null, 4)}`);      
     
 
     if(this.turn == false){
