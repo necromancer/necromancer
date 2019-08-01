@@ -1,5 +1,5 @@
 <template>
-    <div v-bind:id="id" class="card tooltip" v-bind:elementaltype="elementaltype">
+    <div class="card tooltip" v-bind:id="id" v-bind:class="{unavailable: !available}" v-bind:elementaltype="elementaltype">
         <!-- Tooltip card info -->
         <span style="z-index: 999" class="tooltiptext">
             <h4>{{id}}</h4>
@@ -171,5 +171,9 @@ export default {
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+}
+
+.unavailable{
+    -webkit-filter: grayscale(100%);
 }
 </style>
