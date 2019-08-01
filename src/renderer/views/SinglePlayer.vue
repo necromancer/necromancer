@@ -178,22 +178,22 @@ export default {
     },
     data() {
         return {
-        playerName: this.settings.playerName,
-        playerImage:require("./../assets/img/faces/face" +2+".png"),
-        cards:{
-            fireCards: cards.fireCards,
-            waterCards: cards.waterCards,
-            airCards: cards.airCards,
-            earthCards: cards.earthCards,
-            deathCards: cards.deathCards,  
-        },
-        playerSpaces: spacesJS.generateSpaces(7,13),
-        AIspaces: spacesJS.generateSpaces(1,7),
-        playerLife: 60,
-        AIlife: 60,
-        playerMana: undefined,
-        AIMana: undefined,
-        turn: Boolean(Math.round(Math.random()))
+            playerName: this.settings.playerName,
+            playerImage:require("./../assets/img/faces/face" +2+".png"),
+            cards:{
+                fireCards: cards.fireCards,
+                waterCards: cards.waterCards,
+                airCards: cards.airCards,
+                earthCards: cards.earthCards,
+                deathCards: cards.deathCards,  
+            },
+            playerSpaces: spacesJS.generateSpaces(7,13),
+            AIspaces: spacesJS.generateSpaces(1,7),
+            playerLife: 60,
+            AIlife: 60,
+            playerMana: undefined,
+            AIMana: undefined,
+            turn: Boolean(Math.round(Math.random()))
         };
     },
     watch: {
@@ -604,13 +604,8 @@ export default {
     log.info(`Starting turn: ${this.turn}`);
 
     // Mana distribution
-    if(this.turn){
-        this.playerMana = manaJS.generateInitalMana(true);
-        this.AIMana = manaJS.generateInitalMana(false);
-    }else{
-        this.playerMana = manaJS.generateInitalMana(false);
-        this.AIMana = manaJS.generateInitalMana(true);
-    }
+    this.playerMana = manaJS.generateInitalMana(this.turn);
+    this.AIMana = manaJS.generateInitalMana(!this.turn);
 
     // Log
     log.info(`Player initial mana: ${JSON.stringify(this.playerMana, null, 4)}`);
