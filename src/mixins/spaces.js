@@ -1,9 +1,3 @@
-// Player spaces object
-var playerSpaces =  generateSpaces(7,13);
-
-// AI spaces object
-var AISpaces = generateSpaces(1,7);
-
 function generateSpaces (start, end){
     var spaces = [];
     for (var i = start; i < end; i++) {
@@ -24,6 +18,5 @@ function generateSpaces (start, end){
 }
 
 export default{
-    playerSpaces,
-    AISpaces
+    generateSpaces
 }
