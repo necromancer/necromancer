@@ -51,7 +51,7 @@
             <div class="card-column">
                 <Mana :elementaltype="locales.ElementalFire" :value="playerMana[0].value"></Mana>
                 <Card 
-                    v-for="(card, index) in cards.fireCards"
+                    v-for="(card, index) in cards.player.fireCards"
                     :key="index"
                     v-on:click.native="(card.cost <= playerMana[0].value) ? (selectDeckCard(card)) : ''"
                     :elementaltype="card.ElementalType"
@@ -71,7 +71,7 @@
             <div class="card-column">
                 <Mana :elementaltype="locales.ElementalWater" :value="playerMana[1].value"></Mana>
                 <Card 
-                    v-for="(card, index) in cards.waterCards"
+                    v-for="(card, index) in cards.player.waterCards"
                     :key="index"
                     v-on:click.native="(card.cost <= playerMana[1].value) ? (selectDeckCard(card)) : ''"
                     :elementaltype="card.ElementalType"
@@ -92,7 +92,7 @@
             <div class="card-column">
                 <Mana :elementaltype="locales.ElementalAir" :value="playerMana[2].value"></Mana>
                 <Card 
-                    v-for="(card, index) in cards.airCards"
+                    v-for="(card, index) in cards.player.airCards"
                     :key="index"
                     v-on:click.native="(card.cost <= playerMana[2].value) ? (selectDeckCard(card)) : ''"
                     :elementaltype="card.ElementalType"
@@ -112,7 +112,7 @@
             <div class="card-column">
                 <Mana :elementaltype="locales.ElementalEarth" :value="playerMana[3].value"></Mana>
                 <Card 
-                    v-for="(card, index) in cards.earthCards"
+                    v-for="(card, index) in cards.player.earthCards"
                     :key="index"
                     v-on:click.native="(card.cost <= playerMana[3].value) ? (selectDeckCard(card)) : ''"
                     :elementaltype="card.ElementalType"
@@ -132,7 +132,7 @@
             <div class="card-column">
                 <Mana :elementaltype="locales.ElementalDeath" :value="playerMana[4].value"></Mana>
                 <Card 
-                    v-for="(card, index) in cards.deathCards"
+                    v-for="(card, index) in cards.player.deathCards"
                     :key="index"
                     v-on:click.native="(card.cost <= playerMana[4].value) ? (selectDeckCard(card)) : ''"
                     :elementaltype="card.ElementalType"
@@ -181,11 +181,16 @@ export default {
             playerName: this.settings.playerName,
             playerImage:require("./../assets/img/faces/face" +2+".png"),
             cards:{
-                fireCards: cards.fireCards,
-                waterCards: cards.waterCards,
-                airCards: cards.airCards,
-                earthCards: cards.earthCards,
-                deathCards: cards.deathCards,  
+                player:{
+                    fireCards: cards.fireCards,
+                    waterCards: cards.waterCards,
+                    airCards: cards.airCards,
+                    earthCards: cards.earthCards,
+                    deathCards: cards.deathCards, 
+                },
+                AI:{
+
+                }
             },
             playerSpaces: spacesJS.generateSpaces(7,13),
             AIspaces: spacesJS.generateSpaces(1,7),
