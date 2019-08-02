@@ -16,7 +16,8 @@ var cards = require(`./cards.json`);
 function getCards() {
   let decks = [];
 
-  // Temporal: remove spells for now until 0.3 release. To-do: remove this and implement deck build algorithm
+  // Temporal: remove spells for now until 0.3 release. 
+  // TODO: remove this and implement deck build algorithm
   cards = filterCards(cards, "type", "creature");
 
   // Elemental card's objects
