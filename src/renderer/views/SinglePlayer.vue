@@ -414,7 +414,8 @@ export default {
                         if(vm.playerSpaces[i].attack != null && vm.AIspaces[i].attack == null ){
                             vm.AIlife -= vm.playerSpaces[i].attack;
 
-                            // Animate (TODO: create a specific function with attack values)
+                            // Animate 
+                            // TODO: create a specific function with attack values
                             vm.$refs[id][0].animate("attack up");
                             await sleep(timeBtwIteractions);
                         }
@@ -442,7 +443,8 @@ export default {
                                 vm.AIspaces[i] = space;
                             }
                             
-                            // Animate (TODO: create a specific function with attack values)
+                            // Animate 
+                            // TODO: create a specific function with attack values
                             vm.$refs[id][0].animate("attack up");
                             await sleep(timeBtwIteractions);
                         }
@@ -465,7 +467,8 @@ export default {
                         if(vm.AIspaces[i].attack != null && vm.playerSpaces[i].attack == null ){
                             vm.playerLife -= vm.AIspaces[i].attack;
 
-                            // Animate (TODO: create a specific function with attack values)
+                            // Animate 
+                            // TODO: create a specific function with attack values
                             vm.$refs[id][0].animate("attack down");
                             await sleep(timeBtwIteractions);
                         }
@@ -493,7 +496,8 @@ export default {
                                 vm.playerSpaces[i] = space;
                             }
                             
-                            // Animate (TODO: create a specific function with attack values)
+                            // Animate 
+                            // TODO: create a specific function with attack values)
                             vm.$refs[id][0].animate("attack down");
                             await sleep(timeBtwIteractions);
                         }
