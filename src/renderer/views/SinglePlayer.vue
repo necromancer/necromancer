@@ -239,8 +239,8 @@ export default {
                     this.$refs[this.selectedCard.id][0].selected = false;
                 }
              
-                // Only if selected card is avaible
-                //if (card.available !== "false") {
+                // Only for creature cards
+                //if (card.type == "creature") {
 
                     // Store selected card
                     this.selectedCard = cardObj;
