@@ -561,18 +561,16 @@ export default {
                 }
 
                 // *** Choose card ***
-                let testCard = {
-                    "id": "orc",
-                    "type": "card",
-                    "ElementalType": "fire",
-                    "img": "exampleCard.png",
-                    "life": 20,
-                    "attack": 6,
-                    "cost": 7,
-                    "fastAttack": false,
-                };
+                // Choose random Elemental
+                function pickElementalType (obj){
+                    var keys = Object.keys(obj)
+                    return obj[keys[keys.length * Math.random() << 0]];
+                }
+                let elementalType = pickElementalType(vm.cards.AI);
 
-
+                // Choose random card
+                let testCard = elementalType[Math.floor(Math.random() * 4) + 0];
+                
                 vm.selectDeckCard(testCard);
                 vm.moveCard(targetSpace,vm.astralGameFlux);
 
