@@ -414,7 +414,7 @@ export default {
                         if(vm.playerSpaces[i].attack != null && vm.AIspaces[i].attack == null ){
                             vm.AIlife -= vm.playerSpaces[i].attack;
 
-                            // Animate (todo: create a specific function with attack values)
+                            // Animate (TODO: create a specific function with attack values)
                             vm.$refs[id][0].animate("attack up");
                             await sleep(timeBtwIteractions);
                         }
@@ -442,7 +442,7 @@ export default {
                                 vm.AIspaces[i] = space;
                             }
                             
-                            // Animate (todo: create a specific function with attack values)
+                            // Animate (TODO: create a specific function with attack values)
                             vm.$refs[id][0].animate("attack up");
                             await sleep(timeBtwIteractions);
                         }
@@ -465,7 +465,7 @@ export default {
                         if(vm.AIspaces[i].attack != null && vm.playerSpaces[i].attack == null ){
                             vm.playerLife -= vm.AIspaces[i].attack;
 
-                            // Animate (todo: create a specific function with attack values)
+                            // Animate (TODO: create a specific function with attack values)
                             vm.$refs[id][0].animate("attack down");
                             await sleep(timeBtwIteractions);
                         }
@@ -493,7 +493,7 @@ export default {
                                 vm.playerSpaces[i] = space;
                             }
                             
-                            // Animate (todo: create a specific function with attack values)
+                            // Animate (TODO: create a specific function with attack values)
                             vm.$refs[id][0].animate("attack down");
                             await sleep(timeBtwIteractions);
                         }
@@ -514,7 +514,7 @@ export default {
         },
         AI: function (){
             // *** OLD 0.1 AI BOT IMPLEMENTATION ***
-            // To-do: New truly AI
+            // TODO: New truly AI
 
             var vm = this;
 
@@ -569,6 +569,7 @@ export default {
                 let elementalType = pickElementalType(vm.cards.AI);
 
                 // Choose random card
+                // TODO: deal mana to the specific elemental mana
                 let testCard = elementalType[Math.floor(Math.random() * 4) + 0];
                 
                 vm.selectDeckCard(testCard);
