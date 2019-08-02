@@ -181,16 +181,8 @@ export default {
             playerName: this.settings.playerName,
             playerImage:require("./../assets/img/faces/face" +2+".png"),
             cards:{
-                player:{
-                    fireCards: cards.fireCards,
-                    waterCards: cards.waterCards,
-                    airCards: cards.airCards,
-                    earthCards: cards.earthCards,
-                    deathCards: cards.deathCards, 
-                },
-                AI:{
-
-                }
+                player: cards.getCards()[0],
+                AI: cards.getCards()[1]
             },
             playerSpaces: spacesJS.generateSpaces(7,13),
             AIspaces: spacesJS.generateSpaces(1,7),
