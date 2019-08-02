@@ -16,12 +16,15 @@ var cards = require(`./cards.json`);
 function getCards() {
   let decks = [];
 
+  // Temporal: remove spells for now until 0.3 release. To-do: remove this and implement deck build algorithm
+  cards = filterCards(cards, "type", "creature");
+
   // Elemental card's objects
-  var fireCards = shuffle(filterCards('fire')).slice(0, 4).sort((a, b) => a.cost - b.cost);
-  var waterCards = shuffle(filterCards('water')).slice(0, 4).sort((a, b) => a.cost - b.cost);
-  var airCards = shuffle(filterCards('air')).slice(0, 4).sort((a, b) => a.cost - b.cost);
-  var earthCards = shuffle(filterCards('earth')).slice(0, 4).sort((a, b) => a.cost - b.cost);
-  var deathCards = shuffle(filterCards('death')).slice(0, 4).sort((a, b) => a.cost - b.cost);
+  var fireCards = shuffle(filterCards(cards, "elemental", "fire")).slice(0, 4).sort((a, b) => a.cost - b.cost);
+  var waterCards = shuffle(filterCards(cards, "elemental", "water")).slice(0, 4).sort((a, b) => a.cost - b.cost);
+  var airCards = shuffle(filterCards(cards, "elemental", "air")).slice(0, 4).sort((a, b) => a.cost - b.cost);
+  var earthCards = shuffle(filterCards(cards, "elemental", "earth")).slice(0, 4).sort((a, b) => a.cost - b.cost);
+  var deathCards = shuffle(filterCards(cards, "elemental", "death")).slice(0, 4).sort((a, b) => a.cost - b.cost);
 
   let deckA = {fireCards,waterCards,airCards,earthCards,deathCards};
   
@@ -33,9 +36,18 @@ function getCards() {
 
 // *** USEFUL FUNCTIONS ***
 // Filter cards by elemental
-function filterCards(elemental) {
-  return cards.filter(function (u) {
-    return u.ElementalType == elemental
+function filterCards(cardsObj,property,value) {
+  return cardsObj.filter(function (u) {
+
+    if (property == "elemental"){
+      return u.ElementalType == value
+    }
+
+    if (property == "type"){
+      return u.type == value
+    }
+
+    return undefined;
   })
 }
 
