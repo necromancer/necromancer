@@ -400,10 +400,10 @@ export default {
                     // Walk spaces
                     for (var i = 0; i < vm.AIspaces.length; i++) {
                     
-                        // Skip latest moves card
+                        // Skip latest moved card
                         if(vm.playerSpaces[i].id == this.latestSlot.id){
-                            if(!this.latestSlot.fastAttack){
-                                break;
+                            if(this.latestSlot.fastAttack == false){
+                                continue;
                             }
                         }
                     
@@ -453,10 +453,10 @@ export default {
                     // Walk spaces
                     for (var i = 0; i < vm.playerSpaces.length; i++) {
                         
-                        // Skip latest moves card
+                        // Skip latest moved card
                         if(vm.AIspaces[i].id == this.latestSlot.id){
-                            if(!this.latestSlot.fastAttack){
-                                break;
+                            if(this.latestSlot.fastAttack == false){
+                                continue;
                             }
                         }
 
