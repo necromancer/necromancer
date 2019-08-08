@@ -3,7 +3,7 @@
         <img v-bind:src="src" alt="card" class="character">
         <img class="frame" v-bind:src="cardSrc" alt="card">
         <div class="life-indicator">{{life}}</div>
-        <div class="life-deal"></div>
+        <div class="life-deal">{{dealValue}}</div>
         <div class="attack-indicator">{{attack}}</div>
         <div class="cost-indicator">{{cost}}</div>
     </div>
@@ -21,6 +21,11 @@ export default {
         attack: Number,
         cost: Number,
     },
+    data() {
+        return {
+            dealValue: ""
+        };
+    },
     methods:{
         animate: function (animation, data) {
             var spaceHTML = document.getElementById(this.id);
@@ -36,8 +41,8 @@ export default {
             }
 
             if(animation == 'die'){
-                Velocity(spaceHTML, "fadeOut", {display: "inline-table"},{duration: 600});
-                Velocity(spaceHTML, "reverse", {delay: 600});
+                Velocity(spaceHTML, "fadeOut", {display: "inline-table"},{duration: 800});
+                Velocity(spaceHTML, "reverse", {delay: 800});
             }
 
             if (animation == 'summon'){
@@ -46,7 +51,7 @@ export default {
 
             if (animation == 'deal'){
                 spaceHTML.getElementsByClassName('life-deal')[0].style = "";     
-                spaceHTML.getElementsByClassName('life-deal')[0].innerHTML = "-"+data;
+                this.dealValue = "-"+data;
                 Velocity(spaceHTML.getElementsByClassName('life-deal')[0], { top: "50px" },{duration: 400});            
                 Velocity(spaceHTML.getElementsByClassName('life-deal')[0], "fadeOut",{duration: 800});
             }
