@@ -275,6 +275,9 @@ export default {
                 spaceObj.fastAttack = this.selectedCard.fastAttack;
                 spaceObj.cardSrc = "creature.png";
 
+                // Animate
+                this.$refs[spaceObj.id][0].animate("summon");
+
                 // Log
                 log.info(`Moved ${this.selectedCard.id} card  to ${space.id}`);
 
