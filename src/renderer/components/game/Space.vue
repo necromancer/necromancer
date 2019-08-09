@@ -64,6 +64,7 @@ export default {
 
 <style scoped>
 .card-space {
+    width: 9vh;
     margin-right: 30px !important;
     box-sizing: border-box;
     position: relative;
@@ -75,26 +76,18 @@ export default {
 .frame {
     position: relative;
     z-index: 9;
-    width: 86px;
+    width: 100%;
 }
 
 
 .character {
+    width: 100%;
     position: absolute;
-    margin-top: 8px;
-    margin-left: 3px;
-    max-width: 80px;
-    clip: rect(0px, 80px, 80px, 0px);
+    margin-top: 2%;
 }
 .life-indicator {
+    margin: 0;
     color: green;
-    position: absolute;
-    z-index: 10;
-    right: 3px;
-    bottom: 3px;
-}
-.life-deal {
-    color: red;
     position: absolute;
     z-index: 10;
     right: 3px;
@@ -105,7 +98,7 @@ export default {
     color: red;
     position: absolute;
     z-index: 10;
-    left: 3px;
+    left: 6px;
     bottom: 3px;
 }
 
@@ -113,7 +106,22 @@ export default {
     color: blue;
     position: absolute;
     z-index: 10;
-    right: 6px;
-    top: 1px;
+    right: 5px;
+    top: 0px;
+}
+
+.life-deal {
+    color: red;
+    position: absolute;
+    z-index: 10;
+    right: 3px;
+    bottom: 3px;
+}
+
+/* For mobile */
+@media only screen and (max-width: 600px) {
+    .card-space {
+        margin: 0 !important;
+    }
 }
 </style>

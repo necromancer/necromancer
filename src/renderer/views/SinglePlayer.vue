@@ -641,6 +641,9 @@ export default {
 
 
 <style scoped>
+#wrapper{
+    text-align: center;
+}
 .battlefield {
     text-align: center;
     width: 100%;
@@ -664,8 +667,9 @@ export default {
 }
 
 .cards-deck {
-    margin-left: 30%;
-    margin-right: 30%;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
     border: 32px solid transparent;
     -o-border-image: url('~@/assets/img/paperborder.png') 32 round;
     border-image: url('~@/assets/img/paperborder.png') 32 round;
@@ -675,7 +679,6 @@ export default {
 
 
 .card-column{
-    width: 19%;
     display: inline-block;
     text-align: center;
 }
@@ -693,6 +696,7 @@ export default {
 
 .player-bar-profile {
     width: 7%;
+    left: 0;
     position: absolute;
     top: -150%;
     display: inline-block;
@@ -723,11 +727,13 @@ export default {
 .enemy-bar h4 {
     display: inline-block;
     position: relative;
-    left: 4.5%;
+    left: -42%;
+    margin-top: 0.99%;
 }
 
 .enemy-bar-profile {
     width: 4%;
+    left:0;
     position: absolute;
     top: 15%;
     display: inline-block;
@@ -751,5 +757,20 @@ export default {
     color: #fff !important;
     background: url(~@/assets/img/bg.png);
     height:24px;
+}
+
+/* For mobile */
+@media only screen and (max-width: 600px) {
+    .battlefield {
+        padding-top: 10.5%;
+        padding-bottom: 5%;
+    }
+
+    .player-bar-profile {
+        display: none;
+    }
+    .enemy-bar-profile{
+        display: none;
+    }
 }
 </style>

@@ -62,9 +62,10 @@ export default {
 
 <style scoped>
 .card {
-    min-height: 150.05px;
-    display: inline-grid;
-    margin-bottom: -45px;
+    display: block;
+    position: relative;
+    width: 9vh;
+    margin: 0;
     padding: 0;
     cursor: url(~@/assets/img/cursors/pointer.png), pointer;
 }
@@ -72,42 +73,42 @@ export default {
 .frame {
     position: relative;
     z-index: 9;
-    width: 86px;
+    width: 100%;
 }
 
 .card .character {
+    width: 100%;
     position: absolute;
-    margin-top: 8px;
-    margin-left: 3px;
-    max-width: 80px;
-    clip: rect(0px, 80px, 80px, 0px);
+    margin-top: 2%;
 }
 
 .life-indicator {
+    margin: 0;
     color: green;
-    position: relative;
+    position: absolute;
     z-index: 10;
-    right: -33px;
-    top: -18px;
+    right: 3px;
+    bottom: 3px;
 }
 
 .attack-indicator {
     color: red;
-    position: relative;
+    position: absolute;
     z-index: 10;
-    left: -33px;
-    top: -35px;
+    left: 6px;
+    bottom: 3px;
 }
 
 .cost-indicator {
     color: blue;
-    position: relative;
+    position: absolute;
     z-index: 10;
-    right: -33px;
-    top: -133px;
+    right: 5px;
+    top: 0px;
 }
 
 .cost-indicator-spell {
+    display: none;
     color: blue;
     position: relative;
     z-index: 10;
