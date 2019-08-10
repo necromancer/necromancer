@@ -72,7 +72,6 @@ export default {
 
 .frame {
     position: relative;
-    z-index: 9;
     width: 100%;
 }
 
@@ -87,7 +86,6 @@ export default {
     margin: 0;
     color: green;
     position: absolute;
-    z-index: 10;
     right: 3px;
     bottom: 3px;
 }
@@ -96,7 +94,6 @@ export default {
     font-size: 1.6vh;
     color: red;
     position: absolute;
-    z-index: 10;
     left: 6px;
     bottom: 3px;
 }
@@ -105,7 +102,6 @@ export default {
     font-size: 1.6vh;
     color: blue;
     position: absolute;
-    z-index: 10;
     right: 5px;
     top: 0px;
 }
@@ -115,7 +111,6 @@ export default {
     display: none;
     color: blue;
     position: relative;
-    z-index: 10;
     right: -33px;
     top: -107px;
 }
@@ -134,7 +129,6 @@ export default {
     border-radius: 6px;
     padding: 5px;
     position: absolute;
-    z-index: 1;
     bottom: 110%;
     left: 50%;
     margin-left: -120px;

@@ -75,7 +75,6 @@ export default {
 
 .frame {
     position: relative;
-    z-index: 9;
     width: 100%;
 }
 
@@ -90,7 +89,6 @@ export default {
     margin: 0;
     color: green;
     position: absolute;
-    z-index: 10;
     right: 3px;
     bottom: 3px;
 }
@@ -99,7 +97,6 @@ export default {
     font-size: 1.6vh;
     color: red;
     position: absolute;
-    z-index: 10;
     left: 6px;
     bottom: 3px;
 }
@@ -108,7 +105,6 @@ export default {
     font-size: 1.6vh;
     color: blue;
     position: absolute;
-    z-index: 10;
     right: 5px;
     top: 0px;
 }
@@ -117,7 +113,6 @@ export default {
     font-size: 1.6vh;
     color: red;
     position: absolute;
-    z-index: 10;
     right: 3px;
     bottom: 3px;
 }
