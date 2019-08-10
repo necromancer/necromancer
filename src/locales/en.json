@@ -11,5 +11,10 @@
     "ElementalWater": "Water",
     "ElementalAir": "Air",
     "ElementalEarth": "Earth",
-    "ElementalDeath": "Death"
+    "ElementalDeath": "Death",
+    "WinText": "You win",
+    "LooseText": "You loose",
+    "Cost": "Cost",
+    "Attack": "Attack",
+    "Life": "Life"
 }

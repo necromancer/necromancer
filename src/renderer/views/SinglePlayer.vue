@@ -2,7 +2,7 @@
     <div id="wrapper">
         <div class="enemy-bar">
             <img class="enemy-bar-profile" src="~@/assets/img/faces/enemy.png" alt="">
-            <h4>Enemy | Life: {{ AIlife }}</h4>
+            <h4>Enemy | {{locales.Life}}: {{ AIlife }}</h4>
         </div>
         <div id="battlefield" class="battlefield">
             <!-- AI Spaces-->
@@ -40,7 +40,7 @@
             <div id="player-life" class="w3-green" style="width:100%"></div>
             <img id="PlayerImageProfile" class="player-bar-profile" v-bind:src="playerImage" alt="">
 
-            <h4 id="playerName">{{ playerName }} | Life: {{ playerLife }}</h4>
+            <h4 id="playerName">{{ playerName }} | {{locales.Life}}: {{ playerLife }}</h4>
             
                 <img v-on:click="skipTurn();" src="~@/assets/img/skipTurn.png" alt="" style="top: -16px;  width: 7vh;position: absolute;right:0px;">
             
@@ -63,7 +63,8 @@
                     :life="card.life"
                     :attack="card.attack"
                     :cost="card.cost"
-                    :description="card.description">
+                    :description="card.description"
+                    :locales="locales">
                 </Card>
             </div>
 
@@ -83,7 +84,8 @@
                     :life="card.life"
                     :attack="card.attack"
                     :cost="card.cost"
-                    :description="card.description">
+                    :description="card.description"
+                    :locales="locales">
                 </Card>
             </div>
 
@@ -104,7 +106,8 @@
                     :life="card.life"
                     :attack="card.attack"
                     :cost="card.cost"
-                    :description="card.description">
+                    :description="card.description"
+                    :locales="locales">
                 </Card>
             </div>
 
@@ -124,7 +127,8 @@
                     :life="card.life"
                     :attack="card.attack"
                     :cost="card.cost"
-                    :description="card.description">
+                    :description="card.description"
+                    :locales="locales">
                 </Card>
             </div>
 
@@ -144,7 +148,8 @@
                     :life="card.life"
                     :attack="card.attack"
                     :cost="card.cost"
-                    :description="card.description">
+                    :description="card.description"
+                    :locales="locales">
                 </Card>
             </div>
 
@@ -201,13 +206,13 @@ export default {
         },
         playerLife: function () {
             if (this.playerLife <= 0){
-                alert("You lose");
+                alert(this.locales.LooseText);
                 this.$router.push("landing-page");
             }
         },
         AIlife: function () {
             if (this.AIlife <= 0){
-                alert("You win");
+                alert(this.locales.WinText);
                 this.$router.push("landing-page");
             }
         }

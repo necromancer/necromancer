@@ -11,5 +11,10 @@
     "ElementalWater": "Agua",
     "ElementalAir": "Aire",
     "ElementalEarth": "Tierra",
-    "ElementalDeath": "Muerte"
+    "ElementalDeath": "Muerte",
+    "WinText": "Has ganado",
+    "LooseText": "Has perdido",
+    "Cost": "Coste",
+    "Attack": "Ataque",
+    "Life": "Vida"
 }

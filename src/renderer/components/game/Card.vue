@@ -3,7 +3,7 @@
         <!-- Tooltip card info -->
         <span style="z-index: 999" class="tooltiptext">
             <h4>{{id}}</h4>
-            <h5>{{elementaltype}} {{type}}, Cost {{cost}}<span v-if="type === 'creature'">, Attack {{attack}}, Life {{life}}</span></h5>
+            <h5>{{elementaltype}} {{type}}, {{locales.Cost}} {{cost}}<span v-if="type === 'creature'">, {{locales.Attack}} {{attack}}, {{locales.Life}} {{life}}</span></h5>
             <p>{{description}}</p>
         </span>
         <!-- Creature/spell image -->
@@ -38,6 +38,7 @@ export default {
         cost: Number,
         available: Boolean,
         description: String,
+        locales: Object
     },
     data() {
         return {
