@@ -126,6 +126,7 @@ export default {
 @media only screen and (max-width: 600px) {
     .card-space {
         margin: 0 !important;
+        width: 8vh;
     }
 }
 </style>

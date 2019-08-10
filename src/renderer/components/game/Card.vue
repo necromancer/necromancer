@@ -181,4 +181,11 @@ export default {
 .unavailable{
     -webkit-filter: grayscale(100%);
 }
+
+/* For mobile */
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 8vh;
+    }
+}
 </style>
