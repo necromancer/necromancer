@@ -158,4 +158,17 @@ body {
 .buttonMenu {
   margin-top: 1%;
 }
+
+/* For mobile */
+@media only screen and (max-width: 600px) {
+  .title img{
+    width: 100vw;
+  }
+  #main{
+    text-align: center;
+  }
+  .menu{
+    width: inherit;
+  }
+}
 </style>
