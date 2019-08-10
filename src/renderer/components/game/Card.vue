@@ -191,16 +191,16 @@ export default {
     .life-indicator{
         font-size: 1.5vh;
         right: 1px;
-        bottom: 4px;
+        bottom: 3px;
     }
     .attack-indicator{
         font-size: 1.5vh;
         left: 4px;
-        bottom: 4px;
+        bottom: 3px;
     }
     .cost-indicator{
         font-size: 1.5vh;
-        right: 4px;
+        right: 1px;
         top: -1px;
     }
 }
