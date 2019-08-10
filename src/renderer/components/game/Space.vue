@@ -64,7 +64,7 @@ export default {
 
 <style scoped>
 .card-space {
-    width: 9vh;
+    width: 8.5vh;
     margin-right: 30px !important;
     box-sizing: border-box;
     position: relative;
@@ -86,6 +86,7 @@ export default {
     margin-top: 2%;
 }
 .life-indicator {
+    font-size: 1.6vh;
     margin: 0;
     color: green;
     position: absolute;
@@ -95,6 +96,7 @@ export default {
 }
 
 .attack-indicator {
+    font-size: 1.6vh;
     color: red;
     position: absolute;
     z-index: 10;
@@ -103,6 +105,7 @@ export default {
 }
 
 .cost-indicator {
+    font-size: 1.6vh;
     color: blue;
     position: absolute;
     z-index: 10;
@@ -111,6 +114,7 @@ export default {
 }
 
 .life-deal {
+    font-size: 1.6vh;
     color: red;
     position: absolute;
     z-index: 10;

@@ -64,7 +64,7 @@ export default {
 .card {
     display: block;
     position: relative;
-    width: 9vh;
+    width: 8.5vh;
     margin: 0;
     padding: 0;
     cursor: url(~@/assets/img/cursors/pointer.png), pointer;
@@ -83,6 +83,7 @@ export default {
 }
 
 .life-indicator {
+    font-size: 1.6vh;
     margin: 0;
     color: green;
     position: absolute;
@@ -92,6 +93,7 @@ export default {
 }
 
 .attack-indicator {
+    font-size: 1.6vh;
     color: red;
     position: absolute;
     z-index: 10;
@@ -100,6 +102,7 @@ export default {
 }
 
 .cost-indicator {
+    font-size: 1.6vh;
     color: blue;
     position: absolute;
     z-index: 10;
@@ -108,6 +111,7 @@ export default {
 }
 
 .cost-indicator-spell {
+    font-size: 1.6vh;
     display: none;
     color: blue;
     position: relative;
