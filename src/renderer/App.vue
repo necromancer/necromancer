@@ -45,8 +45,13 @@ export default {
 html {
   cursor: url(~@/assets/img/cursors/default.png), default;
   -webkit-user-select: none;
+    overflow: hidden;
+    position:fixed;
 }
 
+#app{
+  width: 100vw;
+}
 :link {
   cursor: url(~@/assets/img/cursors/pointer.png), pointer;
 }
