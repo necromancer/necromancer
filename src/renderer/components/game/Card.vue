@@ -185,7 +185,23 @@ export default {
 /* For mobile */
 @media only screen and (max-width: 600px) {
     .card {
-        width: 8vh;
+        width: 7.5vh;
+    }
+
+    .life-indicator{
+        font-size: 1.5vh;
+        right: 1px;
+        bottom: 4px;
+    }
+    .attack-indicator{
+        font-size: 1.5vh;
+        left: 4px;
+        bottom: 4px;
+    }
+    .cost-indicator{
+        font-size: 1.5vh;
+        right: 4px;
+        top: -1px;
     }
 }
 </style>
