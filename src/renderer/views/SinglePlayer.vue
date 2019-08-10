@@ -774,10 +774,10 @@ export default {
     }
     .player-bar h4 {
         left: 1%;
-        top: -74%;
+        top: -73%;
     }
     .enemy-bar h4{
-        left: -35%;
+        left: -34%;
         margin-top: 2.99%;
     }
 }
