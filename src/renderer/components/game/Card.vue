@@ -203,5 +203,9 @@ export default {
         right: 1px;
         top: -1px;
     }
+    .tooltip .tooltiptext {
+        position: fixed;
+        bottom: 0;
+    }
 }
 </style>
