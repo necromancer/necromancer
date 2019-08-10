@@ -2,7 +2,7 @@
     <div id="wrapper">
         <div class="enemy-bar">
             <img class="enemy-bar-profile" src="~@/assets/img/faces/enemy.png" alt="">
-            <h4>Enemy {{ AIlife }}</h4>
+            <h4>Enemy | Life: {{ AIlife }}</h4>
         </div>
         <div id="battlefield" class="battlefield">
             <!-- AI Spaces-->
@@ -40,9 +40,9 @@
             <div id="player-life" class="w3-green" style="width:100%"></div>
             <img id="PlayerImageProfile" class="player-bar-profile" v-bind:src="playerImage" alt="">
 
-            <h4 id="playerName">{{ playerName }} {{ playerLife }}</h4>
+            <h4 id="playerName">{{ playerName }} | Life: {{ playerLife }}</h4>
             
-                <img v-on:click="skipTurn();" src="~@/assets/img/skipTurn.png" alt="" style="top: 7px;width: 2.5%;position: absolute;right:0px;">
+                <img v-on:click="skipTurn();" src="~@/assets/img/skipTurn.png" alt="" style="top: -16px;  width: 7vh;position: absolute;right:0px;">
             
         </div>
         <div id="cards-deck" class="cards-deck">
@@ -771,6 +771,14 @@ export default {
     }
     .enemy-bar-profile{
         display: none;
+    }
+    .player-bar h4 {
+        left: 1%;
+        top: -74%;
+    }
+    .enemy-bar h4{
+        left: -35%;
+        margin-top: 2.99%;
     }
 }
 </style>
