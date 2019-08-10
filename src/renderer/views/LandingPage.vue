@@ -170,5 +170,8 @@ body {
   .menu{
     width: inherit;
   }
+  .buttonMenu {
+    margin-top: 4%;
+  }
 }
 </style>
