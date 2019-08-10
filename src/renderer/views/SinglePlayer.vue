@@ -2,7 +2,7 @@
     <div id="wrapper">
         <div class="enemy-bar">
             <img class="enemy-bar-profile" src="~@/assets/img/faces/enemy.png" alt="">
-            <h4>Strahdor {{ AIlife }}</h4>
+            <h4>Enemy {{ AIlife }}</h4>
         </div>
         <div id="battlefield" class="battlefield">
             <!-- AI Spaces-->
