@@ -11,6 +11,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 let webConfig = {
+  node: {
+    fs: 'empty',
+  },
   devtool: '#cheap-module-eval-source-map',
   entry: {
     web: path.join(__dirname, '../src/renderer/main.js')
@@ -54,6 +57,16 @@ let webConfig = {
           query: {
             limit: 10000,
             name: 'imgs/[name].[ext]'
+          }
+        }
+      },
+      {
+        test: /\.ogg$/,
+        use: {
+          loader: 'url-loader',
+          query: {
+            limit: 10000,
+            name: 'audio/[name].[ext]'
           }
         }
       },
