@@ -1,7 +1,7 @@
 <template>
     <div class="card tooltip" v-bind:id="id" v-bind:class="{unavailable: !available}" v-bind:elementaltype="elementaltype">
         <!-- Tooltip card info -->
-        <span style="z-index: 999" class="tooltiptext">
+        <span class="tooltiptext">
             <h4>{{id}}</h4>
             <h5>{{elementaltype}} {{type}}, {{locales.Cost}} {{cost}}<span v-if="type === 'creature'">, {{locales.Attack}} {{attack}}, {{locales.Life}} {{life}}</span></h5>
             <p>{{description}}</p>
@@ -173,7 +173,7 @@ export default {
     opacity: 1;
 }
 
-.unavailable{
+.unavailable img{
     -webkit-filter: grayscale(100%);
 }
 
